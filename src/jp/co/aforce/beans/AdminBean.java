@@ -1,8 +1,8 @@
 package jp.co.aforce.beans;
 
-public class AdminBean implements java.io.Serializable{
+public class AdminBean implements java.io.Serializable {
 
-	private String id ;
+	private String id;
 	private String name;
 	private String password;
 
@@ -19,16 +19,15 @@ public class AdminBean implements java.io.Serializable{
 	}
 
 	public void setId(String id) {
-		this.id=id;
+		this.id = id;
 	}
 
 	public void setName(String name) {
-		this.name=name;
+		this.name = name;
 	}
 
 	public void setPassword(String password) {
-		this.password=password;
+		this.password = password;
 	}
-
 
 }

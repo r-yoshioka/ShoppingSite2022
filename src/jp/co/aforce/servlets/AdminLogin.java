@@ -12,13 +12,11 @@ import javax.servlet.http.HttpSession;
 import jp.co.aforce.beans.AdminBean;
 import jp.co.aforce.dao.AdminDAO;
 
-
-
 @WebServlet(urlPatterns = { "/servlets/AdminLogin" })
 public class AdminLogin extends HttpServlet {
 
-	protected  void doPost(
-		HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+	protected void doPost(
+			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset = UTF-8");
@@ -29,7 +27,6 @@ public class AdminLogin extends HttpServlet {
 
 		String id = request.getParameter("id");
 		String password = request.getParameter("password");
-
 
 		AdminDAO Adao = new AdminDAO();
 
@@ -44,7 +41,7 @@ public class AdminLogin extends HttpServlet {
 				request.getRequestDispatcher("../AdminViews/admin_success.jsp").forward(request, response);
 
 			} else {
-			    request.setAttribute("message","IDもしくはパスワードが間違えています");
+				request.setAttribute("message", "IDもしくはパスワードが間違えています");
 				request.getRequestDispatcher("../AdminViews/admin_login.jsp").forward(request, response);
 			}
 

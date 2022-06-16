@@ -2,8 +2,6 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../header.html"%>
 
-
 ようこそ、${AdminBean.name}さん！
-
 
 <%@include file="../footer.html"%>

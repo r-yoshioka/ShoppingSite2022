@@ -6,22 +6,19 @@ import java.sql.ResultSet;
 
 import jp.co.aforce.beans.AdminBean;
 
+public class AdminDAO extends DAO {
+	public AdminBean search(String id, String password) throws Exception {
 
-public class AdminDAO extends DAO{
-	public AdminBean search(String id, String password)throws Exception{
-
-
-
-		Connection con=getConnection();
+		Connection con = getConnection();
 
 		PreparedStatement st;
-		st=con.prepareStatement(
-				"SELECT * FROM login WHERE id=? and password=?" );
+		st = con.prepareStatement(
+				"SELECT * FROM login WHERE id=? and password=?");
 
 		st.setString(1, id);
 		st.setString(2, password);
 
-		ResultSet rs=st.executeQuery();
+		ResultSet rs = st.executeQuery();
 
 		AdminBean ab = new AdminBean();
 
@@ -35,7 +32,4 @@ public class AdminDAO extends DAO{
 		con.close();
 		return ab;
 	}
-
-
-
 }
