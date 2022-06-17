@@ -2,10 +2,12 @@ package jp.co.aforce.beans;
 
 public class AdminBean implements java.io.Serializable {
 
+	//ログイン
 	private String member_id;
 	private String name;
 	private String password;
 
+	//ログイン
 	public String getId() {
 		return member_id;
 	}
@@ -18,6 +20,7 @@ public class AdminBean implements java.io.Serializable {
 		return password;
 	}
 
+	//ログイン
 	public void setId(String member_id) {
 		this.member_id = member_id;
 	}
@@ -29,5 +32,4 @@ public class AdminBean implements java.io.Serializable {
 	public void setPassword(String password) {
 		this.password = password;
 	}
-
 }

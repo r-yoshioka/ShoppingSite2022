@@ -4,14 +4,14 @@
 
 <form action="../servlets/AdminLogin" method="post">
 
+	<span>${message} </span>
+
 	<p>
 		ID:<input type="text" name="member_id" value="${member_id}"required>
 	</p>
 	<p>
 		パスワード:<input type="password" name="password" required>
 	</p>
-
-	<span>${message} </span>
 
 	<p>
 		<input type="submit" value="ログイン">
