@@ -16,34 +16,33 @@ import jp.co.aforce.dao.UserLoginDAO;
 public class UserLogin extends HttpServlet {
 
 	public void doPost(
-			 HttpServletRequest request,HttpServletResponse response
-			 ) throws ServletException, IOException {
+			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset = UTF-8");
 
-		String mailAddress=request.getParameter("mailAddress");
-		 String password=request.getParameter("password");
+		String mailAddress = request.getParameter("mailAddress");
+		String password = request.getParameter("password");
 
-		 UserLoginDAO ld = new UserLoginDAO();
+		UserLoginDAO ld = new UserLoginDAO();
 
-		 try {
-			 UserLoginBean ulb = ld.search(mailAddress, password);
+		try {
+			UserLoginBean ulb = ld.search(mailAddress, password);
 
-			 String address = ulb.getMailAddress();
+			String address = ulb.getMailAddress();
 
-			 if(address != null) {
-			     request.setAttribute("loginName", ulb);
-			     request.getRequestDispatcher("../UserViews/user_top.jsp") .forward(request, response);
-			 }else {
-				 request.setAttribute("LoginMessage","");
-				 request.setAttribute("mailAddress", mailAddress);
-				 request.setAttribute("password", "");
-				 request.getRequestDispatcher("../UserViews/user_login.jsp").forward(request, response);
-			 }
+			if (address != null) {
+				request.setAttribute("loginName", ulb);
+				request.getRequestDispatcher("../UserViews/user_top.jsp").forward(request, response);
+			} else {
+				request.setAttribute("LoginMessage", "");
+				request.setAttribute("mailAddress", mailAddress);
+				request.setAttribute("password", "");
+				request.getRequestDispatcher("../UserViews/user_login.jsp").forward(request, response);
+			}
 
-		 }catch(Exception e) {
-			 e.printStackTrace();
-		 }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }

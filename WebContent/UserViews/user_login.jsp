@@ -1,20 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
-    pageEncoding="UTF-8"%>
-<%@ include file = "../header.html" %>
+	pageEncoding="UTF-8"%>
+<%@ include file="../header.html"%>
 
-<form action = "../servlets/UserLogin" method ="post">
+<form action="../servlets/UserLogin" method="post">
 
-<p>MAIL_ADDRESS：<input type="text" name="mailAddress" value="${mailAddress }" required></p>
-<p>PASSWORD：<input type="password" name="password" required ></p>
+	<p>
+		MAIL_ADDRESS：<input type="text" name="mailAddress"
+			value="${mailAddress }" required>
+	</p>
+	<p>
+		PASSWORD：<input type="password" name="password" required>
+	</p>
 
-<span class="LoginMessage">${LoginMessage} </span>
+	<span class="LoginMessage">${LoginMessage} </span>
 
-<p><input type="submit" value="ログイン"></p>
+	<p>
+		<input type="submit" value="ログイン">
+	</p>
 
 </form>
 
-<form action = "user_home.jsp" method="post">
-<input type="submit" value="戻る">
+<form action="user_home.jsp" method="post">
+	<input type="submit" value="戻る">
 </form>
 
-<%@ include file = "../footer.html" %>
+<%@ include file="../footer.html"%>

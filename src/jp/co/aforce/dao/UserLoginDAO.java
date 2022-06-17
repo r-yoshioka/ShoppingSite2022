@@ -8,8 +8,7 @@ import jp.co.aforce.beans.UserLoginBean;
 
 public class UserLoginDAO extends DAO {
 
-	public UserLoginBean search(String mail_address, String password
-			) throws Exception {
+	public UserLoginBean search(String mail_address, String password) throws Exception {
 
 		Connection con = getConnection();
 
