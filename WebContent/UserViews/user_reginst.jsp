@@ -2,7 +2,7 @@
     pageEncoding="UTF-8"%>
 <%@ include file = "../header.html" %>
 
-<form action = "../jp.co.aforce.main/Reginst" method ="post">
+<form action = "../servlets/UserReginst" method ="post">
 
 <p class="header">会員登録画面</p>
 
@@ -11,37 +11,22 @@
 <table class="design">
 
   <tr>
-     <td class="content">　■MEMBER ID</td>
-  </tr>
-  <tr>
-     <td>
-        　　<input type="text" name="member_id" size="15" maxlength="10">
-     </td>
-  </tr>
-
-  <tr>
-    <td class="content">　■NAME</td>
-  </tr>
-  <tr>
+    <th class="content">　■NAME</th>
       <td class="input">
-        　　<input type="text" name="name" size="15" maxlength="32">
+        <input type="text" name="name" size="15" maxlength="32">
       </td>
   </tr>
 
   <tr>
-    <td class="content">　■GENDER</td>
-  </tr>
-  <tr>
+    <th class="content">　■GENDER</th>
       <td class="input">
-      　　男　<input type="radio" name="sex" value="1">　女　<input type="radio" name="sex" value="2">
+      男　<input type="radio" name="sex" value="1">　女　<input type="radio" name="sex" value="2">
       </td>
   </tr>
 
   <tr>
-    <td class="content">　■BIRTHDAY</td>
-  </tr>
-  <tr>
-      <td class="input">　　
+    <th class="content">　■BIRTHDAY</th>
+      <td class="input">
         <select name="birth_year">
              <option value=""></option>
              <option value="1920">1920</option>
@@ -199,44 +184,30 @@
   </tr>
 
   <tr>
-    <td class="content">　■JOB</td>
-  </tr>
-  <tr>
-      <td class="input">　　
-        <select name="job">
-             <option value=""></option>
-             <option value="100">会社員</option>
-             <option value="200">自営業</option>
-             <option value="300">学生</option>
-             <option value="400">その他</option>
-        </select>
-      </td>
-  </tr>
-
-  <tr>
-    <td class="content">　■PHONE NUMBER</td>
-  </tr>
-  <tr>
+    <th class="content">　■JOB</th>
       <td class="input">
-        　　<input type="tel" name="phone_number">
+        <input type="text" name="job" size="30" maxlength="32">
       </td>
   </tr>
 
   <tr>
-    <td class="content">　■MAIL ADDRESS</td>
-  </tr>
-  <tr>
+    <th class="content">　■PHONE NUMBER</th>
       <td class="input">
-        　　<input type="text" name="mail_address" size="30">
+        <input type="tel" name="phone_number">
       </td>
   </tr>
 
   <tr>
-    <td class="content">　■PASSWORD</td>
+    <th class="content">　■MAIL ADDRESS</th>
+      <td class="input">
+        <input type="text" name="mail_address" size="30">
+      </td>
   </tr>
+
   <tr>
+    <th class="content">　■PASSWORD</th>
     <td class="input">
-      　　<input type="password" name="password" maxlength="20">
+      <input type="password" name="password" maxlength="20">
 </table>
 
 <p><input type="submit" class="push" value="登録"></p>
@@ -247,10 +218,5 @@
 <form action="user_home.jsp" method ="post">
 <p><input type="submit" class="push" value="戻る"></p>
 </form>
-
-
-<span class="messageI_1">${messageI_1 }</span>
-<span class="messageE_1">${messageE_1 }</span>
-
 
 <%@ include file = "../footer.html" %>

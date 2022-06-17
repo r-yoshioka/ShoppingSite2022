@@ -2,95 +2,86 @@ package jp.co.aforce.beans;
 
 public class UserReginstBean implements java.io.Serializable {
 
-	private String MEMBER_ID;
-	private String NAME;
-	private String SEX;
-	private int BIRTH_YEAR;
-	private int BIRTH_MONTH;
-	private int BIRTH_DAY;
-	private String JOB;
-	private String PHONE_NUMBER;
-	private String MAIL_ADDRESS;
-	private String PASSWORD;
-
-	public String getId() {
-		return MEMBER_ID;
-	}
+	private String name;
+	private String sex;
+	private int birthYear;
+	private int birthMonth;
+	private int birthDay;
+	private String job;
+	private String phoneNumber;
+	private String mailAddress;
+	private String password;
 
 	public String getName() {
-		return NAME;
+		return name;
 	}
 
 	public String getSex() {
-		return SEX;
+		return sex;
 	}
 
-	public int getYear() {
-		return BIRTH_YEAR;
+	public int getBirthYear() {
+		return birthYear;
 	}
 
-	public int getMonth() {
-		return BIRTH_MONTH;
+	public int getBirthMonth() {
+		return birthMonth;
 	}
 
-	public int getDay() {
-		return BIRTH_DAY;
+	public int getBirthDay() {
+		return birthDay;
 	}
 
 	public String getJob() {
-		return JOB;
+		return job;
 	}
 
-	public String getPhone() {
-		return PHONE_NUMBER;
+	public String getPhoneNumber() {
+		return phoneNumber;
 	}
 
-	public String getMail() {
-		return MAIL_ADDRESS;
+	public String getMailAddress() {
+		return mailAddress;
 	}
 
 	public String getPassword() {
-		return PASSWORD;
+		return password;
 	}
 
-	public void setId(String mumber_id) {
-		this.MEMBER_ID = mumber_id;
-	}
-
-	public void setLastName(String last_name) {
-		this.NAME = last_name;
+	public void setName(String name) {
+		this.name = name;
 	}
 
 	public void setSex(String sex) {
-		this.SEX = sex;
+		this.sex = sex;
 	}
 
-	public void setYear(int birth_year) {
-		this.BIRTH_YEAR = birth_year;
+	public void setBirthYear(int birth_year) {
+		this.birthYear = birth_year;
 	}
 
-	public void setMonth(int birth_month) {
-		this.BIRTH_MONTH = birth_month;
+	public void setBirthMonth(int birth_month) {
+		this.birthMonth = birth_month;
 	}
 
-	public void setDay(int birth_day) {
-		this.BIRTH_DAY = birth_day;
+	public void setBirthDay(int birth_day) {
+		this.birthDay = birth_day;
 	}
 
 	public void setJob(String job) {
-		this.JOB = job;
+		this.job = job;
 	}
 
-	public void setPhone(String phone_number) {
-		this.PHONE_NUMBER = phone_number;
+	public void setPhoneNumber(String phone_number) {
+		this.phoneNumber = phone_number;
 	}
 
-	public void setMail(String mail_address) {
-		this.MAIL_ADDRESS = mail_address;
+	public void setMailAddress(String mail_address) {
+		this.mailAddress = mail_address;
 	}
 
-	public void setFirstName(String password) {
-		this.PASSWORD = password;
+	public void setPassword(String password) {
+		this.password = password;
 	}
 
 }
