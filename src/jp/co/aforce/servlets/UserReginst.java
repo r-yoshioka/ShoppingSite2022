@@ -19,8 +19,7 @@ import jp.co.aforce.tool.Page;
 public class UserReginst extends HttpServlet {
 
 	public void doPost(
-			HttpServletRequest request, HttpServletResponse response
-			) throws ServletException, IOException {
+			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset = UTF-8");
 		PrintWriter out = response.getWriter();
@@ -55,7 +54,7 @@ public class UserReginst extends HttpServlet {
 
 			String result = urm.inputCheck(urb);
 
-			if(result != null) {
+			if (result != null) {
 				request.setAttribute("message", UserMessage.R_01);
 				request.setAttribute("message02", result + UserMessage.R_02);
 				request.getRequestDispatcher("../UserViews/user_reginst.jsp").forward(request, response);
@@ -65,10 +64,10 @@ public class UserReginst extends HttpServlet {
 
 			int line = urd.search(urb);
 
-			if(line > 0) {
+			if (line > 0) {
 				request.setAttribute("message", UserMessage.R_03);
 				request.getRequestDispatcher("../UserViews/user_reginst.jsp").forward(request, response);
-			}else {
+			} else {
 				UserReginstDAO urd2 = new UserReginstDAO();
 				line = urd2.insert(urb);
 
