@@ -2,12 +2,12 @@ package jp.co.aforce.beans;
 
 public class AdminBean implements java.io.Serializable {
 
-	private String id;
+	private String member_id;
 	private String name;
 	private String password;
 
 	public String getId() {
-		return id;
+		return member_id;
 	}
 
 	public String getName() {
@@ -18,8 +18,8 @@ public class AdminBean implements java.io.Serializable {
 		return password;
 	}
 
-	public void setId(String id) {
-		this.id = id;
+	public void setId(String member_id) {
+		this.member_id = member_id;
 	}
 
 	public void setName(String name) {

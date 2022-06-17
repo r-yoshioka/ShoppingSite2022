@@ -7,23 +7,26 @@ import java.sql.ResultSet;
 import jp.co.aforce.beans.AdminBean;
 
 public class AdminDAO extends DAO {
-	public AdminBean search(String id, String password) throws Exception {
+	public AdminBean search(String member_id, String password) throws Exception {
 
+		//DBとの接続
 		Connection con = getConnection();
 
 		PreparedStatement st;
 		st = con.prepareStatement(
-				"SELECT * FROM login WHERE id=? and password=?");
+				"SELECT * FROM member_info_ksj WHERE member_id=? and password=?");
 
-		st.setString(1, id);
+		//SQLパラメータ設定
+		st.setString(1, member_id);
 		st.setString(2, password);
 
+		//SQLの実行
 		ResultSet rs = st.executeQuery();
 
 		AdminBean ab = new AdminBean();
 
 		while (rs.next()) {
-			ab.setId(rs.getString("id"));
+			ab.setId(rs.getString("member_id"));
 			ab.setName(rs.getString("name"));
 			ab.setPassword(rs.getString("password"));
 		}
