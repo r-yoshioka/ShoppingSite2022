@@ -8,23 +8,23 @@ import jp.co.aforce.beans.UserLoginBean;
 
 public class UserLoginDAO extends DAO {
 
-	public UserLoginBean search(String MEMBER_ID, String PASSWORD
+	public UserLoginBean search(String mail_address, String password
 			) throws Exception {
 
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"SELECT * FROM member_info_ksj WHERE MEMBER_ID=? and PASSWORD=?");
+				"SELECT * FROM MEMBER_INFO_KSJ WHERE MAIL_ADDRESS=? and PASSWORD=?");
 
-		st.setString(1, MEMBER_ID);
-		st.setString(2, PASSWORD);
+		st.setString(1, mail_address);
+		st.setString(2, password);
 
 		ResultSet rs = st.executeQuery();
 
 		UserLoginBean ulb = new UserLoginBean();
 
 		while (rs.next()) {
-			ulb.setId(rs.getString("member_id"));
+			ulb.setMailAddress(rs.getString("mail_address"));
 			ulb.setName(rs.getString("name"));
 			ulb.setPassword(rs.getString("password"));
 		}

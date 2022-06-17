@@ -4,13 +4,17 @@
 
 <form action = "../servlets/UserLogin" method ="post">
 
-<p>ID：<input type="text" name="member_id" value="${member_id }" required></p>
+<p>MAIL_ADDRESS：<input type="text" name="mailAddress" value="${mailAddress }" required></p>
 <p>PASSWORD：<input type="password" name="password" required ></p>
 
 <span class="LoginMessage">${LoginMessage} </span>
 
 <p><input type="submit" value="ログイン"></p>
 
+</form>
+
+<form action = "user_home.jsp" method="post">
+<input type="submit" value="戻る">
 </form>
 
 <%@ include file = "../footer.html" %>

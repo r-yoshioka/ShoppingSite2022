@@ -2,32 +2,32 @@ package jp.co.aforce.beans;
 
 public class UserLoginBean implements java.io.Serializable {
 
-	private String MEMBER_ID;
-	private String NAME;
-	private String PASSWORD;
+	private String mailAddress;
+	private String name;
+	private String password;
 
-	public String getId() {
-		return MEMBER_ID;
+	public String getMailAddress() {
+		return mailAddress;
 	}
 
 	public String getName() {
-		return NAME;
+		return name;
 	}
 
 	public String getPassword() {
-		return PASSWORD;
+		return password;
 	}
 
-	public void setId(String member_id) {
-		this.MEMBER_ID = member_id;
+	public void setMailAddress(String mail_address) {
+		this.mailAddress = mail_address;
 	}
 
 	public void setName(String name) {
-		this.NAME = name;
+		this.name = name;
 	}
 
 	public void setPassword(String password) {
-		this.PASSWORD = password;
+		this.password = password;
 	}
 
 }
