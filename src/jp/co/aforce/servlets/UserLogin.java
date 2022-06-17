@@ -16,34 +16,33 @@ import jp.co.aforce.set.UserMessage;
 public class UserLogin extends HttpServlet {
 
 	public void doPost(
-			 HttpServletRequest request,HttpServletResponse response
-			 ) throws ServletException, IOException {
+			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset = UTF-8");
 
-		String MEMBER_ID=request.getParameter("member_id");
-		 String PASSWORD=request.getParameter("password");
+		String MEMBER_ID = request.getParameter("member_id");
+		String PASSWORD = request.getParameter("password");
 
-		 UserLoginDAO ld = new UserLoginDAO();
+		UserLoginDAO ld = new UserLoginDAO();
 
-		 try {
-			 UserLoginBean ulb = ld.search(MEMBER_ID, PASSWORD);
+		try {
+			UserLoginBean ulb = ld.search(MEMBER_ID, PASSWORD);
 
-			 String logId = ulb.getId();
+			String logId = ulb.getId();
 
-			 if(logId != null) {
-			     request.setAttribute("loginName", ulb);
-			     request.getRequestDispatcher("../UserViews/user_top.jsp") .forward(request, response);
-			 }else {
-				 request.setAttribute("LoginMessage", UserMessage.L_01);
-				 request.setAttribute("member_id", MEMBER_ID);
-				 request.setAttribute("password", "");
-				 request.getRequestDispatcher("../UserViews/user_login.jsp").forward(request, response);
-			 }
+			if (logId != null) {
+				request.setAttribute("loginName", ulb);
+				request.getRequestDispatcher("../UserViews/user_top.jsp").forward(request, response);
+			} else {
+				request.setAttribute("LoginMessage", UserMessage.L_01);
+				request.setAttribute("member_id", MEMBER_ID);
+				request.setAttribute("password", "");
+				request.getRequestDispatcher("../UserViews/user_login.jsp").forward(request, response);
+			}
 
-		 }catch(Exception e) {
-			 e.printStackTrace();
-		 }
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
 	}
 }
