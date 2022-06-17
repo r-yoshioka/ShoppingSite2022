@@ -83,4 +83,32 @@ public class AdminDAO extends DAO {
 		}
 		return line;
 	}
+	//一覧DAO(後から着手)
+	public static List<RegistBean>  All(){
+
+		//DBとの接続
+		//Connection con = getConnection();
+		Connection con = null;
+		PreparedStatement ps = null;
+		ResultSet rs = null;
+
+		List<RegistBean> list = new ArrayList<RegistBean>();
+
+		try {
+		con = shoppingsite.getConnection();
+		PreparedStatement st = con.prepareStatement("SELECT * FROM item_info_ksj");
+		ResultSet rs = st.executeQuery();
+
+		while (rs.next()) {
+			rb.setItemId(rs.getString("item_id"));
+			rb.setName(rs.getString("name"));
+			rb.setPrice(rs.getInt("price"));
+			rb.setNumber(rs.getInt("number"));
+		}
+		}
+		st.close();
+		con.close();
+
+		return ;
+	}
 }
