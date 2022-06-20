@@ -15,7 +15,7 @@ public class AdminDAO extends DAO {
 
 		PreparedStatement st;
 		st = con.prepareStatement(
-				"SELECT * FROM  member_info_ksj WHERE member_id=? and password=?");
+				"SELECT * FROM member_info_ksj WHERE member_id=? and password=?");
 
 		//SQLパラメータ設定
 		st.setString(1, member_id);
@@ -82,5 +82,25 @@ public class AdminDAO extends DAO {
 			line++;
 		}
 		return line;
+	}
+	//更新DAO
+	public int update(RegistBean rb) throws Exception{
+
+		int line = 0;
+		//DBとの接続
+		Connection con = getConnection();
+		PreparedStatement st = con.prepareStatement("UPDATE item_info_ksj SET item_name=?, item_price=?, number=? WHERE item_id=?");
+
+		st.setString(1, rb.getName());
+		st.setInt(2, rb.getPrice());
+		st.setInt(3, rb.getNumber());
+		st.setString(4, rb.getItemId());
+		line = st.executeUpdate();
+
+		st.close();
+		con.close();
+
+		return line;
+
 	}
 }
