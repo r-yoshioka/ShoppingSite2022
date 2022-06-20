@@ -2,31 +2,26 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../header.html"%>
 
-<form action="../servlets/UserUpdate" method="post">
+<p class="header">会員情報更新画面</p>
 
-	<p>
-		MAIL_ADDRESS：<input type="text" name="mail_address"
-			value="${mail_address }" required>
-	</p>
-	<p>
-		PASSWORD：<input type="password" name="password" required>
-	</p>
+<span>${USMessage }</span>
 
-	<span class="LoginMessage">${LoginMessage} </span>
+<form action="../servlets/UserUpdateSearch" method="post">
+	<table class="search">
+		<tr>
+			<th>■MAIL ADDRESS</th>
+			<td><input type="text" name="mail_address"></td>
+		</tr>
 
-	<p>
-		<input type="submit" value="検索">
-	</p>
-	<p>
-		<input type="reset" class="push" value="リセット">
-	</p>
+		<tr>
+			<th>■PASSWORD</th>
+			<td><input type="password" name="password"></td>
+		</tr>
+
+		<tr>
+			<td><input type="submit" value="検索"></td>
+		</tr>
+	</table>
 
 </form>
-
-<form action="user_top.jsp" method="post">
-	<p>
-		<input type="submit" class="push" value="TOPへ戻る">
-	</p>
-</form>
-
 <%@ include file="../footer.html"%>
