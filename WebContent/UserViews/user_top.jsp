@@ -8,4 +8,10 @@
 
 </form>
 
+<form action="user_update_success.jsp" method="post">
+
+	<p>おかえりなさい。${uub. name} さん！</p>
+
+</form>
+
 <%@ include file="../footer.html"%>

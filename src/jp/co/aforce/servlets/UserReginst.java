@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
 
 import jp.co.aforce.beans.UserReginstBean;
-import jp.co.aforce.dao.UserReginstDAO;
+import jp.co.aforce.dao.UserMemberDAO;
 import jp.co.aforce.model.UserReginstModel;
 import jp.co.aforce.set.UserMessage;
 import jp.co.aforce.tool.Page;
@@ -60,15 +60,15 @@ public class UserReginst extends HttpServlet {
 				request.getRequestDispatcher("../UserViews/user_reginst.jsp").forward(request, response);
 			}
 
-			UserReginstDAO urd = new UserReginstDAO();
+			UserMemberDAO urd = new UserMemberDAO();
 
-			int line = urd.search(urb);
+			int line = urd.check(urb);
 
 			if (line > 0) {
 				request.setAttribute("message", UserMessage.R_03);
 				request.getRequestDispatcher("../UserViews/user_reginst.jsp").forward(request, response);
 			} else {
-				UserReginstDAO urd2 = new UserReginstDAO();
+				UserMemberDAO urd2 = new UserMemberDAO();
 				line = urd2.insert(urb);
 
 				request.setAttribute("reginstBean", urb);
