@@ -13,7 +13,7 @@
 
 	<table class="design">
 		<tr>
-			<td class="input">商品番号： <input type="text" name="item_id" required></td>
+			<td class="input">商品番号： <input type="text" name="item_id" value="${item_id}" required></td>
 		</tr>
 		<tr>
 			<td class="input"><input type="submit" value="検索"></td>
@@ -28,16 +28,16 @@
 
 	<table class="design">
 		<tr>
-			<td class="input">商品名： <input type="text" name="name" value="${name}" required>
+			<td class="input">商品名： <input type="text" name="name" value="${rb.name}" required>
 			</td>
 		</tr>
 
 		<tr>
-			<td class="input">値段： <input type="text" name="price" value="${price}" required>
+			<td class="input">値段： <input type="text" name="price" value="${rb.price}"required>
 			</td>
 		</tr>
 		<tr>
-			<td class="input">個数： <input type="text" name="number" value="${number}" required>
+			<td class="input">個数： <input type="text" name="number" value="${rb.number}" required>
 			</td>
 		</tr>
 	</table>
