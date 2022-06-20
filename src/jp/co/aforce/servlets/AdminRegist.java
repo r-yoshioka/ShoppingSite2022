@@ -39,7 +39,7 @@ public class AdminRegist extends HttpServlet {
 		//入力値セット
 		RegistBean rb = new RegistBean();
 
-		DateTimeFormatter format = DateTimeFormatter.ofPattern("yyMMddHH");
+		DateTimeFormatter format = DateTimeFormatter.ofPattern("MMddHHss");
 
 		// 書式を指定してLocalDateTimeのインスタンスを作成する
 		LocalDateTime ldt = LocalDateTime.now();
@@ -62,16 +62,16 @@ public class AdminRegist extends HttpServlet {
 
 			if (line > 0) {
 				request.setAttribute("messageE1", AdminMessage.E_01);
-				request.getRequestDispatcher("../AdminViews/admin_regist.jsp").forward(request, response);
+				request.getRequestDispatcher("../AdminViews/admin_regist_error.jsp").forward(request, response);
 
 			} else {
 				adminDao.insert(rb);
 				request.setAttribute("messageI1", AdminMessage.I_01);
-				request.getRequestDispatcher("../AdminViews/admin_regist.jsp").forward(request, response);
+				request.getRequestDispatcher("../AdminViews/admin_regist_success.jsp").forward(request, response);
 			}
 		} catch (Exception e) {
 			request.setAttribute("messageE2", AdminMessage.E_02);
-			request.getRequestDispatcher("../AdminViews/admin_regist.jsp").forward(request, response);
+			request.getRequestDispatcher("../AdminViews/admin_regist_error.jsp").forward(request, response);
 			e.printStackTrace();
 		}
 	}

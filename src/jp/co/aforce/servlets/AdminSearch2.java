@@ -12,8 +12,8 @@ import jp.co.aforce.beans.RegistBean;
 import jp.co.aforce.dao.AdminDAO;
 import jp.co.aforce.set.AdminMessage;
 
-@WebServlet(urlPatterns = { "/Servlets/AdminDelete" })
-public class AdminDelete extends HttpServlet {
+@WebServlet(urlPatterns = { "/Servlets/AdminSearch2" })
+public class AdminSearch2 extends HttpServlet {
 
 	public void doGet(
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
@@ -30,22 +30,24 @@ public class AdminDelete extends HttpServlet {
 		response.setContentType("text/html; charset = UTF-8");
 
 		//パラメータの取得
-		RegistBean rb = new RegistBean();
 
-		rb.setItemId(request.getParameter("item_id"));
+		String item_id = request.getParameter("item_id");
 
 		//DAOオブジェクト宣言
 		AdminDAO adminDao = new AdminDAO();
 
 		try {
-			int line = adminDao.delete(rb);
+			RegistBean rb = adminDao.searchId(item_id);
 
-			if (line > 0) {
-				request.setAttribute("messageI2", AdminMessage.I_02);
-				request.getRequestDispatcher("../AdminViews/admin_delete_success.jsp").forward(request, response);
+			if (rb == null) {
+				request.setAttribute("messageE3", AdminMessage.E_03);
+				request.getRequestDispatcher("../AdminViews/admin_delete.jsp").forward(request, response);
 
+			} else {
+				request.setAttribute("item_id", item_id);
+				request.setAttribute("rb", rb);
+				request.getRequestDispatcher("../AdminViews/admin_delete.jsp").forward(request, response);
 			}
-
 		} catch (Exception e) {
 			request.setAttribute("messageE4", AdminMessage.E_04);
 			request.getRequestDispatcher("../AdminViews/admin_delete.jsp").forward(request, response);

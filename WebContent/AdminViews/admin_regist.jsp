@@ -6,8 +6,7 @@
 
 	<p>商品情報登録画面</p>
 
-	<span class="red">${messageE1} </span> <span class="red">${messageI1}
-	</span> <span class="red">${messageE2} </span>
+	<span class="red">${messageI1}</span>
 
 	<table class="design">
 		<tr>
