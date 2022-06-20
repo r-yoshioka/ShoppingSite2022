@@ -7,7 +7,7 @@
 .classpath
 .settings
 .project
-.xml
+context.xml
 
 # Idea
 .idea
