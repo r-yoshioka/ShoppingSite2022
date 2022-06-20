@@ -46,7 +46,7 @@ public class AdminLogin extends HttpServlet {
 			if (logId != null) {
 				//入力されたIDとPASSが存在する場合、成功画面へ遷移
 				session.setAttribute("id", member_id);
-				request.getRequestDispatcher("../AdminViews/admin_success.jsp").forward(request, response);
+				request.getRequestDispatcher("../AdminViews/admin_menu.jsp").forward(request, response);
 
 			} else {
 				//入力されたIDとPASSが存在しない場合、エラーメッセージを出力
