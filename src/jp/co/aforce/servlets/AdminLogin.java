@@ -15,38 +15,51 @@ import jp.co.aforce.dao.AdminDAO;
 @WebServlet(urlPatterns = { "/servlets/AdminLogin" })
 public class AdminLogin extends HttpServlet {
 
+	public void doGet(
+			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		//直接アクセスの場合はログイン画面へ遷移
+		request.getRequestDispatcher("../AdminViews/admin_login").forward(request, response);
+	}
+
 	protected void doPost(
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
+		//エンコーディング設定
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset = UTF-8");
 
-		//PrintWriter out = response.getWriter();
-
 		HttpSession session = request.getSession();
 
-		String id = request.getParameter("id");
+		//入力値の取得
+		String member_id = request.getParameter("member_id");
 		String password = request.getParameter("password");
 
-		AdminDAO Adao = new AdminDAO();
+		AdminDAO AdminDao = new AdminDAO();
 
 		try {
 
-			AdminBean ab = Adao.search(id, password);
+			AdminBean ab = AdminDao.search(member_id, password);
 
 			String logId = ab.getId();
 
 			if (logId != null) {
-				session.setAttribute("AdminBean", ab);
-				request.getRequestDispatcher("../AdminViews/admin_success.jsp").forward(request, response);
+				//入力されたIDとPASSが存在する場合、成功画面へ遷移
+				session.setAttribute("id", member_id);
+				request.getRequestDispatcher("../AdminViews/admin_menu.jsp").forward(request, response);
 
 			} else {
-				request.setAttribute("message", "IDもしくはパスワードが間違えています");
+				//入力されたIDとPASSが存在しない場合、エラーメッセージを出力
+				request.setAttribute("id", member_id);
+				request.setAttribute("message", "IDまたはパスワードが違います");
 				request.getRequestDispatcher("../AdminViews/admin_login.jsp").forward(request, response);
 			}
 
 		} catch (Exception e) {
-			e.printStackTrace();
+			//その他のエラーが発生時エラーメッセージ
+			request.setAttribute("id", member_id);
+			request.setAttribute("message", "システムエラーが発生しました。:" + e);
+			request.getRequestDispatcher("../AdminViews/admin_login.jsp").forward(request, response);
 		}
 	}
 }
