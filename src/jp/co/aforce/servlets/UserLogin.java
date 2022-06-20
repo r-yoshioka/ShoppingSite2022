@@ -10,7 +10,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import jp.co.aforce.beans.UserLoginBean;
 import jp.co.aforce.dao.UserLoginDAO;
-//import jp.co.aforce.set.UserMessage;
+import jp.co.aforce.set.UserMessage;
 
 @WebServlet(urlPatterns = { "/servlets/UserLogin" })
 public class UserLogin extends HttpServlet {
@@ -35,7 +35,7 @@ public class UserLogin extends HttpServlet {
 				request.setAttribute("loginName", ulb);
 				request.getRequestDispatcher("../UserViews/user_top.jsp").forward(request, response);
 			} else {
-				request.setAttribute("LoginMessage", "");
+				request.setAttribute("LoginMessage", UserMessage.L_01);
 				request.setAttribute("mailAddress", mailAddress);
 				request.setAttribute("password", "");
 				request.getRequestDispatcher("../UserViews/user_login.jsp").forward(request, response);

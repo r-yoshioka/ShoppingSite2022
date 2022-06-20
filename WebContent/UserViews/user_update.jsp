@@ -127,7 +127,8 @@
 					<option value="2018">2018</option>
 					<option value="2019">2019</option>
 					<option value="2020">2020</option>
-			</select>年 <select name="birth_month">
+			</select>年
+			<select name="birth_month">
 					<option value=""></option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -141,7 +142,8 @@
 					<option value="10">10</option>
 					<option value="11">11</option>
 					<option value="12">12</option>
-			</select>月 <select name="birth_day">
+			</select>月
+			<select name="birth_day">
 					<option value=""></option>
 					<option value="1">1</option>
 					<option value="2">2</option>
