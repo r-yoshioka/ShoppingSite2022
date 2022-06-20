@@ -4,8 +4,9 @@
 
 	<p>商品情報削除画面</p>
 
-	<span class="red">${messageI3} </span> <span class="red">${messageE3}
-	</span> <span class="red">${messageE2} </span>
+	<span class="red">${messageI3} </span>
+	<span class="red">${messageE3} </span>
+	<span class="red">${messageE2} </span>
 
 <form action="../Servlets/AdminUpdate" method="post">
 
