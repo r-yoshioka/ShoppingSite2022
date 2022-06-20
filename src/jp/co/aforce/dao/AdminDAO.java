@@ -133,4 +133,22 @@ public class AdminDAO extends DAO {
 
 		return line;
 	}
+
+	//削除DAO
+	public int delete(RegistBean rb) throws Exception {
+
+		int line = 0;
+		//DBとの接続
+		Connection con = getConnection();
+		PreparedStatement st = con
+				.prepareStatement("DELETE FROM item_info_ksj WHERE item_info_ksj.item_id=?");
+
+		st.setString(1, rb.getItemId());
+		line = st.executeUpdate();
+
+		st.close();
+		con.close();
+
+		return line;
+	}
 }

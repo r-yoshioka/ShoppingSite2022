@@ -35,7 +35,7 @@ public class UserLogin extends HttpServlet {
 				request.setAttribute("loginName", ulb);
 				request.getRequestDispatcher("../UserViews/user_top.jsp").forward(request, response);
 			} else {
-				request.setAttribute("LoginMessage",UserMessage.L_01 );
+				request.setAttribute("LoginMessage", UserMessage.L_01);
 				request.setAttribute("mailAddress", mailAddress);
 				request.setAttribute("password", "");
 				request.getRequestDispatcher("../UserViews/user_login.jsp").forward(request, response);
