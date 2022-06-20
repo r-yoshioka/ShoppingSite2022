@@ -24,7 +24,8 @@
 
 		<tr>
 			<th class="content">■BIRTHDAY</th>
-			<td class="input"><select name="birth_year">
+			<td class="input">
+			    <select name="birth_year">
 					<option value=""></option>
 					<option value="1920">1920</option>
 					<option value="1921">1921</option>
@@ -127,8 +128,8 @@
 					<option value="2018">2018</option>
 					<option value="2019">2019</option>
 					<option value="2020">2020</option>
-			</select>年
-			<select name="birth_month">
+			    </select>年
+			    <select name="birth_month">
 					<option value=""></option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -142,8 +143,7 @@
 					<option value="10">10</option>
 					<option value="11">11</option>
 					<option value="12">12</option>
-			</select>月
-			<select name="birth_day">
+			    </select>月 <select name="birth_day">
 					<option value=""></option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -176,7 +176,8 @@
 					<option value="29">29</option>
 					<option value="30">30</option>
 					<option value="31">31</option>
-			</select>日</td>
+			    </select>日
+			</td>
 		</tr>
 
 		<tr>

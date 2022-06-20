@@ -10,7 +10,6 @@ import javax.servlet.http.HttpServletResponse;
 
 import jp.co.aforce.beans.UserUpdateBean;
 import jp.co.aforce.dao.UserMemberDAO;
-//import jp.co.aforce.model.UserReginstModel;
 import jp.co.aforce.set.UserMessage;
 
 @WebServlet(urlPatterns = { "/servlets/UserUpdate" })
