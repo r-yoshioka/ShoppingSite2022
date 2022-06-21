@@ -21,7 +21,8 @@ public class AdminInfoRegist extends HttpServlet {
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//直接アクセスの場合はログイン画面へ遷移
-		request.getRequestDispatcher("../AdminViews/admin_login.jsp").forward(request, response);}
+		request.getRequestDispatcher("../AdminViews/admin_login.jsp").forward(request, response);
+	}
 
 	public void doPost(
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
