@@ -2,6 +2,7 @@ package jp.co.aforce.beans;
 
 public class UserReginstBean implements java.io.Serializable {
 
+	private String memberId;
 	private String name;
 	private String sex;
 	private int birthYear;
@@ -11,6 +12,10 @@ public class UserReginstBean implements java.io.Serializable {
 	private String phoneNumber;
 	private String mailAddress;
 	private String password;
+
+	public String getMemberId() {
+		return memberId;
+	}
 
 	public String getName() {
 		return name;
@@ -46,6 +51,10 @@ public class UserReginstBean implements java.io.Serializable {
 
 	public String getPassword() {
 		return password;
+	}
+
+	public void setMemberId(String memberId) {
+		this.memberId = memberId;
 	}
 
 	public void setName(String name) {

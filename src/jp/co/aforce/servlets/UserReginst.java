@@ -2,6 +2,8 @@ package jp.co.aforce.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
+import java.time.LocalDateTime;
+import java.time.format.DateTimeFormatter;
 
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
@@ -40,6 +42,11 @@ public class UserReginst extends HttpServlet {
 
 			UserReginstBean urb = new UserReginstBean();
 
+			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyMMddHHmmss");
+			LocalDateTime ld = LocalDateTime.now();
+			String date = ld.format(format);
+
+			urb.setMemberId("M" + date);
 			urb.setName(NAME);
 			urb.setSex(SEX);
 			urb.setBirthYear(BIRTH_YEAR);
@@ -62,7 +69,7 @@ public class UserReginst extends HttpServlet {
 
 			UserMemberDAO urd = new UserMemberDAO();
 
-			int line = urd.check(urb);
+			int line = urd.searchReginst(urb);
 
 			if (line > 0) {
 				request.setAttribute("message", UserMessage.R_03);
