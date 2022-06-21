@@ -3,11 +3,14 @@ package jp.co.aforce.dao;
 import java.sql.Connection;
 import java.sql.PreparedStatement;
 import java.sql.ResultSet;
+import java.util.ArrayList;
+import java.util.List;
 
 import jp.co.aforce.beans.AdminBean;
 import jp.co.aforce.beans.RegistBean;
 
 public class AdminDAO extends DAO {
+
 	public AdminBean search(String member_id, String password) throws Exception {
 
 		//DBとの接続
@@ -120,7 +123,8 @@ public class AdminDAO extends DAO {
 		//DBとの接続
 		Connection con = getConnection();
 		PreparedStatement st = con
-				.prepareStatement("UPDATE item_info_ksj SET item_info_ksj.name=?, item_info_ksj.price=?, item_info_ksj.number=? WHERE item_info_ksj.item_id=?");
+				.prepareStatement(
+						"UPDATE item_info_ksj SET item_info_ksj.name=?, item_info_ksj.price=?, item_info_ksj.number=? WHERE item_info_ksj.item_id=?");
 
 		st.setString(1, rb.getName());
 		st.setInt(2, rb.getPrice());
@@ -132,7 +136,6 @@ public class AdminDAO extends DAO {
 		con.close();
 
 		return line;
-
 	}
 
 	//削除DAO
@@ -151,5 +154,31 @@ public class AdminDAO extends DAO {
 		con.close();
 
 		return line;
+	}
+
+	//一覧DAO
+	public List<RegistBean> itemSearch(String keyword) throws Exception {
+		List<RegistBean> List = new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st = con.prepareStatement(
+				"SELECT * FROM item_info_ksj WHERE name LIKE ?");
+		st.setString(1, "%" + keyword + "%");
+		ResultSet rs = st.executeQuery();
+
+		while (rs.next()) {
+			RegistBean rb = new RegistBean();
+			rb.setItemId(rs.getString("item_id"));
+			rb.setName(rs.getString("name"));
+			rb.setPrice(rs.getInt("price"));
+			rb.setNumber(rs.getInt("number"));
+			List.add(rb);
+		}
+
+		st.close();
+		con.close();
+
+		return List;
 	}
 }
