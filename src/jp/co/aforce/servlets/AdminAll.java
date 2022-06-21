@@ -2,20 +2,19 @@ package jp.co.aforce.servlets;
 
 import java.io.IOException;
 import java.io.PrintWriter;
-import java.sql.Connection;
-import java.sql.PreparedStatement;
-import java.sql.ResultSet;
+import java.util.List;
 
-import javax.naming.InitialContext;
 import javax.servlet.ServletException;
 import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
-import javax.sql.DataSource;
+
+import jp.co.aforce.beans.RegistBean;
+import jp.co.aforce.dao.AdminDAO;
 
 
-@WebServlet(urlPatterns = { "/../Servlets/AdminAll" })
+@WebServlet(urlPatterns = { "/Servlets/AdminAll" })
 public class AdminAll extends HttpServlet {
 
 	public void doGet(
@@ -34,25 +33,16 @@ public class AdminAll extends HttpServlet {
 		PrintWriter out = response.getWriter();
 
 		try {
-			InitialContext ic = new InitialContext(); //InitialContextオブジェクト取得
-			DataSource ds = (DataSource) ic.lookup("java:/comp/env/jdbc/shoppingsite");
-			Connection con = ds.getConnection(); //ConectionをPOSTメソッドを使ってオブジェクト取得
+			AdminDAO adminDao = new AdminDAO();
+			//全商品の情報を取得
+			//search2メソッドは、商品リストをList〈RegistBean〉型で返す
+			List<RegistBean> list = adminDao.search2("");
 
-			PreparedStatement st = con.prepareStatement("SELECT * FROM item_info_ksj");
-			ResultSet rs = st.executeQuery();
+			//リクエスト属性に商品リストを設定する
+			request.setAttribute("list", list);
 
-			while (rs.next()) {
-				out.println(rs.getString("item_id"));
-				out.println(" : ");
-				out.println(rs.getString("name"));
-				out.println(" : ");
-				out.println(rs.getInt("price"));
-				out.println(" : ");
-				out.println(rs.getInt("number"));
-				out.println(" <br> ");
-			}
-			st.close();
-			con.close();
+			request.getRequestDispatcher("../AdminViews/admin_all.jsp").forward(request, response);
+
 		} catch (Exception e) {
 			e.printStackTrace(out);
 		}

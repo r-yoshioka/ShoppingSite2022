@@ -13,8 +13,5 @@
 <form action="../AdminViews/admin_menu.jsp" method="post">
 	<input type="submit" class="push" value="メニュー">
 </form>
-<form action="../AdminViews/admin_regist.jsp" method="post">
-	<input type="submit" class="push" value="戻る">
-</form>
 
 <%@ include file="../footer.html"%>

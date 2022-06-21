@@ -47,8 +47,8 @@ public class AdminRegist extends HttpServlet {
 		// システム日付を、DateTimeFormatterで指定したフォーマットで文字列に変換
 		String date = ldt.format(format);
 
-		//A＋日付でIDを採番
-		rb.setItemId("A" + date);
+		//I＋日付でIDを採番
+		rb.setItemId("I" + date);
 		rb.setName(name);
 		rb.setPrice(price);
 		rb.setNumber(number);

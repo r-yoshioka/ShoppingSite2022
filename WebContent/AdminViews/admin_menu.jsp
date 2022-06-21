@@ -2,7 +2,7 @@
 	pageEncoding="UTF-8"%>
 <%@include file="../header.html"%>
 
-<form method="post" action="">
+<form method="post" action="../Servlets/AdminAll">
 	<input class="menu" type="submit" value="商品情報一覧" name="all">
 </form>
 
