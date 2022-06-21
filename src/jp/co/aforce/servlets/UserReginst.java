@@ -42,7 +42,7 @@ public class UserReginst extends HttpServlet {
 
 			UserReginstBean urb = new UserReginstBean();
 
-			DateTimeFormatter format = DateTimeFormatter.ofPattern("MMddHHss");
+			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyMMddHHmmss");
 			LocalDateTime ld = LocalDateTime.now();
 			String date = ld.format(format);
 
