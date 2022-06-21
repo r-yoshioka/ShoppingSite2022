@@ -157,7 +157,7 @@ public class AdminDAO extends DAO {
 	}
 
 	//一覧DAO
-	public List<RegistBean> itemSearch(String keyword) throws Exception {
+	public List<RegistBean> search2(String keyword) throws Exception {
 		List<RegistBean> List = new ArrayList<>();
 
 		Connection con = getConnection();
