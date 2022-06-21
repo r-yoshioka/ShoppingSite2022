@@ -42,11 +42,11 @@ public class UserReginst extends HttpServlet {
 
 			UserReginstBean urb = new UserReginstBean();
 
-			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyMMddHHmmss");
+			DateTimeFormatter format = DateTimeFormatter.ofPattern("MMddHHss");
 			LocalDateTime ld = LocalDateTime.now();
 			String date = ld.format(format);
 
-			urb.setMemberId("A" + date);
+			urb.setMemberId("M" + date);
 			urb.setName(NAME);
 			urb.setSex(SEX);
 			urb.setBirthYear(BIRTH_YEAR);
