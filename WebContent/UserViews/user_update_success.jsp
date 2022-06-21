@@ -6,6 +6,8 @@
 
 	<p class="header">入力内容（確認画面）</p>
 
+	<p>以下の内容で変更いたしました。</p>
+
 	<table class="design">
 
 		<tr>
@@ -45,13 +47,7 @@
 
 </form>
 
-<form action="user_top.jsp" method="post">
-	<p>
-		<input type="submit" class="push" value="確認">
-	</p>
-</form>
-
-<form action="/UserViews/user_update_search.jsp" method="post">
+<form action="../UserViews/user_top.jsp" method="post">
 	<p>
 		<input type="submit" class="push" value="TOPへ戻る">
 	</p>

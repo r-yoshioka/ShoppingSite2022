@@ -143,7 +143,8 @@
 					<option value="10">10</option>
 					<option value="11">11</option>
 					<option value="12">12</option>
-			    </select>月 <select name="birth_day">
+			    </select>月
+			    <select name="birth_day">
 					<option value=""></option>
 					<option value="1">1</option>
 					<option value="2">2</option>
@@ -213,7 +214,7 @@
 
 </form>
 
-<form action="user_top.jsp" method="post">
+<form action="../UserViews/user_top.jsp" method="post">
 	<p>
 		<input type="submit" class="push" value="戻る">
 	</p>
