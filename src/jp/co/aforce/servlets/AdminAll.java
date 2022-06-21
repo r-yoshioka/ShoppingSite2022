@@ -36,7 +36,7 @@ public class AdminAll extends HttpServlet {
 			AdminDAO adminDao = new AdminDAO();
 			//全商品の情報を取得
 			//search2メソッドは、商品リストをList〈RegistBean〉型で返す
-			List<RegistBean> list = adminDao.search2("");
+			List<RegistBean> list = adminDao.itemSearch("");
 
 			//リクエスト属性に商品リストを設定する
 			request.setAttribute("list", list);
