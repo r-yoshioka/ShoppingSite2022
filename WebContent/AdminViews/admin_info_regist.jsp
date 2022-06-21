@@ -18,6 +18,7 @@
 			<td class="input">パスワード： <input type="password" maxlength="20"
 				name="password" required>
 			</td>
+		</tr>
 	</table>
 
 	<input type="button" onclick="history.back()" value="戻る">
