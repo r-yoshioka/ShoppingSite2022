@@ -11,17 +11,17 @@ import jp.co.aforce.beans.RegistBean;
 
 public class AdminDAO extends DAO {
 
-	public AdminBean search(String member_id, String password) throws Exception {
+	public AdminBean search(String admin_id, String password) throws Exception {
 
 		//DBとの接続
 		Connection con = getConnection();
 
 		PreparedStatement st;
 		st = con.prepareStatement(
-				"SELECT * FROM member_info_ksj WHERE member_id=? and password=?");
+				"SELECT * FROM member_info_ksj WHERE admin_id=? and password=?");
 
 		//SQLパラメータ設定
-		st.setString(1, member_id);
+		st.setString(1, admin_id);
 		st.setString(2, password);
 
 		//SQLの実行
@@ -30,7 +30,7 @@ public class AdminDAO extends DAO {
 		AdminBean ab = new AdminBean();
 
 		while (rs.next()) {
-			ab.setId(rs.getString("member_id"));
+			ab.setAdminId(rs.getString("admin_id"));
 			ab.setName(rs.getString("name"));
 			ab.setPassword(rs.getString("password"));
 		}
@@ -38,6 +38,28 @@ public class AdminDAO extends DAO {
 		st.close();
 		con.close();
 		return ab;
+	}
+
+	//管理者登録DAO
+	public int adminInsert(AdminBean ab) throws Exception {
+
+		//DBとの接続
+		Connection con = getConnection();
+
+		//データの追加処理
+		PreparedStatement st = con.prepareStatement(
+				"INSERT INTO admin_info_ksj VALUES( ?, ?, ?)");
+
+		st.setString(1, ab.getAdminId());
+		st.setString(2, ab.getName());
+		st.setString(3, ab.getPassword());
+
+		int line = st.executeUpdate();
+
+		st.close();
+		con.close();
+
+		return line;
 	}
 
 	//商品登録DAO
@@ -63,7 +85,30 @@ public class AdminDAO extends DAO {
 		return line;
 	}
 
-	//検索DAO
+	//管理者情報検索DAO
+	public int adminSearch(AdminBean ab) throws Exception {
+
+		//DBとの接続
+		Connection con = getConnection();
+
+		//追加した名前と同じ名前を持つ行を検索して結果を取得
+		PreparedStatement st = con.prepareStatement(
+				"SELECT * FROM admin_info_ksj WHERE "
+						+ " NAME =  ? AND  PASSWORD = ?");
+
+		st.setString(1, ab.getName());
+		st.setString(2, ab.getPassword());
+
+		ResultSet rs = st.executeQuery();
+
+		int line = 0;
+		while (rs.next()) {
+			line++;
+		}
+		return line;
+	}
+
+	//商品検索DAO
 	public int search(RegistBean rb) throws Exception {
 
 		//DBとの接続
