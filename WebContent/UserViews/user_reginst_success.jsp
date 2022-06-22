@@ -45,13 +45,13 @@
 
 </form>
 
-<form action="user_home.jsp" method="post">
+<form action="../UserViews/user_home.jsp" method="post">
 	<p>
 		<input type="submit" class="push" value="確認">
 	</p>
 </form>
 
-<form action="user_reginst.jsp" method="post">
+<form action="../UserViews/user_reginst.jsp" method="post">
 	<p>
 		<input type="submit" class="push" value="戻る">
 </form>

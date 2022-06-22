@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.title {
+	text-align: center; /* 文字中央寄せ */
+	letter-spacing: 0.3em; /* 文字の間隔 */
+	font-weight: bold; /* 文字太め */
+	margin-top: 200;
+	font-size: 50px;
+}
+
+.push {
+	padding: 1em 1em; /* ボタンの余白 */
+	display: block; /* ボタン中央 */
+	width: 150px;
+	margin: 0 auto;
+}
+
+body {
+	background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%,
+		rgba(151, 217, 225, 0.7) 100%), url(../UserImg/user_home.jpg); /* 背景画像指定 */
+	background-repeat: no-repeat; /* 画像繰り返しなし */
+	background-position: center; /* 画像中央寄せ */
+	width: auto;
+	height: auto;
+}
