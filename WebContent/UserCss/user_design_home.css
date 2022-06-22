@@ -4,12 +4,12 @@
 	text-align: center; /* 文字中央寄せ */
 	letter-spacing: 0.3em; /* 文字の間隔 */
 	font-weight: bold; /* 文字太め */
-	margin-top: 200;
+	margin-top: 200px;
 	font-size: 50px;
 }
 
 .push {
-	padding: 1em 1em; /* ボタンの余白 */
+	padding: 1em; /* ボタンの余白 */
 	display: block; /* ボタン中央 */
 	width: 150px;
 	margin: 0 auto;
