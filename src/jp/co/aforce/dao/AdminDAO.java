@@ -161,6 +161,34 @@ public class AdminDAO extends DAO {
 		return rb;
 	}
 
+	//キーワード検索DAO
+	public List<RegistBean> keywordSearch(String keyword) throws Exception {
+
+		List<RegistBean> list = new ArrayList<>();
+
+		Connection con = getConnection();
+
+		PreparedStatement st = con.prepareStatement(
+				"SELECT * FROM item_info_ksj WHERE name like ?");
+
+		st.setString(1, "%" + keyword + "%");
+		ResultSet rs = st.executeQuery();
+
+		while (rs.next()) {
+			RegistBean rb = new RegistBean();
+			rb.setItemId(rs.getString("item_id"));
+			rb.setName(rs.getString("name"));
+			rb.setPrice(rs.getInt("price"));
+			rb.setNumber(rs.getInt("number"));
+			list.add(rb);
+		}
+
+		st.close();
+		con.close();
+
+		return list;
+	}
+
 	//更新DAO
 	public int update(RegistBean rb) throws Exception {
 
