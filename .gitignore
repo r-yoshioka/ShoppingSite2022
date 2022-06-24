@@ -7,7 +7,7 @@
 .classpath
 .settings
 .project
-WebContent/META-INF/context.xml
+context.xml
 
 # Idea
 .idea
