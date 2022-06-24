@@ -19,4 +19,9 @@ public class UserMessage {
 	public static final String U_04 = "会員情報の更新に失敗しました。";
 	public static final String U_05 = "会員情報の更新が完了いたしました。";
 
+	//検索
+	public static final String S_01 = "入力内容に誤りがあります。";
+	public static final String S_02 = "検索情報が見つかりません。";
+	public static final String S_03 = "の検索結果です。";
+
 }
