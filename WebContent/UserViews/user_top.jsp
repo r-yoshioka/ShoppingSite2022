@@ -3,25 +3,25 @@
 <!DOCTYPE html>
 <html>
    <head>
-      <meta charset="UTF-8">
-      <title>Login</title>
-      <!-- フォント -->
-      <link
-	      href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
-	      rel="stylesheet">
-      <!-- 検索・スライド写真・スクロール-->
-      <link rel="stylesheet" type="text/css"
-	      href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
-      <!-- スライド写真-->
-      <link rel="stylesheet" type="text/css"
-	      href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
-      <!-- 商品一覧 -->
-      <link rel="stylesheet"
-	      href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-      <!-- 自作のCSS -->
-      <link rel="stylesheet" type="text/css" href="../UserCss/user_top.css">
-      <link rel="stylesheet" type="text/css"
-	      href="../UserCss/user_top_header.css">
+        <meta charset="UTF-8">
+        <title>Login</title>
+        <!-- フォント -->
+        <link
+	        href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+	        rel="stylesheet">
+        <!-- 検索・スライド写真・スクロール-->
+        <link rel="stylesheet" type="text/css"
+	        href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
+        <!-- スライド写真-->
+        <link rel="stylesheet" type="text/css"
+	        href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
+        <!-- 商品一覧 -->
+        <link rel="stylesheet"
+	        href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
+        <!-- 自作のCSS -->
+        <link rel="stylesheet" type="text/css" href="../UserCss/user_top.css">
+        <link rel="stylesheet" type="text/css"
+	        href="../UserCss/user_top_header.css">
    </head>
 
    <body>

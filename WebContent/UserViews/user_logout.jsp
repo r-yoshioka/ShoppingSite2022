@@ -3,14 +3,14 @@
 <!DOCTYPE html>
 <html>
    <head>
-   <meta charset="UTF-8">
-   <title>LOGOUT</title>
-   <!-- フォント -->
-   <link
-	   href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
-	   rel="stylesheet">
-   <!-- 自作のCSS -->
-   <link rel="stylesheet" type="text/css" href="../UserCss/user_mypage.css">
+       <meta charset="UTF-8">
+       <title>LOGOUT</title>
+       <!-- フォント -->
+       <link
+	       href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+	       rel="stylesheet">
+       <!-- 自作のCSS -->
+       <link rel="stylesheet" type="text/css" href="../UserCss/user_mypage.css">
    </head>
 
    <body>
