@@ -1,6 +1,6 @@
 @charset "UTF-8";
 
-h1 footer{
+h1 footer {
 	font-size: 300%;
 	font-family: 'Shadows Into Light', cursive;
 }
@@ -48,55 +48,55 @@ h1 footer{
 	color: #666;
 }
 
-.mini{
-	font-size:20px;
+.mini {
+	font-size: 20px;
 	/*矢印と下線の基点とするためrelativeを指定*/
 	position: relative;
-    /*形状*/
-    display: inline-block;
+	/*形状*/
+	display: inline-block;
 	padding: 0 20px;
-    color: #fff;
-    text-decoration: none;
-    outline: none;
+	color: #fff;
+	text-decoration: none;
+	outline: none;
 }
 
 /*矢印と下線の形状*/
-.mini::before{
-    content: '';
-    /*絶対配置で下線の位置を決める*/
+.mini::before {
+	content: '';
+	/*絶対配置で下線の位置を決める*/
 	position: absolute;
-    bottom:-8px;
-    left:15%;
-    /*下線の形状*/
-    width: 85%;
-    height: 1px;
-	background:#fff;
-    /*アニメーションの指定*/
-    transition: all .3s;
+	bottom: -8px;
+	left: 15%;
+	/*下線の形状*/
+	width: 85%;
+	height: 1px;
+	background: #fff;
+	/*アニメーションの指定*/
+	transition: all .3s;
 }
 
-.mini::after{
-    content: '';
-    /*絶対配置で矢印の位置を決める*/
+.mini::after {
+	content: '';
+	/*絶対配置で矢印の位置を決める*/
 	position: absolute;
-    bottom:-3px;
-    right:0;
-    /*矢印の形状*/
-    width: 15px;
-    height:1px;
-	background:#fff;
-    transform: rotate(35deg);
-    /*アニメーションの指定*/
-    transition: all .3s;
+	bottom: -3px;
+	right: 0;
+	/*矢印の形状*/
+	width: 15px;
+	height: 1px;
+	background: #fff;
+	transform: rotate(35deg);
+	/*アニメーションの指定*/
+	transition: all .3s;
 }
 
 /*hoverした際の移動*/
-.mini:hover::before{
-    left:20%;
+.mini:hover::before {
+	left: 20%;
 }
 
-.mini:hover::after{
-    right:-5%;
+.mini:hover::after {
+	right: -5%;
 }
 
 /*2階層目以降は横並びにしない*/
@@ -132,7 +132,7 @@ nav li.has-child ul {
 	/*形状を指定*/
 	background: #808080;
 	width: 800px;
-	height:700px;
+	height: 700px;
 	/*はじめは非表示*/
 	visibility: hidden;
 	opacity: 0;
@@ -170,19 +170,18 @@ nav ul li.has-child.active::before {
 }
 
 /*footer設定*/
-
-#footer{
-  background:#333;
-  color:#fff;
-  padding:40px;
-  text-align:center;
+#footer {
+	background: #333;
+	color: #fff;
+	padding: 40px;
+	text-align: center;
 }
 
 /*フッター*/
-#footer a{
-  color: #000000;
+#footer a {
+	color: #000000;
 }
 
-.copyright{
+.copyright {
 	color: #fff;
 }

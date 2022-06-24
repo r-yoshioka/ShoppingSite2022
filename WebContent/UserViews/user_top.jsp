@@ -46,19 +46,20 @@
 						</ul>
 					</li>
 					<li><a href="#">CART</a></li>
-					<li class="has-child"><a href="../UserViews/user_mypage.jsp"
-						class="push">MYPAGE</a>
+					<li class="has-child">
+					    <a href="../UserViews/user_mypage.jsp"class="push">MYPAGE</a>
 						<ul>
-							<li class="mini"><a
-								href="../UserViews/user_profile_search.jsp" class="push">MY
-									PROFILE</a></li>
-							<li class="mini"><a
-								href="../UserViews/user_update_search.jsp" class="push">UPDATE
-									MY PROFILE</a></li>
-							<li class="mini"><a
-								href="../UserViews/user_update_search.jsp" class="push">INFORMATION</a></li>
-							<li class="mini"><a href="../UserViews/user_logout.jsp"
-								class="push">LOGOUT</a></li>
+							<li class="mini">
+							    <a href="../UserViews/user_profile_search.jsp" class="push">MY PROFILE</a>
+							</li>
+							<li class="mini">
+							    <a href="../UserViews/user_update_search.jsp" class="push">UPDATE MY PROFILE</a>
+							</li>
+							<li class="mini">
+							    <a href="../UserViews/user_update_search.jsp" class="push">INFORMATION</a>
+							</li>
+							<li class="mini">
+							    <a href="../UserViews/user_logout.jsp" class="push">LOGOUT</a></li>
 						</ul>
 					<li>
 						<div class="open-btn"></div> <!--虫眼鏡マークのHTML-->
@@ -69,9 +70,8 @@
 							</div>
 							<div class="search-area">
 								<form role="search" method="post" action="../servlets/UserTop">
-									<input type="text" value="search" name="search"
-										id="search-text" placeholder="search"> <input
-										type="submit" id="searchsubmit" value="">
+									<input type="text" value="search" name="search" id="search-text" placeholder="search">
+									<input type="submit" id="searchsubmit" value="">
 								</form>
 								<!--/search-area-->
 							</div>
@@ -102,16 +102,17 @@
 				<table>
 					<tr>
 						<td><img src="../UserImg/ビーガン２.jpg" alt="ビーガン" width="60%"></td>
-						<td><img src="../UserImg/オーガニック.jpg" alt="オーガニック"
-							width="60%"></td>
+						<td><img src="../UserImg/オーガニック.jpg" alt="オーガニック" width="60%"></td>
 					</tr>
 					<tr>
 						<td>ビーガンとは<br>
-						日本語で「完全菜食主義」といわれ、<br>
-						食事や衣服、生活用品などで動物由来のものは利用せず、作られるもの</td>
+						      日本語で「完全菜食主義」といわれ、<br>
+							  食事や衣服、生活用品などで動物由来のものは利用せず、作られるもの
+						</td>
 						<td>オーガニックとは<br>
-						化学肥料や農薬などを極力使用せず、<br>
-						自然の恵みを大切にしたもの</td>
+						      化学肥料や農薬などを極力使用せず、<br>
+							  自然の恵みを大切にしたもの
+						</td>
 					</tr>
 				</table>
 				<!--/area1-->
@@ -456,29 +457,25 @@
 			</section>
 
 			<form action="../servlets/UserLogin" method="post">
-
 				<p>ようこそ！${loginName.name } さん！</p>
-
 			</form>
 
 			<form action="user_update_success.jsp" method="post">
-
 				<p>おかえりなさい。${uub. name} さん！</p>
-
 			</form>
 			<!--/main-->
 		</main>
-	</div>
 
-	<footer id="footer">
-		<p class="js-scroll scroll-top scrollview">
-			<a href="#area-1">Scroll</a>
-		</p>
-		<p class="js-pagetop scroll-top">
-			<a href="#">Page Top</a>
-		</p>
-		<small id="copyright">Copyright; KSJ</small>
-	</footer>
+		<footer id="footer">
+			<p class="js-scroll scroll-top scrollview">
+				<a href="#area-1">Scroll</a>
+			</p>
+			<p class="js-pagetop scroll-top">
+				<a href="#">Page Top</a>
+			</p>
+			<small id="copyright">Copyright; KSJ</small>
+		</footer>
+	</div>
 
 	<!-- jquery -->
 	<script src="https://code.jquery.com/jquery-3.4.1.min.js"

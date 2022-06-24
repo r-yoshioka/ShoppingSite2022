@@ -26,14 +26,25 @@
 							<li><a href="#" class="push">HAIR CARE</a></li>
 							<li><a href="#" class="push">BODY CARE</a></li>
 							<li><a href="#" class="push">SKIN CARE</a></li>
-						</ul></li>
+						</ul>
+					</li>
 					<li><a href="#">CART</a></li>
 					<li class="has-child"><a href="../UserViews/user_mypage.jsp">MYPAGE</a>
-					     <ul>
-							<li class="mini"><a href="../UserViews/user_profile_search.jsp" class="push">MY PROFILE</a></li>
-							<li class="mini"><a href="../UserViews/user_update_search.jsp" class="push">UPDATE MY PROFILE</a></li>
-							<li class="mini"><a href="../UserViews/user_update_search.jsp" class="push">INFORMATION</a></li>
-							<li class="mini"><a href="../UserViews/user_logout.jsp" class="push">LOGOUT</a></li>
+						<ul>
+							<li class="mini"><a
+								href="../UserViews/user_profile_search.jsp" class="push">MY
+									PROFILE</a>
+							</li>
+							<li class="mini"><a
+								href="../UserViews/user_update_search.jsp" class="push">UPDATE
+									MY PROFILE</a>
+							</li>
+							<li class="mini"><a
+								href="../UserViews/user_update_search.jsp" class="push">INFORMATION</a>
+							</li>
+							<li class="mini"><a href="../UserViews/user_logout.jsp"
+								class="push">LOGOUT</a>
+							</li>
 						</ul>
 					</li>
 				</ul>
@@ -49,11 +60,12 @@
 			</ul>
 			<!--/main-->
 		</main>
-	</div>
 
-	<footer id="footer">
-		<small id="copyright">Copyright; KSJ</small>
-	</footer>
+		<footer id="footer">
+			<small id="copyright">Copyright; KSJ</small>
+		</footer>
+
+	</div>
 
 	<!--自作のJS-->
 	<script src="../UserJs/user_mypage.js"></script>
