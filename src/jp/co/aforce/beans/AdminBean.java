@@ -3,13 +3,13 @@ package jp.co.aforce.beans;
 public class AdminBean implements java.io.Serializable {
 
 	//ログイン
-	private String member_id;
+	private String admin_id;
 	private String name;
 	private String password;
 
 	//ログイン
-	public String getId() {
-		return member_id;
+	public String getAdminId() {
+		return admin_id;
 	}
 
 	public String getName() {
@@ -21,8 +21,8 @@ public class AdminBean implements java.io.Serializable {
 	}
 
 	//ログイン
-	public void setId(String member_id) {
-		this.member_id = member_id;
+	public void setAdminId(String admin_id) {
+		this.admin_id = admin_id;
 	}
 
 	public void setName(String name) {

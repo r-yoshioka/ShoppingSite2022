@@ -9,14 +9,14 @@ import jp.co.aforce.beans.UserUpdateBean;
 
 public class UserMemberDAO extends DAO {
 
-	public int check(UserReginstBean urb) throws Exception {
+	public int searchReginst(UserReginstBean urb) throws Exception {
 
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"SELECT COUNT(*) FROM MEMBER_INFO_KSJ WHERE "
-						+ "NAME = ? AND SEX = ? AND  BIRTH_YEAR = ? AND BIRTH_MONTH = ? AND BIRTH_DAY = ? "
-						+ "AND JOB = ? AND PHONE_NUMBER = ? AND MAIL_ADDRESS = ? AND PASSWORD = ?");
+				"SELECT * FROM MEMBER_INFO_KSJ WHERE "
+						+ " NAME =  ? AND SEX = ? AND BIRTH_YEAR = ? AND BIRTH_MONTH = ? AND BIRTH_DAY = ? "
+						+ "AND JOB = ? AND PHONE_NUMBER = ? AND MAIL_ADDRESS = ? AND  PASSWORD = ?");
 
 		st.setString(1, urb.getName());
 		st.setString(2, urb.getSex());
@@ -30,15 +30,11 @@ public class UserMemberDAO extends DAO {
 
 		ResultSet rs = st.executeQuery();
 
-		int count = 0;
+		int line = 0;
 		while (rs.next()) {
-			count = rs.getInt(1);
+			line++;
 		}
-
-		st.close();
-		con.close();
-
-		return count;
+		return line;
 	}
 
 	public int insert(UserReginstBean urb) throws Exception {
@@ -46,17 +42,18 @@ public class UserMemberDAO extends DAO {
 		Connection con = getConnection();
 
 		PreparedStatement st = con.prepareStatement(
-				"INSERT INTO MEMBER_INFO_KSJ VALUES(?, ?, ?, ?, ?, ?, ?, ?, ? )");
+				"INSERT INTO MEMBER_INFO_KSJ VALUES(?, ?, ?, ?, ?, ?, ?, ?, ?, ? )");
 
-		st.setString(1, urb.getName());
-		st.setString(2, urb.getSex());
-		st.setInt(3, urb.getBirthYear());
-		st.setInt(4, urb.getBirthMonth());
-		st.setInt(5, urb.getBirthDay());
-		st.setString(6, urb.getJob());
-		st.setString(7, urb.getPhoneNumber());
-		st.setString(8, urb.getMailAddress());
-		st.setString(9, urb.getPassword());
+		st.setString(1, urb.getMemberId());
+		st.setString(2, urb.getName());
+		st.setString(3, urb.getSex());
+		st.setInt(4, urb.getBirthYear());
+		st.setInt(5, urb.getBirthMonth());
+		st.setInt(6, urb.getBirthDay());
+		st.setString(7, urb.getJob());
+		st.setString(8, urb.getPhoneNumber());
+		st.setString(9, urb.getMailAddress());
+		st.setString(10, urb.getPassword());
 
 		int line = st.executeUpdate();
 

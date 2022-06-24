@@ -32,32 +32,32 @@ public class AdminLogin extends HttpServlet {
 		HttpSession session = request.getSession();
 
 		//入力値の取得
-		String member_id = request.getParameter("member_id");
+		String admin_id = request.getParameter("admin_id");
 		String password = request.getParameter("password");
 
 		AdminDAO AdminDao = new AdminDAO();
 
 		try {
 
-			AdminBean ab = AdminDao.search(member_id, password);
+			AdminBean ab = AdminDao.search(admin_id, password);
 
-			String logId = ab.getId();
+			String logId = ab.getAdminId();
 
 			if (logId != null) {
 				//入力されたIDとPASSが存在する場合、成功画面へ遷移
-				session.setAttribute("id", member_id);
+				session.setAttribute("id", admin_id);
 				request.getRequestDispatcher("../AdminViews/admin_menu.jsp").forward(request, response);
 
 			} else {
 				//入力されたIDとPASSが存在しない場合、エラーメッセージを出力
-				request.setAttribute("id", member_id);
+				request.setAttribute("id", admin_id);
 				request.setAttribute("message", "IDまたはパスワードが違います");
 				request.getRequestDispatcher("../AdminViews/admin_login.jsp").forward(request, response);
 			}
 
 		} catch (Exception e) {
 			//その他のエラーが発生時エラーメッセージ
-			request.setAttribute("id", member_id);
+			request.setAttribute("id", admin_id);
 			request.setAttribute("message", "システムエラーが発生しました。:" + e);
 			request.getRequestDispatcher("../AdminViews/admin_login.jsp").forward(request, response);
 		}

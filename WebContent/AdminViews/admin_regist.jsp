@@ -10,15 +10,15 @@
 
 	<table class="design">
 		<tr>
-			<td class="input">商品名： <input type="text" name="name" required>
+			<td class="input">商品名： <input type="text" maxlength="20" name="name" required>
 			</td>
 		</tr>
 		<tr>
-			<td class="input">値段： <input type="text" name="price" required>
+			<td class="input">値段： <input type="tel" name="price" required>
 			</td>
 		</tr>
 		<tr>
-			<td class="input">個数： <input type="text" name="number" required>
+			<td class="input">個数： <input type="tel" name="number" required>
 			</td>
 		</tr>
 	</table>
