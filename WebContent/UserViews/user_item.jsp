@@ -6,16 +6,17 @@
 
 <p>ALL ITEMES</p>
 <hr>
-
+<form action="../servlets/UserItemInfo" method="get">
 <ul>
-	<c:forEach var="RegistBean" items="${list}">
+	<c:forEach var="rb" items="${list}">
 
-			<li><img src="../UserImg/${RegistBean.itemId}.jpg" height="100"></li>
-			<li>商品名${RegistBean.name}</li>
-			<li>値段${RegistBean.price}円</li>
-			<li><a href="CartAdd.action?id=${RegistBean.itemId}">カート</a></li>
+			<li><img src="../UserImg/${rb.itemId}.jpg" height="100"></li>
+			<li><a href="../servlets/UserItemInfo?id=${rb.itemId}">商品名${rb.name}</a></li>
+			<li>値段${rb.price}円</li>
+			<li><a href="CartAdd.action?id=${rb.itemId}">カート</a></li>
 
 	</c:forEach>
 </ul>
+</form>
 
 <%@ include file="../footer.html"%>

@@ -19,8 +19,8 @@ public class UserItemAction extends HttpServlet {
 	public void doGet(
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		//直接アクセスの場合はログイン画面へ遷移
-		//request.getRequestDispatcher("../UserViews/user_login").forward(request, response);
+//		直接アクセスの場合はログイン画面へ遷移
+//		request.getRequestDispatcher("../UserViews/user_login").forward(request, response);
 
 		HttpSession session = request.getSession();
 
@@ -36,24 +36,24 @@ public class UserItemAction extends HttpServlet {
 		}
 	}
 
-	public void doPost(
-			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
-
-		//エンコーディング設定
-		request.setCharacterEncoding("UTF-8");
-		response.setContentType("text/html; charset = UTF-8");
-
-		HttpSession session = request.getSession();
-
-		AdminDAO ad = new AdminDAO();
-
-		try {
-			List<RegistBean> list = ad.allItem();
-			session.setAttribute("list", list);
-			request.getRequestDispatcher("../UserViews/user_item.jsp").forward(request, response);
-
-		} catch (Exception e) {
-			e.printStackTrace();
-		}
-	}
+//	public void doPost(
+//			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//
+//		//エンコーディング設定
+//		request.setCharacterEncoding("UTF-8");
+//		response.setContentType("text/html; charset = UTF-8");
+//
+//		HttpSession session = request.getSession();
+//
+//		AdminDAO ad = new AdminDAO();
+//
+//		try {
+//			List<RegistBean> list = ad.allItem();
+//			session.setAttribute("list", list);
+//			request.getRequestDispatcher("../UserViews/user_item.jsp").forward(request, response);
+//
+//		} catch (Exception e) {
+//			e.printStackTrace();
+//		}
+//	}
 }

@@ -10,7 +10,7 @@
 
 	<li><img src="../UserImg/${rb.itemId}.jpg" height="100"></li>
 	<li>商品名${rb.name}</li>
-	<li>詳細${rb.price}</li>
+	<li>詳細${rb.info}</li>
 	<li>値段${rb.price}円</li>
 	<li><a href="CartAdd.action?id=${rb.itemId}">カート</a></li>
 

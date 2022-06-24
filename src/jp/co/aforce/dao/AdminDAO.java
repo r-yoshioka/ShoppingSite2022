@@ -285,7 +285,6 @@ public class AdminDAO extends DAO {
 			rb.setItemId(rs.getString("itemId"));
 			rb.setName(rs.getString("name"));
 			rb.setPrice(rs.getInt("price"));
-			rb.setNumber(rs.getInt("number"));
 			rb.setInfo(rs.getString("info"));
 		}
 
