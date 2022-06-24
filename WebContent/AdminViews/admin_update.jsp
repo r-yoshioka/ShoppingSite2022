@@ -13,7 +13,7 @@
 
 	<table class="design">
 		<tr>
-			<td class="input">商品番号： <input type="text" name="item_id" required></td>
+			<td class="input">商品番号： <input type="text" maxlength="10" name="item_id" required></td>
 		</tr>
 		<tr>
 			<td class="input"><input type="submit" value="検索"></td>
@@ -28,23 +28,23 @@
 
 	<table class="design">
 		<tr>
-			<td class="input">商品名： <input type="text" name="name" value="${name}" required>
+			<td class="input">商品名： <input type="text" maxlength="20" name="name" value="${name}" required>
 			</td>
 		</tr>
 
 		<tr>
-			<td class="input">値段： <input type="text" name="price" value="${price}" required>
+			<td class="input">値段： <input type="tel" name="price" value="${price}" required>
 			</td>
 		</tr>
 		<tr>
-			<td class="input">個数： <input type="text" name="number" value="${number}" required>
+			<td class="input">個数： <input type="tel" name="number" value="${number}" required>
 			</td>
 		</tr>
 	</table>
 
-	<input type="button" onclick="history.back()" value="戻る">
-	<input type="submit" value="更新">
-	<input type="reset" value="リセット">
+	<input type="button" class="push" onclick="history.back()" value="戻る">
+	<input type="submit" class="push" value="更新">
+	<input type="reset" class="push" value="リセット">
 
 </form>
 

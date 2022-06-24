@@ -30,8 +30,5 @@
 <form action="../AdminViews/admin_menu.jsp" method="post">
 	<input type="submit" class="push" value="メニュー">
 </form>
-<p>
-	<input type="button" onclick="history.back()" value="戻る">
-</p>
 
 <%@ include file="../footer.html"%>

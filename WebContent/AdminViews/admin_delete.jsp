@@ -32,18 +32,18 @@
 		</tr>
 
 		<tr>
-			<td class="input">値段： <input type="text" name="price" value="${rb.price}" required>
+			<td class="input">値段： <input type="tel" name="price" value="${rb.price}" required>
 			</td>
 		</tr>
 		<tr>
-			<td class="input">個数： <input type="text" name="number" value="${rb.number}" required>
+			<td class="input">個数： <input type="tel" name="number" value="${rb.number}" required>
 			</td>
 		</tr>
 	</table>
 
-	<input type="button" onclick="history.back()" value="戻る">
-	<input type="submit" value="削除">
-	<input type="reset" value="リセット">
+	<input type="button" class="push" onclick="history.back()" value="戻る">
+	<input type="submit" class="push" value="削除">
+	<input type="reset" class="push" value="リセット">
 
 </form>
 
