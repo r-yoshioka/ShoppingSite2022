@@ -16,6 +16,26 @@ import jp.co.aforce.dao.AdminDAO;
 @WebServlet(urlPatterns = { "/servlets/UserItemAction" })
 public class UserItemAction extends HttpServlet {
 
+	public void doGet(
+			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+
+		//直接アクセスの場合はログイン画面へ遷移
+		//request.getRequestDispatcher("../UserViews/user_login").forward(request, response);
+
+		HttpSession session = request.getSession();
+
+		AdminDAO ad = new AdminDAO();
+
+		try {
+			List<RegistBean> list = ad.allItem();
+			session.setAttribute("list", list);
+			request.getRequestDispatcher("../UserViews/user_item.jsp").forward(request, response);
+
+		} catch (Exception e) {
+			e.printStackTrace();
+		}
+	}
+
 	public void doPost(
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
@@ -25,15 +45,13 @@ public class UserItemAction extends HttpServlet {
 
 		HttpSession session = request.getSession();
 
-		String keyword = request.getParameter("keyword");
-		if (keyword == null) keyword="";
-
 		AdminDAO ad = new AdminDAO();
 
 		try {
-			List<RegistBean> list = ad.keywordSearch(keyword);
+			List<RegistBean> list = ad.allItem();
 			session.setAttribute("list", list);
 			request.getRequestDispatcher("../UserViews/user_item.jsp").forward(request, response);
+
 		} catch (Exception e) {
 			e.printStackTrace();
 		}

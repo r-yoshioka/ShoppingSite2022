@@ -7,19 +7,19 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.co.aforce.beans.RegistBean;
 import jp.co.aforce.dao.AdminDAO;
-import jp.co.aforce.set.AdminMessage;
 
-@WebServlet(urlPatterns = { "/Servlets/AdminSearch" })
-public class AdminSearch extends HttpServlet {
+@WebServlet(urlPatterns = { "/servlets/UserItemInfo" })
+public class UserItemInfo extends HttpServlet {
 
 	public void doGet(
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//直接アクセスの場合はログイン画面へ遷移
-		request.getRequestDispatcher("../AdminViews/admin_login.jsp").forward(request, response);
+		request.getRequestDispatcher("../UserViews/user_login").forward(request, response);
 	}
 
 	public void doPost(
@@ -29,28 +29,20 @@ public class AdminSearch extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset = UTF-8");
 
-		//パラメータの取得
+		HttpSession session = request.getSession();
 
+		//パラメータ取得
 		String itemId = request.getParameter("itemId");
 
 		//DAOオブジェクト宣言
-		AdminDAO adminDao = new AdminDAO();
+		AdminDAO ad = new AdminDAO();
 
 		try {
-			RegistBean rb = adminDao.searchId(itemId);
+			RegistBean rb = ad.itemInfo(itemId);
+			session.setAttribute("rb", rb);
+			request.getRequestDispatcher("../UserViews/user_item_info.jsp").forward(request, response);
 
-			if (rb == null) {
-				request.setAttribute("messageE3", AdminMessage.E_03);
-				request.getRequestDispatcher("../AdminViews/admin_update.jsp").forward(request, response);
-
-			} else {
-				request.setAttribute("itemId", itemId);
-				request.setAttribute("rb", rb);
-				request.getRequestDispatcher("../AdminViews/admin_update2.jsp").forward(request, response);
-			}
 		} catch (Exception e) {
-			request.setAttribute("messageE5", AdminMessage.E_05);
-			request.getRequestDispatcher("../AdminViews/admin_update.jsp").forward(request, response);
 			e.printStackTrace();
 		}
 	}

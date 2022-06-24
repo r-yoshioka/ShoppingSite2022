@@ -16,7 +16,7 @@
 	</tr>
 
 	<tr>
-		<td class="input"><%=rb.getItemId() %>:<%=rb.getName() %>:<%=rb.getPrice() %>:<%=rb.getNumber() %><br>
+		<td class="input"><%=rb.getItemId() %>:<%=rb.getName() %>:<%=rb.getPrice() %>:<%=rb.getNumber() %>:<%=rb.getInfo() %><br>
 						  <% } %></td>
 	</tr>
 
