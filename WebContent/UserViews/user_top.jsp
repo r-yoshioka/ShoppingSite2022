@@ -5,20 +5,19 @@
 <head>
 <meta charset="UTF-8">
 <title>Login</title>
-<!-- 検索-->
+<!-- フォント -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+	rel="stylesheet">
+<!-- 検索・スライド写真・スクロール-->
 <link rel="stylesheet" type="text/css"
 	href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
 <!-- スライド写真-->
-<link rel="stylesheet" type="text/css"
-	href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
 <link rel="stylesheet" type="text/css"
 	href="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.css">
 <!-- 商品一覧 -->
 <link rel="stylesheet"
 	href="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.css">
-<!-- スクロール -->
-<link rel="stylesheet" type="text/css"
-	href="https://coco-factory.jp/ugokuweb/wp-content/themes/ugokuweb/data/reset.css">
 <!-- 自作のCSS -->
 <link rel="stylesheet" type="text/css" href="../UserCss/user_top.css">
 <link rel="stylesheet" type="text/css"
@@ -37,16 +36,30 @@
 			<h1>SHOP</h1>
 			<nav>
 				<ul id="menu">
-					<li><a href="#">TOP</a></li>
-					<li class="has-child"><a href="#">CATEGORY</a>
+					<li><a href="../UserViews/user_top.jsp" class="push">TOP</a></li>
+					<li class="has-child"><a href="#" class="push">CATEGORY</a>
 						<ul>
-							<li><a href="#">ALL ITEM</a></li>
-							<li><a href="#">HAIR CARE</a></li>
-							<li><a href="#">BODY CARE</a></li>
-							<li><a href="#">SKIN CARE</a></li>
-						</ul></li>
+							<li class="mini"><a href="#" class="push">ALL ITEM</a></li>
+							<li class="mini"><a href="#" class="push">HAIR CARE</a></li>
+							<li class="mini"><a href="#" class="push">BODY CARE</a></li>
+							<li class="mini"><a href="#" class="push">SKIN CARE</a></li>
+						</ul>
+					</li>
 					<li><a href="#">CART</a></li>
-					<li><a href="#">MYPAGE</a></li>
+					<li class="has-child"><a href="../UserViews/user_mypage.jsp"
+						class="push">MYPAGE</a>
+						<ul>
+							<li class="mini"><a
+								href="../UserViews/user_profile_search.jsp" class="push">MY
+									PROFILE</a></li>
+							<li class="mini"><a
+								href="../UserViews/user_update_search.jsp" class="push">UPDATE
+									MY PROFILE</a></li>
+							<li class="mini"><a
+								href="../UserViews/user_update_search.jsp" class="push">INFORMATION</a></li>
+							<li class="mini"><a href="../UserViews/user_logout.jsp"
+								class="push">LOGOUT</a></li>
+						</ul>
 					<li>
 						<div class="open-btn"></div> <!--虫眼鏡マークのHTML-->
 						<div id="search-wrap">
@@ -55,10 +68,10 @@
 								<span></span><span></span>
 							</div>
 							<div class="search-area">
-								<form role="search" method="get" action="">
-									<input type="text" value="" name="" id="search-text"
-										placeholder="search"> <input type="submit"
-										id="searchsubmit" value="">
+								<form role="search" method="post" action="../servlets/UserTop">
+									<input type="text" value="search" name="search"
+										id="search-text" placeholder="search"> <input
+										type="submit" id="searchsubmit" value="">
 								</form>
 								<!--/search-area-->
 							</div>
@@ -80,12 +93,38 @@
 			</div>
 
 			<section id="area-1">
+				<h2>CONCEPT</h2>
+				<h3>自然にやさしく、自分を磨こう</h3>
+				<p>
+					オーガニックやビーガンなどの成分を使用し、自然環境にやさしく<br> そして、身体の内側から自分磨きをしていきませんか？
+				</p>
+
+				<table>
+					<tr>
+						<td><img src="../UserImg/ビーガン２.jpg" alt="ビーガン" width="60%"></td>
+						<td><img src="../UserImg/オーガニック.jpg" alt="オーガニック"
+							width="60%"></td>
+					</tr>
+					<tr>
+						<td>ビーガンとは<br>
+						日本語で「完全菜食主義」といわれ、<br>
+						食事や衣服、生活用品などで動物由来のものは利用せず、作られるもの</td>
+						<td>オーガニックとは<br>
+						化学肥料や農薬などを極力使用せず、<br>
+						自然の恵みを大切にしたもの</td>
+					</tr>
+				</table>
+				<!--/area1-->
+			</section>
+
+			<section id="area-2">
+				<!--area2の範囲に入ったらページトップリンクが出現-->
 				<ul class="sort-btn">
-					<li class="sort00 active">ALL</li>
+					<li class="sort00 active">HOT ITEM</li>
 					<!--はじめに「全て」ボタンに現在地表示をつけるためactive というクラス名を付与-->
-					<li class="sort01">MEMORY</li>
-					<li class="sort02">MY FAMIIY</li>
-					<li class="sort03">SCENERY</li>
+					<li class="sort01">RANKING</li>
+					<li class="sort02">SUMMER ITEM</li>
+					<li class="sort03">ALL ITEM</li>
 				</ul>
 
 				<ul class="grid">
@@ -94,7 +133,7 @@
 						<!--li には、item というクラス名と並び替え基準となるクラス名（ボタンのクラス名と同じ名前）を付与。-->
 						<div class="item-content">
 							<!--内側のdivには高さを維持するためにitem-contentというクラス名をつける。-->
-							<a href="img/01.jpg" data-fancybox="group1"
+							<a href="UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="グループ1キャプション"><img src="img/01.jpg" alt=""></a>
 							<!--複数画像をグループ化してサムネ
 イル表示させたい場合は、datafancybox="半角英数字で同一のグループ名"、キャプションを入れたい場合はdata-caption="キャプションタイトル"を設定する。-->
@@ -102,7 +141,7 @@
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/グランピング.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Flower 2018"><div class="img-box">
 									<img src="image/グランピング.jpg" alt="">
 								</div> <span>Glamping2022</span></a>
@@ -110,7 +149,7 @@
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/カメハメハ大王.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Flower 2018"><div class="img-box">
 									<img src="image/カメハメハ大王.jpg" alt="">
 								</div> <span>Sea2021</span></a>
@@ -118,7 +157,7 @@
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/猫階段.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Flower 2020"><div class="img-box">
 									<img src="image/猫階段.jpg" alt="">
 								</div> <span>My Family</span></a>
@@ -126,7 +165,7 @@
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/卒業一人.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Flower 2018"><div class="img-box">
 									<img src="image/卒業一人.jpg" alt="">
 								</div> <span>Graduation2022</span></a>
@@ -134,7 +173,7 @@
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/熱海花火.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Woman 2018"><div class="img-box">
 									<img src="image/熱海花火.jpg" alt="">
 								</div> <span>Firework 2019</span></a>
@@ -142,257 +181,257 @@
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/スキー場.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Flower 2018"><div class="img-box">
-									<img src="image/スキー場.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Glamping2022</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/猫顔.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Woman2024"><div class="img-box">
-									<img src="image/猫顔.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>My Family</span></a>
 						</div>
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/history.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Flower 2018"><div class="img-box">
-									<img src="image/history.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Glamping2022</span></a>
 						</div>
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/変な雲.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Winter 2006"><div class="img-box">
-									<img src="image/変な雲.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2021</span></a>
 						</div>
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/ぐあむ.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Desk 2020"><div class="img-box">
-									<img src="image/ぐあむ.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2020</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/ジブゴミ箱.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Flower 2018"><div class="img-box">
-									<img src="image/ジブゴミ箱.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Glamping2022</span></a>
 						</div>
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/湘南平.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Winter 2006"><div class="img-box">
-									<img src="image/湘南平.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2021</span></a>
 						</div>
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/でぃずにー.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Woman 2018"><div class="img-box">
-									<img src="image/でぃずにー.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2022</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/ジブ光.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Flower 2018"><div class="img-box">
-									<img src="image/ジブ光.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Glamping2022</span></a>
 						</div>
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/だざいふ.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Ocean 2010"><div class="img-box">
-									<img src="image/だざいふ.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Trip 2022</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/猫餌.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Flower 2018"><div class="img-box">
-									<img src="image/猫餌.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Glamping2022</span></a>
 						</div>
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/雪自分.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Woman 2021"><div class="img-box">
-									<img src="image/雪自分.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2020</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/テテ顔.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Flower 2018"><div class="img-box">
-									<img src="image/テテ顔.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Glamping2022</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/テテカラー.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Mountain 2000"><div class="img-box">
-									<img src="image/テテカラー.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>My Family</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/ジブ寝.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Flower 2018"><div class="img-box">
-									<img src="image/ジブ寝.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Glamping2022</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/ジブ赤ちゃん.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Ocean 2025"><div class="img-box">
-									<img src="image/ジブ赤ちゃん.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>My Family</span></a>
 						</div>
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/高校.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Woman 2020"><div class="img-box">
-									<img src="image/高校.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2018</span></a>
 						</div>
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/ebisu.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Steps 2000"><div class="img-box">
-									<img src="image/ebisu.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2021</span></a>
 						</div>
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/あしかが.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Winter 2006"><div class="img-box">
-									<img src="image/あしかが.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2021</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/テテかくれんぼ.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Art 2021"><div class="img-box">
-									<img src="image/テテかくれんぼ.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>My Family</span></a>
 						</div>
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/湘南.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Group 2010"><div class="img-box">
-									<img src="image/湘南.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2020</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/猫外.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Woman 2023"><div class="img-box">
-									<img src="image/猫外.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>My Family</span></a>
 						</div>
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/富士山.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Woman 2013"><div class="img-box">
-									<img src="image/富士山.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Photo 2020</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/テテ寝.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Winter 2023"><div class="img-box">
-									<img src="image/テテ寝.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>My Family</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/仲良し.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Table 2023"><div class="img-box">
-									<img src="image/仲良し.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>My Family</span></a>
 						</div>
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/sotugyou.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Flower 2019"><div class="img-box">
-									<img src="image/sotugyou.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2022</span></a>
 						</div>
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/鎌倉花.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Coffee 2019"><div class="img-box">
-									<img src="image/鎌倉花.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2021</span></a>
 						</div>
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/バスケ (2).jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg (2).jpg" data-fancybox="group1"
 								data-caption="Ocean 2019"><div class="img-box">
-									<img src="image/バスケ (2).jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg (2).jpg" alt="">
 								</div> <span>Memory 2018</span></a>
 						</div>
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/gurannpinngu.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Woman 2014"><div class="img-box">
-									<img src="image/gurannpinngu.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2022</span></a>
 						</div>
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/恵比寿２.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Steps 2000"><div class="img-box">
-									<img src="image/恵比寿２.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2021</span></a>
 						</div>
 					</li>
 					<li class="item sort01">
 						<div class="item-content">
-							<a href="image/熱海.jpg" data-fancybox="group1"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
 								data-caption="Table 2000"><div class="img-box">
-									<img src="image/熱海.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>My Family</span></a>
 						</div>
 					</li>
 					<li class="item sort02">
 						<div class="item-content">
-							<a href="image/other.jpg" data-fancybox="group2"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
 								data-caption="Woman 2000"><div class="img-box">
-									<img src="image/other.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>My Family</span></a>
 						</div>
 					</li>
@@ -406,32 +445,15 @@
 					</li>
 					<li class="item sort03">
 						<div class="item-content">
-							<a href="image/鎌倉.jpg" data-fancybox="group3"
+							<a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
 								data-caption="Summer 2007"><div class="img-box">
-									<img src="image/鎌倉.jpg" alt="">
+									<img src="../UserImg/スキンケア２１.jpg" alt="">
 								</div> <span>Memory 2021</span></a>
 						</div>
 					</li>
 				</ul>
-				<!--/area1-->
-			</section>
-
-			<section id="area-2">
-				<!--area2の範囲に入ったらページトップリンクが出現-->
-				<h2>Area 2</h2>
-				<p>内容が入ります。</p>
 				<!--/area2-->
 			</section>
-
-			<footer id="footer">
-				<p class="js-scroll scroll-top scrollview">
-					<a href="#area-2">Scroll</a>
-				</p>
-				<p class="js-pagetop scroll-top">
-					<a href="#">Page Top</a>
-				</p>
-				<small>Copyright; KSJ</small>
-			</footer>
 
 			<form action="../servlets/UserLogin" method="post">
 
@@ -450,12 +472,12 @@
 
 	<footer id="footer">
 		<p class="js-scroll scroll-top scrollview">
-			<a href="#area-2">Scroll</a>
+			<a href="#area-1">Scroll</a>
 		</p>
 		<p class="js-pagetop scroll-top">
 			<a href="#">Page Top</a>
 		</p>
-		<small>Copyright; KSJ</small>
+		<small id="copyright">Copyright; KSJ</small>
 	</footer>
 
 	<!-- jquery -->
@@ -463,12 +485,18 @@
 		integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo="
 		crossorigin="anonymous"></script>
 
+	<script
+		src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
+
+	<!--自作のJS-->
 	<script src="../UserJs/user_top.js"></script>
 
 	<script
-		src="https://cdn.jsdelivr.net/npm/slick-carousel@1.8.1/slick/slick.min.js"></script>
-	<script
 		src="https://rawgit.com/kimmobrunfeldt/progressbar.js/master/dist/progressbar.min.js"></script>
+
+	<!--自作のJS-->
+	<script src="../UserJs/user_top_header.js"></script>
+
 	<script
 		src="https://cdnjs.cloudflare.com/ajax/libs/multiscroll.js/0.2.2/jquery.multiscroll.min.js"></script>
 	<script
@@ -480,7 +508,5 @@
 	<!--fancybox-->
 	<script
 		src="https://cdn.jsdelivr.net/gh/fancyapps/fancybox@3.5.7/dist/jquery.fancybox.min.js"></script>
-	<!--自作のJS-->
-		<script src="../UserJs/user_top_header.js"></script>
 </body>
 </html>
