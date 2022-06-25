@@ -264,7 +264,7 @@ public class AdminDAO extends DAO {
 	}
 
 	//商品詳細DAO
-	public RegistBean itemInfo (String itemId) throws Exception {
+	public RegistBean itemInfoSearch (String itemId) throws Exception {
 
 		//DBとの接続
 		Connection con = getConnection();

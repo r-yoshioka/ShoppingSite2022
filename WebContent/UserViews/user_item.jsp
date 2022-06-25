@@ -6,8 +6,8 @@
 
 <p>ALL ITEMES</p>
 <hr>
-<form action="../servlets/UserItemInfo" method="get">
-<ul>
+
+<ul class="top-banner">
 	<c:forEach var="rb" items="${list}">
 
 			<li><img src="../UserImg/${rb.itemId}.jpg" height="100"></li>
@@ -17,6 +17,5 @@
 
 	</c:forEach>
 </ul>
-</form>
 
 <%@ include file="../footer.html"%>

@@ -31,7 +31,7 @@ public class UserItemInfo extends HttpServlet {
 		AdminDAO ad = new AdminDAO();
 
 		try {
-			RegistBean rb = ad.itemInfo(itemId);
+			RegistBean rb = ad.itemInfoSearch(itemId);
 			session.setAttribute("rb", rb);
 			request.getRequestDispatcher("../UserViews/user_item_info.jsp").forward(request, response);
 

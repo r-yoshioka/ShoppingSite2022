@@ -6,8 +6,8 @@
 <%@ include file="../header.html"%>
 
 <hr>
-<ul>
 
+<ul>
 	<li><img src="../UserImg/${rb.itemId}.jpg" height="100"></li>
 	<li>商品名${rb.name}</li>
 	<li>詳細${rb.info}</li>
