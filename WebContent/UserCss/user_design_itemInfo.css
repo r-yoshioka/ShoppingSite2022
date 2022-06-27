@@ -1,0 +1,25 @@
+@charset "UTF-8";
+
+.itemInfo {
+	text-align: center;
+	margin: auto;
+}
+
+.itemInfo div {
+	background: white;
+	box-shadow: 2px 2px 2px 2px #efefef;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+p {
+	text-decoration: none;
+	padding: 1vh 2vh;
+	text-align: center;
+}
+
+p:last-child {
+	border-top: 3px dotted #efefef;
+	text-align: right;
+}

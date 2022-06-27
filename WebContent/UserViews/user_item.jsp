@@ -3,19 +3,33 @@
 <link rel="stylesheet" type="text/css" href="<%= request.getContextPath() %>/UserCss/user_design_item.css">
 <%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <%@ include file="../header.html"%>
+<div class="wrapper">
+<h1>ALL ITEMES</h1>
+</div>
 
-<p>ALL ITEMES</p>
 <hr>
 
-<ul class="top-banner">
+<form action="../servlets/UserIemInfo" method="post">
+<div class="itemes">
 	<c:forEach var="rb" items="${list}">
 
-			<li><img src="../UserImg/${rb.itemId}.jpg" height="100"></li>
-			<li><a href="../servlets/UserItemInfo?id=${rb.itemId}">商品名${rb.name}</a></li>
-			<li>値段${rb.price}円</li>
-			<li><a href="CartAdd.action?id=${rb.itemId}">カート</a></li>
+			<div>
+				<a href="<c:url value="../servlets/UserItemInfo">
+					<c:param name="itemId" value="${rb.itemId }" /></c:url>">
+				<img src="../UserImg/${rb.itemId}.jpg" >
+				</a>
+
+				<p><a href="<c:url value="../servlets/UserItemInfo">
+					<c:param name="itemId" value="${rb.itemId }" /></c:url>">
+					${rb.name}</a>
+				</p>
+
+				<p>\ ${rb.price}</p>
+				<p><a class="cart" href="CartAdd.action?id=${rb.itemId}" >CART</a></p>
+			</div>
 
 	</c:forEach>
-</ul>
+</div>
+</form>
 
 <%@ include file="../footer.html"%>
