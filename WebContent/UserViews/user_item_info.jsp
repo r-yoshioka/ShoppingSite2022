@@ -10,10 +10,15 @@
 
 	<div>
 		<p><img src="../UserImg/${rb.itemId}.jpg" height="100"></p>
-		<p>商品名${rb.name}</p>
-		<p>詳細${rb.info}</p>
-		<p>値段${rb.price}円</p>
-		<p><a href="">カート</a> <a href="../servlets/UserItemAction">戻る</a></p>
+		<p>${rb.name}<br>
+		   ${rb.info}
+		</p>
+		<p>\ ${rb.price}</p>
+	</div>
+
+	<div class="link">
+		<a href="">カート</a>
+		<a href="../servlets/UserItemAction">戻る</a>
 	</div>
 
 </div>

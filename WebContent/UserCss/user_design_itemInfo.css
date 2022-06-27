@@ -19,7 +19,8 @@ p {
 	text-align: center;
 }
 
-p:last-child {
+.link {
 	border-top: 3px dotted #efefef;
 	text-align: right;
+	text-decoration: none;
 }
