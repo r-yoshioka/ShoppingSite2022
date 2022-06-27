@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../header.html"%>
+<link rel="stylesheet" type="text/css" href="../UserCss/user_update.css">
 
 <p class="header">会員情報更新画面</p>
 

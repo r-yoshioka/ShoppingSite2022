@@ -1,6 +1,7 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../header.html"%>
+<link rel="stylesheet" type="text/css" href="../UserCss/user_update.css">
 
 <form action="../servlets/UserUpdate" method="post">
 
@@ -45,6 +46,12 @@
 			<td class="input">${uub. password}
 	</table>
 
+</form>
+
+<form action="../UserViews/user_update.jsp" method="post">
+	<p>
+		<input type="submit" class="push" value="変更画面へ戻る">
+	</p>
 </form>
 
 <form action="../UserViews/user_top.jsp" method="post">
