@@ -21,6 +21,10 @@
 			<td class="input">個数： <input type="tel" name="number" required>
 			</td>
 		</tr>
+		<tr>
+			<td class="input">商品詳細： <textarea name="info" cols="30" rows="5" required></textarea>
+			</td>
+		</tr>
 	</table>
 
 	<input type="button" onclick="history.back()" value="戻る">

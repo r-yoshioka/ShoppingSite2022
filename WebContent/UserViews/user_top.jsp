@@ -127,7 +127,6 @@
 					   <li class="sort02">SUMMER ITEM</li>
 					   <li class="sort03">ALL ITEM</li>
 				   </ul>
-
 				   <ul class="grid">
 					   <!--1番外側のタグにgrid というクラス名を付与。-->
 					   <li class="item sort01">
