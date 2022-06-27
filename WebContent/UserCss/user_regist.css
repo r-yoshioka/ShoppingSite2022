@@ -1,75 +1,87 @@
 @charset "UTF-8";
 
-header{
-	width:100%;
-	height:40px;
-	text-align:left;
-	color:#fff;
-	font-size:25px;
-	padding:50px 30px;
-	background-color:#000;
+header {
+	width: 100%;
+	height: 40px;
+	text-align: left;
+	color: #fff;
+	font-size: 25px;
+	padding: 50px 30px;
+	background-color: #000;
 }
 
-.shopName{
+.shopName {
 	font-family: 'Smooch', cursive;
-	margin-bottom:20px;
+	margin-bottom: 20px;
 }
 
-.header{
-    font-size: 35px;
-    font-weight: bold;
-    margin-top:40px;
-    margin-bottom: 40px;
-    text-align: center;
-    border-bottom: 3px solid #000;
+.header {
+	font-size: 35px;
+	font-weight: bold;
+	margin-top: 40px;
+	margin-bottom: 40px;
+	text-align: center;
+	border-bottom: 3px solid #000;
 }
 
-.message{
-	color:#f00;
+.message {
+	color: #f00;
+	text-align: center;
 }
 
-.design{
+.design {
 	width: 60%;
-	margin-top:10px;
-    margin-bottom: 20px;
-    margin-right:auto;
-    margin-left:auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-.content,.input {
-    padding: 20px;
-    border: 1px solid #ccc;
+.content, .input {
+	padding: 20px;
+	border: 1px solid #ccc;
 }
 
 .content {
-    text-align: left;
-    width: 30%;
-    background-color: #eee;
+	text-align: left;
+	width: 30%;
+	background-color: #eee;
 }
 
 .input {
-    width: 70%;
+	width: 70%;
 }
 
 button.btn-border {
-    border: 2px solid #000;
-    border-radius: 0;
-    background: #fff;
-    text-align: center;
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	text-align: center;
 }
 
 button.btn-border:hover {
-    color: #fff;
-    background: #000;
-    text-align: center;
+	color: #fff;
+	background: #000;
+	text-align: center;
 }
 
-.push{
-	text-align:center;
-	padding:10px 10px;
-	margin-top:20px;
-	margin-right:50px;
-	margin-left:120px;
-	width:20%;
-	float:left;
+.push {
+	text-align: center;
+	padding: 10px 10px;
+	margin-top: 20px;
+	margin-right: 50px;
+	margin-left: 120px;
+	width: 20%;
+	float: left;
+	background-color: #fff;
+}
+
+footer {
+	width: 100%;
+	height: -80px;
+	text-align: center;
+	color: #fff;
+	font-size: 15px;
+	padding: 50px 50px;
+	background-color: #000;
 }

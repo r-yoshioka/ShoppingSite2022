@@ -13,6 +13,8 @@
       <header>
           <h1 class="shopName">SHOP</h1>
       </header>
+
+   <main>
       <form action="../servlets/UserReginst" method="post">
 
 	  <h1 class="header">会員登録画面</h1>
@@ -225,5 +227,15 @@
 		      <input type="submit" class="push" value="戻る">
 	      </p>
       </form>
+   </main>
+
+      <footer>
+         <p>Minami Shingaki<br>
+              M.shingaki@ks-japan.jp</p>
+         <p>Risa Yoshioka<br>
+              R.yoshioka@ks-japan.jp</p>
+         <p>copyright:KSJ,</p>
+      </footer>
+</body>
 
 <%@ include file="../footer.html"%>
