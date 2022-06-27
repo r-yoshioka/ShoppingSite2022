@@ -2,17 +2,22 @@ package jp.co.aforce.beans;
 
 public class RegistBean implements java.io.Serializable {
 
-	private String item_id;
+	private String itemId;
 	private String name;
+	private String info;
 	private int price;
 	private int number;
 
 	public String getItemId() {
-		return item_id;
+		return itemId;
 	}
 
 	public String getName() {
 		return name;
+	}
+
+	public String getInfo() {
+		return info;
 	}
 
 	public int getPrice() {
@@ -23,12 +28,17 @@ public class RegistBean implements java.io.Serializable {
 		return number;
 	}
 
-	public void setItemId(String item_id) {
-		this.item_id = item_id;
+
+	public void setItemId(String itemId) {
+		this.itemId = itemId;
 	}
 
 	public void setName(String name) {
 		this.name = name;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
 	}
 
 	public void setPrice(int price) {

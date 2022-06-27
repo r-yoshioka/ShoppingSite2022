@@ -7,7 +7,7 @@
 	<span>${message} </span>
 
 	<p>
-		ID:<input type="text" name="admin_id" maxlength="10" value="${member_id}"required>
+		ID:<input type="text" name="adminId" maxlength="15" value="${adminId}"required>
 	</p>
 	<p>
 		パスワード:<input type="password" maxlength="20" name="password" required>

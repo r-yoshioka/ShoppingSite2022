@@ -32,10 +32,11 @@ public class AdminUpdate extends HttpServlet {
 		//パラメータの取得
 		RegistBean rb = new RegistBean();
 
-		rb.setItemId(request.getParameter("item_id"));
+		rb.setItemId(request.getParameter("itemId"));
 		rb.setName(request.getParameter("name"));
 		rb.setPrice(Integer.parseInt(request.getParameter("price")));
 		rb.setNumber(Integer.parseInt(request.getParameter("number")));
+		rb.setInfo(request.getParameter("info"));
 
 		//DAOオブジェクト宣言
 		AdminDAO adminDao = new AdminDAO();

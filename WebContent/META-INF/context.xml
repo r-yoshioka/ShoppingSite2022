@@ -1,5 +1,4 @@
 <?xml version="1.0" encoding="UTF-8"?>
-
 <Context reloadable="true">
 
 	<!-- maxTotal: Maximum number of database connections in pool. Make sure
@@ -26,8 +25,8 @@
 			  auth="Container"
 		      type="javax.sql.DataSource"
 		      maxTotal="100" maxIdle="30" maxWaitMillis="10000"
-		      username="root" password="Gachapin1015"
+		      username="root" password="Cocomimirocky51"
 		      driverClassName="com.mysql.cj.jdbc.Driver"
-		      url="jdbc:mysql://localhost:3306/shoppingsite_yoshioka" />
+		      url="jdbc:mysql://localhost:3306/shoppingsite_shingaki" />
 
 </Context>

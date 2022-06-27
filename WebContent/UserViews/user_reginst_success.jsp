@@ -54,6 +54,7 @@
 <form action="../UserViews/user_reginst.jsp" method="post">
 	<p>
 		<input type="submit" class="push" value="戻る">
+	</p>
 </form>
 
 <%@ include file="../footer.html"%>

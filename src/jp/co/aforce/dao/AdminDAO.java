@@ -11,17 +11,17 @@ import jp.co.aforce.beans.RegistBean;
 
 public class AdminDAO extends DAO {
 
-	public AdminBean search(String admin_id, String password) throws Exception {
+	public AdminBean search(String adminId, String password) throws Exception {
 
 		//DBとの接続
 		Connection con = getConnection();
 
 		PreparedStatement st;
 		st = con.prepareStatement(
-				"SELECT * FROM member_info_ksj WHERE admin_id=? and password=?");
+				"SELECT * FROM admin_info_ksj WHERE adminId=? and password=?");
 
 		//SQLパラメータ設定
-		st.setString(1, admin_id);
+		st.setString(1, adminId);
 		st.setString(2, password);
 
 		//SQLの実行
@@ -30,7 +30,7 @@ public class AdminDAO extends DAO {
 		AdminBean ab = new AdminBean();
 
 		while (rs.next()) {
-			ab.setAdminId(rs.getString("admin_id"));
+			ab.setAdminId(rs.getString("adminId"));
 			ab.setName(rs.getString("name"));
 			ab.setPassword(rs.getString("password"));
 		}
@@ -70,12 +70,13 @@ public class AdminDAO extends DAO {
 
 		//データの追加処理
 		PreparedStatement st = con.prepareStatement(
-				"INSERT INTO item_info_ksj VALUES( ?, ?, ?, ?)");
+				"INSERT INTO item_info_ksj VALUES( ?, ?, ?, ?, ?)");
 
 		st.setString(1, rb.getItemId());
 		st.setString(2, rb.getName());
 		st.setInt(3, rb.getPrice());
 		st.setInt(4, rb.getNumber());
+		st.setString(5, rb.getInfo());
 
 		int line = st.executeUpdate();
 
@@ -117,11 +118,12 @@ public class AdminDAO extends DAO {
 		//追加した名前と同じ名前を持つ行を検索して結果を取得
 		PreparedStatement st = con.prepareStatement(
 				"SELECT * FROM item_info_ksj WHERE "
-						+ " NAME =  ? AND  PRICE = ? AND NUMBER = ?");
+						+ " NAME =  ? AND  PRICE = ? AND NUMBER = ? AND INFO = ?");
 
 		st.setString(1, rb.getName());
 		st.setInt(2, rb.getPrice());
 		st.setInt(3, rb.getNumber());
+		st.setString(4, rb.getInfo());
 
 		ResultSet rs = st.executeQuery();
 
@@ -133,7 +135,7 @@ public class AdminDAO extends DAO {
 	}
 
 	//item_id検索DAO
-	public RegistBean searchId(String item_id) throws Exception {
+	public RegistBean searchId(String itemId) throws Exception {
 
 		RegistBean rb = null;
 
@@ -142,10 +144,10 @@ public class AdminDAO extends DAO {
 
 		//追加した名前と同じ名前を持つ行を検索して結果を取得
 		PreparedStatement st = con.prepareStatement(
-				"SELECT item_info_ksj.name,item_info_ksj.price,item_info_ksj.number FROM item_info_ksj WHERE "
-						+ "item_info_ksj.item_id=?");
+				"SELECT item_info_ksj.name,item_info_ksj.price,item_info_ksj.number, item_info_ksj.info FROM item_info_ksj WHERE "
+						+ "item_info_ksj.itemId=?");
 
-		st.setString(1, item_id);
+		st.setString(1, itemId);
 		ResultSet rs = st.executeQuery();
 
 		while (rs.next()) {
@@ -153,12 +155,43 @@ public class AdminDAO extends DAO {
 			rb.setName(rs.getString("name"));
 			rb.setPrice(rs.getInt("price"));
 			rb.setNumber(rs.getInt("number"));
+			rb.setInfo(rs.getString("info"));
 		}
 
 		st.close();
 		con.close();
 
 		return rb;
+	}
+
+	//商品一覧DAO
+	public List<RegistBean> allItem() throws Exception {
+
+		//DBとの接続
+		Connection con = getConnection();
+
+		List<RegistBean> list = new ArrayList<RegistBean>();
+
+		//全商品を取得
+		PreparedStatement st = con.prepareStatement(
+				"SELECT * FROM item_info_ksj");
+
+		ResultSet rs = st.executeQuery();
+
+		while (rs.next()) {
+			RegistBean rb = new RegistBean();
+			rb.setItemId(rs.getString("itemId"));
+			rb.setName(rs.getString("name"));
+			rb.setPrice(rs.getInt("price"));
+			rb.setNumber(rs.getInt("number"));
+			rb.setInfo(rs.getString("info"));
+			list.add(rb);
+		}
+
+		st.close();
+		con.close();
+
+		return list;
 	}
 
 	//更新DAO
@@ -169,12 +202,14 @@ public class AdminDAO extends DAO {
 		Connection con = getConnection();
 		PreparedStatement st = con
 				.prepareStatement(
-						"UPDATE item_info_ksj SET item_info_ksj.name=?, item_info_ksj.price=?, item_info_ksj.number=? WHERE item_info_ksj.item_id=?");
+						"UPDATE item_info_ksj SET item_info_ksj.name=?, item_info_ksj.price=?, item_info_ksj.number=?, item_info_ksj.info=? WHERE item_info_ksj.itemId=?");
 
 		st.setString(1, rb.getName());
 		st.setInt(2, rb.getPrice());
 		st.setInt(3, rb.getNumber());
-		st.setString(4, rb.getItemId());
+		st.setString(4, rb.getInfo());
+		st.setString(5, rb.getItemId());
+
 		line = st.executeUpdate();
 
 		st.close();
@@ -190,7 +225,7 @@ public class AdminDAO extends DAO {
 		//DBとの接続
 		Connection con = getConnection();
 		PreparedStatement st = con
-				.prepareStatement("DELETE FROM item_info_ksj WHERE item_info_ksj.item_id=?");
+				.prepareStatement("DELETE FROM item_info_ksj WHERE item_info_ksj.itemId=?");
 
 		st.setString(1, rb.getItemId());
 		line = st.executeUpdate();
@@ -214,10 +249,11 @@ public class AdminDAO extends DAO {
 
 		while (rs.next()) {
 			RegistBean rb = new RegistBean();
-			rb.setItemId(rs.getString("item_id"));
+			rb.setItemId(rs.getString("itemId"));
 			rb.setName(rs.getString("name"));
 			rb.setPrice(rs.getInt("price"));
 			rb.setNumber(rs.getInt("number"));
+			rb.setInfo(rs.getString("info"));
 			List.add(rb);
 		}
 
@@ -225,5 +261,36 @@ public class AdminDAO extends DAO {
 		con.close();
 
 		return List;
+	}
+
+	//商品詳細DAO
+	public RegistBean itemInfoSearch(String itemId) throws Exception {
+
+		//DBとの接続
+		Connection con = getConnection();
+
+		PreparedStatement st;
+		st = con.prepareStatement(
+				"SELECT * FROM item_info_ksj WHERE itemId=? ");
+
+		//SQLパラメータ設定
+		st.setString(1, itemId);
+
+		//SQLの実行
+		ResultSet rs = st.executeQuery();
+
+		RegistBean rb = new RegistBean();
+
+		while (rs.next()) {
+			rb.setItemId(rs.getString("itemId"));
+			rb.setName(rs.getString("name"));
+			rb.setPrice(rs.getInt("price"));
+			rb.setInfo(rs.getString("info"));
+		}
+
+		st.close();
+		con.close();
+
+		return rb;
 	}
 }

@@ -23,6 +23,11 @@
 			<td class="input">${rb.number}個</td>
 		</tr>
 
+		<tr>
+			<th class="content">■Infomation</th>
+			<td class="input">${rb.info}</td>
+		</tr>
+
 	</table>
 
 </form>
