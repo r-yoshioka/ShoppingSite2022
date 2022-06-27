@@ -109,6 +109,10 @@ a:hover, a:active {
 	color: #fff;
 }
 
+.concept{
+	text-align:center;
+}
+
 /*＝＝＝並び替えボタンのCSS*/
 .sort-btn {
 	display: flex;
@@ -192,6 +196,17 @@ li {
 
 .fancybox-thumbs__list a:before {
 	border: 6px solid #FA999B;
+}
+
+/*商品*/
+
+
+.list{
+	text-align:center;
+}
+
+.total{
+	font-size:25px;
 }
 
 /*footer設定*/

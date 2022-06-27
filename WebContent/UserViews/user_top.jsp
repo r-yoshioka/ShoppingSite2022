@@ -1,5 +1,6 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
    <head>
@@ -22,6 +23,7 @@
         <link rel="stylesheet" type="text/css" href="../UserCss/user_top.css">
         <link rel="stylesheet" type="text/css"
 	        href="../UserCss/user_top_header.css">
+	    <link rel="stylesheet" type="text/css" href="../UserCss/user_cart.css">
    </head>
 
    <body>
@@ -36,8 +38,8 @@
 			   <h1>SHOP</h1>
 			   <nav>
 				   <ul id="menu">
-					   <li><a href="../UserViews/user_top.jsp" class="push">TOP</a></li>
-					   <li class="has-child"><a href="#" class="push">CATEGORY</a>
+					   <li><a href="../UserViews/user_top.jsp" class="navi">TOP</a></li>
+					   <li class="has-child"><a href="#" class="navi">CATEGORY</a>
 						   <ul>
 							   <li class="mini"><a href="#" class="push">ALL ITEM</a></li>
 							   <li class="mini"><a href="#" class="push">HAIR CARE</a></li>
@@ -45,9 +47,8 @@
 							   <li class="mini"><a href="#" class="push">SKIN CARE</a></li>
 						   </ul>
 					   </li>
-					   <li><a href="#">CART</a></li>
 					   <li class="has-child">
-					       <a href="../UserViews/user_mypage.jsp"class="push">MYPAGE</a>
+					       <a href="../UserViews/user_mypage.jsp" class="navi">MYPAGE</a>
 						   <ul>
 							   <li class="mini">
 							       <a href="../UserViews/user_profile_search.jsp" class="push">MY PROFILE</a>
@@ -61,6 +62,7 @@
 							   <li class="mini">
 							       <a href="../UserViews/user_logout.jsp" class="push">LOGOUT</a></li>
 						   </ul>
+					   <li><a href="../UserViews/user_cart.jsp" class="cart-btn"></a></li>
 					   <li>
 						   <div class="open-btn"></div> <!--虫眼鏡マークのHTML-->
 						   <div id="search-wrap">
@@ -92,7 +94,7 @@
 				   <!--/wrapper-->
 			   </div>
 
-			   <section id="area-1">
+			   <section id="area-1" class="concept">
 				   <h2>CONCEPT</h2>
 				   <h3>自然にやさしく、自分を磨こう</h3>
 				   <p>
@@ -119,340 +121,77 @@
 			   </section>
 
 			   <section id="area-2">
+			   <form action="../servlets/UserTopItem" method="get">
 				   <!--area2の範囲に入ったらページトップリンクが出現-->
-				   <ul class="sort-btn">
-					   <li class="sort00 active">HOT ITEM</li>
-					   <!--はじめに「全て」ボタンに現在地表示をつけるためactive というクラス名を付与-->
-					   <li class="sort01">RANKING</li>
-					   <li class="sort02">SUMMER ITEM</li>
-					   <li class="sort03">ALL ITEM</li>
-				   </ul>
 
-				   <ul class="grid">
-					   <!--1番外側のタグにgrid というクラス名を付与。-->
-					   <li class="item sort01">
-						   <!--li には、item というクラス名と並び替え基準となるクラス名（ボタンのクラス名と同じ名前）を付与。-->
-						   <div class="item-content">
-							   <!--内側のdivには高さを維持するためにitem-contentというクラス名をつける。-->
-							   <a href="UserImg/スキンケア２１.jpg" data-fancybox="group1"
-								   data-caption="グループ1キャプション"><img src="img/01.jpg" alt=""></a>
-							   <!--複数画像をグループ化してサムネ
-イル表示させたい場合は、datafancybox="半角英数字で同一のグループ名"、キャプションを入れたい場合はdata-caption="キャプションタイトル"を設定する。-->
-						   </div>
-					   </li>
-					   <li class="item sort01">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
-							  	   data-caption="Flower 2018"><div class="img-box">
-									   <img src="image/グランピング.jpg" alt="">
-								   </div> <span>Glamping2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort03">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
-								   data-caption="Flower 2018"><div class="img-box">
-									   <img src="image/カメハメハ大王.jpg" alt="">
-								   </div> <span>Sea2021</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Flower 2020"><div class="img-box">
-									   <img src="image/猫階段.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort01">
-						   <div class="item-content">
-						 	   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
-								   data-caption="Flower 2018"><div class="img-box">
-									   <img src="image/卒業一人.jpg" alt="">
-								   </div> <span>Graduation2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort03">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
-								   data-caption="Woman 2018"><div class="img-box">
-									   <img src="image/熱海花火.jpg" alt="">
-								   </div> <span>Firework 2019</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort03">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
-								   data-caption="Flower 2018"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Glamping2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Woman2024"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort01">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
-								   data-caption="Flower 2018"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Glamping2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort03">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
-								   data-caption="Winter 2006"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Memory 2021</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort01">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
-								   data-caption="Desk 2020"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Memory 2020</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Flower 2018"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Glamping2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort03">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
-								   data-caption="Winter 2006"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Memory 2021</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort01">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
-								   data-caption="Woman 2018"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Memory 2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Flower 2018"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Glamping2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort03">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group3"
-								   data-caption="Ocean 2010"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Trip 2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Flower 2018"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Glamping2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort01">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group1"
-								   data-caption="Woman 2021"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Memory 2020</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Flower 2018"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Glamping2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Flower 2018"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>Glamping2022</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-					   <li class="item sort02">
-						   <div class="item-content">
-							   <a href="../UserImg/スキンケア２１.jpg" data-fancybox="group2"
-								   data-caption="Mountain 2000"><div class="img-box">
-									   <img src="../UserImg/スキンケア２１.jpg" alt="">
-								   </div> <span>My Family</span></a>
-						   </div>
-					   </li>
-				   </ul>
+				      <ul class="sort-btn">
+				         <li class="sort00 active">HOT ITEM</li>
+				         <li class="sort01">RANKING</li>
+				         <li class="sort02">SUMMER ITEM</li>
+				         <li class="sort03">ALL ITEM</li>
+				      </ul>
+
+				   <table class="item">
+				      <tr>
+				         <th class="image"><img src="../UserImg/I06271020.jpg"  alt="化粧水１" width="100%"></th>
+	                     <td class="list">化粧水１</td>
+                         <td class="list">1,208</td>
+                         <td><a class="cart" href="../UserViews/user_cart.jsp" >CART</a></td>
+                      </tr>
+
+                        <tr>
+                        <th class="image"><img src="../UserImg/I06271025.jpg"  alt="化粧水２" width="100%"></th>
+                         <td class="list">化粧水２</td>
+                         <td class="list">1,208</td>
+                         <td><a class="cart" href="../UserViews/user_cart.jsp" >CART</a></td>
+                      </tr>
+
+                      <tr>
+                      <th class="image"><img src="../UserImg/I06271046.jpg"  alt="化粧水3" width="100%"></th>
+                         <td class="list">化粧水3</td>
+                         <td class="list">1,208</td>
+                         <td><a class="cart" href="../UserViews/user_cart.jsp" >CART</a></td>
+                      </tr>
+
+                      <tr>
+                         <th class="image"><img src="../UserImg/スキンケア１１.jpg"  alt="化粧水3" width="100%"></th>
+                         <td class="list">化粧水4</td>
+                         <td class="list">1,208</td>
+                         <td><a class="cart" href="../UserViews/user_cart.jsp" >CART</a></td>
+                      </tr>
+
+                      <tr>
+                         <td>￥<input type="text" name="item01" size="8" value="0"> </td>
+                         <td>￥<input type="text" name="item02" size="8" value="0"> </td>
+                         <td>￥<input type="text" name="item03" size="8" value="0"> </td>
+                      </tr>
+
+
+				   <c:forEach var="rb" items="${list}">
+				      <tr>
+				         <td><a href="<c:url value="../servlets/UserItemInfo">
+				         <c:param name="itemId" value="${rb.itemId }" /></c:url>">
+				         <img src="../UserImg/${rb.itemId}.jpg" ></a></td>
+				      </tr>
+
+				      <tr>
+				         <td><a href="<c:url value="../servlets/UserItemInfo">
+				         <c:param name="itemId" value="${rb.itemId }" /></c:url>">
+				         ${rb.name}</a></td>
+				      </tr>
+
+				      <tr>
+				         <td>¥ ${rb.price}</td>
+				      </tr>
+
+				      <tr>
+				         <td><a class="cart" href="CartAdd.action?id=${rb.itemId}" >CART</a></td>
+				      </tr>
+
+				   </c:forEach>
+				   </table>
+
+				 </form>
 				   <!--/area2-->
 			   </section>
 
