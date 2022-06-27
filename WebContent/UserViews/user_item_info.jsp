@@ -16,7 +16,7 @@
 		<p>詳細${rb.info}</p>
 		<p>値段${rb.price}円</p>
 		<p>
-			<a href="CartAdd.action?id=${rb.itemId}">カート</a> <a
+			<a href="">カート</a> <a
 				href="../servlets/UserItemAction">戻る</a>
 		</p>
 	</div>

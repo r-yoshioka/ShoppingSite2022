@@ -25,7 +25,7 @@
 				</p>
 
 				<p>\ ${rb.price}</p>
-				<p><a class="cart" href="CartAdd.action?id=${rb.itemId}" >CART</a></p>
+				<p><a class="cart" href="" >CART</a></p>
 			</div>
 
 	</c:forEach>
