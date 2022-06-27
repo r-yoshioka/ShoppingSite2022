@@ -5,7 +5,7 @@
 
 <p class="header">会員情報更新画面</p>
 
-<span>${UpdateMessage }</span>
+<span class="message">${UpdateMessage }</span>
 
 <form action="../servlets/UserUpdate" method="post">
 
