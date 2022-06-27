@@ -16,10 +16,13 @@
 }
 
 body {
-	background: linear-gradient(to top, rgba(217, 175, 217, 0.7) 0%,
-		rgba(151, 217, 225, 0.7) 100%), url(../UserImg/user_home.jpg); /* 背景画像指定 */
+	background-image: url(../UserImg/user_home.jpg); /* 背景画像指定 */
+	background-size: cover; /* 画面フルサイズ*/
 	background-repeat: no-repeat; /* 画像繰り返しなし */
 	background-position: center; /* 画像中央寄せ */
 	width: auto;
 	height: auto;
 }
+
+/* 画像を暗くする */
+
