@@ -53,11 +53,10 @@ public class CartAction extends HttpServlet {
 		}
 		request.setAttribute("sum", sum);
 
-		//商品が存在しない場合、セッション属性から商品リストを取得
-		List<RegistBean> list = (List<RegistBean>) session.getAttribute("list");
-
 		//商品Idを使って、これから追加する商品を商品リストから探す
 		if (existItem) {
+			//商品が存在しない場合、セッション属性から商品リストを取得
+			List<RegistBean> list = (List<RegistBean>) session.getAttribute("list");
 			for (RegistBean registBean : list) {
 				if (registBean.getItemId().equals(itemId)) {
 					ItemBean itemBean = new ItemBean();
