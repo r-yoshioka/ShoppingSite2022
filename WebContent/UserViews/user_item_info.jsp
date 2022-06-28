@@ -17,8 +17,11 @@
 	</div>
 
 	<div class="link">
-		<a href="">カート</a>
-		<a href="../servlets/UserItemAction">戻る</a>
+		<a class="cart"
+					href="<c:url value="../servlets/CartAction">
+					<c:param name="itemId" value="${rb.itemId }" /></c:url>">CART</a>
+
+		<a href="../servlets/UserItemAction">BACK</a>
 	</div>
 
 </div>
