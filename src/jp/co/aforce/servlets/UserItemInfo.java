@@ -18,12 +18,12 @@ public class UserItemInfo extends HttpServlet {
 	public void doGet(
 			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
-		//直接アクセスの場合はログイン画面へ遷移
-		request.getRequestDispatcher("../UserViews/user_login").forward(request, response);
-	}
-
-	public void doPost(
-			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
+//		//直接アクセスの場合はログイン画面へ遷移
+//		request.getRequestDispatcher("../UserViews/user_login").forward(request, response);
+//	}
+//
+//	public void doPost(
+//			HttpServletRequest request, HttpServletResponse response) throws ServletException, IOException {
 
 		//エンコーディング設定
 		request.setCharacterEncoding("UTF-8");
