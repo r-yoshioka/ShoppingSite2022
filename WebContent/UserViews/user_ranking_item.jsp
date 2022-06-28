@@ -1,18 +1,16 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
-<%@ taglib prefix="c" uri="http://java.sun.com/jsp/jstl/core"%>
 <!DOCTYPE html>
 <html>
    <head>
        <meta charset="UTF-8">
-       <title>CART</title>
+       <title>MY PAGE</title>
        <!-- フォント -->
        <link
 	       href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
 	       rel="stylesheet">
        <!-- 自作のCSS -->
        <link rel="stylesheet" type="text/css" href="../UserCss/user_mypage.css">
-       <link rel="stylesheet" type="text/css" href="../UserCss/user_cart.css">
    </head>
 
    <body>
@@ -30,6 +28,7 @@
 							   <li><a href="#" class="push">SKIN CARE</a></li>
 						   </ul>
 					   </li>
+					   <li><a href="#">CART</a></li>
 					   <li class="has-child"><a href="../UserViews/user_mypage.jsp">MYPAGE</a>
 						   <ul>
 							   <li class="mini">
@@ -46,25 +45,96 @@
 							   </li>
 						   </ul>
 					   </li>
-					   <li><a href="../UserViews/user_cart.jsp">CART</a></li>
 				   </ul>
 			   </nav>
 		   </header>
 
-		   <main>
-		      <div class="itemes">
-		         <c:forEach var="rb" items="${list}">
-		            <ul>
-		               <li></li>
-		               <li><a href="../servlets/">商品名</a></li>
-		               <li>値段</li>
-		               <li>値段(税)</li>
-		               <li>数量</li>
-		               <li>小計</li>
-		            </ul>
-		         </c:forEach>
-              </div>
-		   </main>
+  <main>
+
+     <h2>RANKING</h2>
+
+     <table>
+        <tr>
+           <th>1位</th>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+
+        <tr>
+           <th>2位</th>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+
+        <tr>
+           <th>3位</th>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+
+        <tr>
+           <th>4位</th>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+
+        <tr>
+           <th>5位</th>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+
+        <tr>
+           <th>6位</th>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+
+        <tr>
+           <th>7位</th>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+
+        <tr>
+           <th>8位</th>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+
+        <tr>
+           <th>9位</th>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+
+        <tr>
+           <th>10位</th>
+           <td></td>
+           <td></td>
+           <td></td>
+           <td></td>
+        </tr>
+     </table>
+  </main>
 
            <footer id="footer">
 			   <small id="copyright">Copyright; KSJ</small>

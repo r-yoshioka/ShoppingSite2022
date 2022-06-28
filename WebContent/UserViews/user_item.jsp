@@ -10,7 +10,7 @@
 
 <hr>
 
-<form action="../servlets/UserIemInfo" method="post">
+<form action="../servlets/UserItemInfo" method="get">
 	<div class="itemes">
 		<c:forEach var="rb" items="${list}">
 
