@@ -9,7 +9,7 @@
 <div class="itemInfo">
 
 	<div>
-		<p><img src="../UserImg/${rb.itemId}.jpg" height="100"></p>
+		<p><img src="../UserImg/${rb.itemId}.jpg" height="400"></p>
 		<p>${rb.name}<br>
 		   ${rb.info}
 		</p>

@@ -1,15 +1,17 @@
 @charset "UTF-8";
 
-.itemInfo {
+h1, p {
 	text-align: center;
-	margin: auto;
-	width: 80%;
+	font-size: 2rem;
+	margin-bottom: 2vh;
 }
 
-.itemInfo div {
+.itemes {
+	margin: auto;
+}
+
+.itemes div {
 	background: white;
-	box-shadow: 2px 2px 2px 2px #efefef;
-	display: flex;
 	flex-direction: column;
 	justify-content: space-between;
 }
@@ -20,15 +22,6 @@ p {
 	text-align: center;
 }
 
-.link a{
-	text-align: right;
-	text-decoration: none;
-}
-
-.cart {
-	border-top: 3px dotted #efefef;
-}
-
 a:link { /*アクセスしたことのないリンク*/
 	color: black;
 }
@@ -36,4 +29,12 @@ a:link { /*アクセスしたことのないリンク*/
 a:hover { /*マウスが上に乗っている状態*/
 	color: #FF0099;
 	text-decoration: underline;
+}
+
+img {
+	width: 100%;
+}
+
+.buttun {
+	text-align: right;
 }

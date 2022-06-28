@@ -29,6 +29,8 @@ public class CartAction extends HttpServlet {
 
 		String itemId = request.getParameter("itemId");
 
+		int sum = 0;
+
 		//セッション属性から、ItemBeanリストを取得
 		List<ItemBean> cart = (List<ItemBean>) session.getAttribute("cart");
 
@@ -39,25 +41,34 @@ public class CartAction extends HttpServlet {
 		}
 		//商品Idを使って、追加する商品がカート内に存在するかを調べる
 		//商品が存在する場合、個数を加算
+		boolean existItem = true;
 		for (ItemBean itemBean : cart) {
 			if (itemBean.getRegistBean().getItemId().equals(itemId)) {
 				itemBean.setCount(itemBean.getCount() + 1);
-				request.getRequestDispatcher("../UserViews/user_cart.jsp").forward(request, response);
+				existItem = false;
 			}
+			//商品の合計
+			sum = sum + itemBean.getRegistBean().getPrice() * itemBean.getCount();
+			itemBean.setSum(itemBean.getSum());
 		}
+		request.setAttribute("sum", sum);
 
 		//商品が存在しない場合、セッション属性から商品リストを取得
 		List<RegistBean> list = (List<RegistBean>) session.getAttribute("list");
 
 		//商品Idを使って、これから追加する商品を商品リストから探す
-		for (RegistBean registBean : list) {
-			if (registBean.getItemId().equals(itemId)) {
-				ItemBean itemBean = new ItemBean();
-				itemBean.setRegistBean(registBean);
-				itemBean.setCount(1);
-				cart.add(itemBean);
+		if (existItem) {
+			for (RegistBean registBean : list) {
+				if (registBean.getItemId().equals(itemId)) {
+					ItemBean itemBean = new ItemBean();
+					itemBean.setRegistBean(registBean);
+					itemBean.setCount(1);
+					cart.add(itemBean);
+					sum=sum+registBean.getPrice();
+				}
 			}
 		}
+		request.setAttribute("sum", sum);
 		request.getRequestDispatcher("../UserViews/user_cart.jsp").forward(request, response);
 	}
 }

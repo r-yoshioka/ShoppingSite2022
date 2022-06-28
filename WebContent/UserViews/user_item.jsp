@@ -21,9 +21,7 @@
 					<img src="../UserImg/${rb.itemId}.jpg">
 				</a>
 
-				<p>
-					<a
-						href="<c:url value="../servlets/UserItemInfo">
+				<p><a href="<c:url value="../servlets/UserItemInfo">
 					<c:param name="itemId" value="${rb.itemId }" /></c:url>">${rb.name}</a>
 				</p>
 
@@ -32,8 +30,7 @@
 
 			<form action="../servlets/CartAction" method="get">
 			<p>
-				<a class="cart"
-					href="<c:url value="../servlets/CartAction">
+				<a class="cart" href="<c:url value="../servlets/CartAction">
 					<c:param name="itemId" value="${rb.itemId }" /></c:url>">CART</a>
 			</p>
 			</form>
