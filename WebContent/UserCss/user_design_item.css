@@ -45,6 +45,7 @@ a {
 	background-repeat: no-repeat; /*背景画像の繰り返し*/
 	background-position: center right; /*背景画像の配置*/
 	padding-right: 50px;
+	z-index:1000;
 }
 
 a:link { /*アクセスしたことのないリンク*/

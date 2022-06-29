@@ -11,40 +11,38 @@
 	<table class="design">
 		<tr>
 			<th class="content">NAME</th>
-			<td class="input">${uob. name}</td>
+			<td class="input"><%=request.getAttribute("name")%></td>
 		</tr>
 
 		<tr>
 			<th class="content">POST</th>
-			<td class="input">${uob. post}</td>
+			<td class="input"><%=request.getAttribute("post")%></td>
 		</tr>
 
 		<tr>
 			<th class="content">PREFECTURES</th>
-			<td class="input">${uob. prefectures}</td>
+			<td class="input"><%=request.getAttribute("prefectures")%></td>
 		</tr>
 
 		<tr>
 			<th class="content">ADDRESS</th>
-			<td class="input">${uob. address}</td>
+			<td class="input"><%=request.getAttribute("address")%></td>
 		</tr>
 
 		<tr>
 			<th class="content">PAYMENT</th>
-			<td class="input">${uob. payment}</td>
+			<td class="input"><%=request.getAttribute("payment")%></td>
 		</tr>
 
 		<tr>
 			<th class="content">DELIVERY DATE</th>
-			<td class="input">${uob. date}</td>
+			<td class="input"><%=request.getAttribute("datelist")%></td>
 		</tr>
 	</table>
 
-	<p>購入内容</p>
-
 </form>
 
-<form action="../UserViews/user_home.jsp" method="post">
+<form action="../UserViews/user_logout.jsp" method="post">
 	<p>
 		<input type="submit" class="push" value="ログアウト">
 	</p>

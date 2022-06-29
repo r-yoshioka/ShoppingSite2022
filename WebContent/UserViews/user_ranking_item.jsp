@@ -19,7 +19,7 @@
 			   <h1>SHOP</h1>
 			   <nav>
 				   <ul id="menu">
-					   <li><a href="../UserVews/user_top.jsp" class="push">TOP</a></li>
+					   <li><a href="../UserViews/user_top.jsp" class="push">TOP</a></li>
 					   <li class="has-child"><a href="#" class="push">CATEGORY</a>
 						   <ul>
 							   <li><a href="#" class="push">ALL ITEM</a></li>
@@ -28,7 +28,7 @@
 							   <li><a href="#" class="push">SKIN CARE</a></li>
 						   </ul>
 					   </li>
-					   <li><a href="#">CART</a></li>
+					   <li><a href="../UserViews/user_cart.jsp">CART</a></li>
 					   <li class="has-child"><a href="../UserViews/user_mypage.jsp">MYPAGE</a>
 						   <ul>
 							   <li class="mini">
@@ -56,82 +56,82 @@
      <table>
         <tr>
            <th>1位</th>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
+          <td><img src="../UserImg/I06281437.jpg" alt="face" width="80%"></td>
+				<td>ONE THING</td>
+				<td>￥2,160</td>
+				<td><a class="cart" href="">CART</a></td>
         </tr>
 
         <tr>
            <th>2位</th>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
+           <td><img src="../UserImg/I06281428.jpg" alt="body" width="80%"></td>
+				<td>ボディーソープ</td>
+				<td>￥1,540</td>
+				<td><a class="cart" href="">CART</a></td>
         </tr>
 
         <tr>
            <th>3位</th>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
+           <td><img src="../UserImg/I06281400.jpg" alt="hair" width="80%"></td>
+				<td>DROAS(PLANE)</td>
+				<td>￥1,980</td>
+				<td><a class="cart" href="">CART</a></td>
         </tr>
 
         <tr>
            <th>4位</th>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
+           <td><img src="../UserImg/I06281403.jpg" alt="hair" width="80%"></td>
+				<td>DROAS(PINK)</td>
+				<td>￥1,980</td>
+				<td><a class="cart" href="">CART</a></td>
         </tr>
 
         <tr>
            <th>5位</th>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
+           <td><img src="../UserImg/I06281422.jpg" alt="hair" width="80%"></td>
+				<td>DROAS(YELLOW)</td>
+				<td>￥1,980</td>
+				<td><a class="cart" href="">CART</a></td>
         </tr>
 
         <tr>
            <th>6位</th>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
+           <td><img src="../UserImg/I06281449.jpg" alt="face" width="80%"></td>
+				<td>ONE THING</td>
+				<td>￥2,160</td>
+				<td><a class="cart" href="">CART</a></td>
         </tr>
 
         <tr>
            <th>7位</th>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
+           <td><img src="../UserImg/I06281453.jpg" alt="body" width="80%"></td>
+				<td>ボディーソープ</td>
+				<td>￥1,540</td>
+				<td><a class="cart" href="">CART</a></td>
         </tr>
 
         <tr>
            <th>8位</th>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
+           <td><img src="../UserImg/I06281424.jpg" alt="body" width="80%"></td>
+				<td>ボディクリーム</td>
+				<td>￥1,540</td>
+				<td><a class="cart" href="">CART</a></td>
         </tr>
 
         <tr>
            <th>9位</th>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
+           <td><img src="../UserImg/I06281432.jpg" alt="body" width="80%"></td>
+				<td>ボディクリーム</td>
+				<td>￥1,540</td>
+				<td><a class="cart" href="">CART</a></td>
         </tr>
 
         <tr>
            <th>10位</th>
-           <td></td>
-           <td></td>
-           <td></td>
-           <td></td>
+          <td><img src="../UserImg/I06271046.jpg" alt="face" width="80%"></td>
+				<td>ONE THING</td>
+				<td>￥2,160</td>
+				<td><a class="cart" href="">CART</a></td>
         </tr>
      </table>
   </main>

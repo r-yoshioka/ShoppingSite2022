@@ -34,7 +34,7 @@ public class UserTop extends HttpServlet {
 		try {
 				List<UserTopBean> list = uid.search(keyword);
 				session.setAttribute("list", list);
-				request.getRequestDispatcher("../UserViews/user_top.jsp").forward(request, response);
+				request.getRequestDispatcher("../UserViews/user_face.jsp").forward(request, response);
 		} catch (Exception e) {
 			session.setAttribute("Smessage", UserMessage.S_01);
 			request.getRequestDispatcher("../UserViews/user_top.jsp").forward(request, response);

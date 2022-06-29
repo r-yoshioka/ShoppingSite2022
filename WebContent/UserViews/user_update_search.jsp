@@ -28,7 +28,7 @@
 							   <li class="has-child"><a href="#" class="push">SKIN CARE</a></li>
 						   </ul>
 					   </li>
-					   <li><a href="#">CART</a></li>
+					   <li><a href="../UserViews/user_cart.jsp">CART</a></li>
 					   <li class="has-child"><a href="../UserViews/user_mypage.jsp">MYPAGE</a>
 						   <ul>
 							   <li class="mini">

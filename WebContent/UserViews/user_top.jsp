@@ -224,14 +224,6 @@
 			     <p class="copyright">Risa Yoshioka<br>
 			                r.yoshioka@ks-japan.jp</p>
 			     <p class="copyright">Copyright:KSJ</p>
-
-				<form action="../servlets/UserLogin" method="post">
-					<p class="login">ようこそ！${loginName.name } さん！</p>
-				</form>
-
-				<form action="user_update_success.jsp" method="post">
-					<p class="login">おかえりなさい。${uub. name} さん！</p>
-				</form>
 		      </footer>
 			</section>
 			<!--/main-->
