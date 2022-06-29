@@ -2,22 +2,26 @@
 	pageEncoding="UTF-8"%>
 <%@ include file="../header.html"%>
 
+<h1 class="title">Login</h1>
+
 <form action="../servlets/UserLogin" method="post">
 
-	<p>
-		MAIL_ADDRESS：<input type="text" name="mailAddress"
-			value="${mailAddress }" required>
-	</p>
-	<p>
-		PASSWORD：<input type="password" name="password" required>
-	</p>
+	<table class="design">
+		<tr>
+			<th class="content">■MAIL ADDRESS</th>
+			<td class="input"><input type="text" name="mail_address"></td>
+		</tr>
 
-	<span class="LoginMessage">${LoginMessage} </span>
+		<tr>
+			<th class="content">■PASSWORD</th>
+			<td class="input"><input type="password" name="password"></td>
+		</tr>
 
-</form>
-
-<form action="../UserViews/user_top.jsp">
-	<input type="submit" value="ログイン">
+		<tr>
+			<th></th>
+			<td><input type="submit" value="ログイン"></td>
+		</tr>
+	</table>
 </form>
 
 <form action="user_home.jsp" method="post">
