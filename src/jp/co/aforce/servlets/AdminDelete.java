@@ -32,7 +32,7 @@ public class AdminDelete extends HttpServlet {
 		//パラメータの取得
 		RegistBean rb = new RegistBean();
 
-		rb.setItemId(request.getParameter("item_id"));
+		rb.setItemId(request.getParameter("itemId"));
 
 		//DAOオブジェクト宣言
 		AdminDAO adminDao = new AdminDAO();

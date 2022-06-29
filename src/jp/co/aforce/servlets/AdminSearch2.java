@@ -31,20 +31,20 @@ public class AdminSearch2 extends HttpServlet {
 
 		//パラメータの取得
 
-		String item_id = request.getParameter("item_id");
+		String itemId = request.getParameter("itemId");
 
 		//DAOオブジェクト宣言
 		AdminDAO adminDao = new AdminDAO();
 
 		try {
-			RegistBean rb = adminDao.searchId(item_id);
+			RegistBean rb = adminDao.searchId(itemId);
 
 			if (rb == null) {
 				request.setAttribute("messageE3", AdminMessage.E_03);
 				request.getRequestDispatcher("../AdminViews/admin_delete.jsp").forward(request, response);
 
 			} else {
-				request.setAttribute("item_id", item_id);
+				request.setAttribute("itemId", itemId);
 				request.setAttribute("rb", rb);
 				request.getRequestDispatcher("../AdminViews/admin_delete.jsp").forward(request, response);
 			}

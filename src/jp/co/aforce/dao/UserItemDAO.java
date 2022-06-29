@@ -37,4 +37,29 @@ public class UserItemDAO extends DAO {
 		return list;
 	}
 
+	public List<UserTopBean> itemSreach() throws Exception {
+
+		Connection con = getConnection();
+		List<UserTopBean> list = new ArrayList<UserTopBean>();
+
+		PreparedStatement st = con.prepareStatement(
+				"SELECT * FROM ITEM_INFO_KSJ");
+
+		ResultSet rs = st.executeQuery();
+
+		while (rs.next()) {
+			UserTopBean utb = new UserTopBean();
+			utb.setItemId(rs.getString("itemId"));
+			utb.setName(rs.getString("name"));
+			utb.setPrice(rs.getInt("price"));
+			utb.setNumber(rs.getInt("number"));
+			utb.setInfo(rs.getString("info"));
+			list.add(utb);
+		}
+		st.close();
+		con.close();
+
+		return list;
+	}
+
 }

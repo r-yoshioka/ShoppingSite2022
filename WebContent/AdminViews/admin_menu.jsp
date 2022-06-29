@@ -1,6 +1,10 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
+<link rel="stylesheet" type="text/css"
+	href="<%=request.getContextPath()%>/AdminCss/admin_menu.css">
 <%@include file="../header.html"%>
+
+<p>MENU</p>
 
 <form method="post" action="../Servlets/AdminAll">
 	<input class="menu" type="submit" value="商品情報一覧" name="all">

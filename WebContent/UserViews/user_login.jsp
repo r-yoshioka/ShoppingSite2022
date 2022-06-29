@@ -14,10 +14,10 @@
 
 	<span class="LoginMessage">${LoginMessage} </span>
 
-	<p>
-		<input type="submit" value="ログイン">
-	</p>
+</form>
 
+<form action="../UserViews/user_top.jsp">
+	<input type="submit" value="ログイン">
 </form>
 
 <form action="user_home.jsp" method="post">

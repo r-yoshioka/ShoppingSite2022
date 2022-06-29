@@ -65,4 +65,11 @@
          <p>copyright:KSJ,</p>
 </footer>
 
+<form action="../UserViews/user_reginst.jsp" method="post">
+	<p>
+		<input type="submit" class="push" value="戻る">
+	</p>
+</form>
+>>>>>>> branch 'staging' of https://github.com/r-yoshioka/ShoppingSite2022
+
 <%@ include file="../footer.html"%>

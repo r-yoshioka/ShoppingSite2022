@@ -13,7 +13,7 @@
 
 	<table class="design">
 		<tr>
-			<td class="input">商品番号： <input type="text" maxlength="10" name="item_id" value="${item_id}" required></td>
+			<td class="input">商品番号： <input type="text" maxlength="10" name="itemId" value="${itemId}" required></td>
 		</tr>
 		<tr>
 			<td class="input"><input type="submit" value="検索"></td>
@@ -24,7 +24,7 @@
 
 <form action="../Servlets/AdminUpdate" method="post">
 
-	<input type="hidden" name="item_id" value="${item_id}">
+	<input type="hidden" name="itemId" value="${itemId}">
 
 	<table class="design">
 		<tr>
@@ -38,6 +38,10 @@
 		</tr>
 		<tr>
 			<td class="input">個数： <input type="tel" name="number" value="${rb.number}" required>
+			</td>
+		</tr>
+		<tr>
+			<td class="input">商品詳細： <textarea name="info" cols="20" rows="10" required></textarea>
 			</td>
 		</tr>
 	</table>

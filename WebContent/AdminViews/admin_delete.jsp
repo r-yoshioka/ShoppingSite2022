@@ -12,7 +12,7 @@
 
 	<table class="design">
 		<tr>
-			<td class="input">商品番号： <input type="text" name="item_id" value="${item_id}" required></td>
+			<td class="input">商品番号： <input type="text" name="itemId" value="${itemId}" required></td>
 		</tr>
 		<tr>
 			<td class="input"><input type="submit" value="検索"></td>
@@ -23,20 +23,20 @@
 
 <form action="../Servlets/AdminDelete" method="post">
 
-	<input type="hidden" name="item_id" value="${item_id}">
+	<input type="hidden" name="itemId" value="${itemId}">
 
 	<table class="design">
 		<tr>
-			<td class="input">商品名： <input type="text" name="name" value="${rb.name}" required>
+			<td class="input">商品名： <input type="text" name="name" value="${rb.name}">
 			</td>
 		</tr>
 
 		<tr>
-			<td class="input">値段： <input type="tel" name="price" value="${rb.price}" required>
+			<td class="input">値段： <input type="tel" name="price" value="${rb.price}" >
 			</td>
 		</tr>
 		<tr>
-			<td class="input">個数： <input type="tel" name="number" value="${rb.number}" required>
+			<td class="input">個数： <input type="tel" name="number" value="${rb.number}" >
 			</td>
 		</tr>
 	</table>

@@ -33,6 +33,7 @@ public class AdminRegist extends HttpServlet {
 
 		//パラメータの取得
 		String name = request.getParameter("name");
+		String info = request.getParameter("info");
 		int price = Integer.parseInt(request.getParameter("price"));
 		int number = Integer.parseInt(request.getParameter("number"));
 
@@ -52,6 +53,7 @@ public class AdminRegist extends HttpServlet {
 		rb.setName(name);
 		rb.setPrice(price);
 		rb.setNumber(number);
+		rb.setInfo(info);
 
 		//DAOオブジェクト宣言
 		AdminDAO adminDao = new AdminDAO();
@@ -66,6 +68,7 @@ public class AdminRegist extends HttpServlet {
 
 			} else {
 				adminDao.insert(rb);
+				request.setAttribute("rb", rb);
 				request.setAttribute("messageI1", AdminMessage.I_01);
 				request.getRequestDispatcher("../AdminViews/admin_regist_success.jsp").forward(request, response);
 			}

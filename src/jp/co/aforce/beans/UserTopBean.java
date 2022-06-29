@@ -1,11 +1,12 @@
 package jp.co.aforce.beans;
 
-public class UserTopBean {
+public class UserTopBean implements java.io.Serializable {
 
 	private String itemId;
 	private String name;
 	private int price;
 	private int number;
+	private String info;
 
 	public String getItemId() {
 		return itemId;
@@ -23,6 +24,10 @@ public class UserTopBean {
 		return number;
 	}
 
+	public String getInfo() {
+		return info;
+	}
+
 	public void setItemId(String itemId) {
 		this.itemId = itemId;
 	}
@@ -37,6 +42,10 @@ public class UserTopBean {
 
 	public void setNumber(int number) {
 		this.number = number;
+	}
+
+	public void setInfo(String info) {
+		this.info = info;
 	}
 
 }

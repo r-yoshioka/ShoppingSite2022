@@ -9,6 +9,10 @@
 	<table class="design">
 
 		<tr>
+			<th class="content">■ID</th>
+			<td class="input">${rb.itemId}</td>
+		</tr>
+		<tr>
 			<th class="content">■NAME</th>
 			<td class="input">${rb.name}</td>
 		</tr>
@@ -21,6 +25,11 @@
 		<tr>
 			<th class="content">■NUMBER</th>
 			<td class="input">${rb.number}個</td>
+		</tr>
+
+		<tr>
+			<th class="content">■Infomation</th>
+			<td class="input">${rb.info}</td>
 		</tr>
 
 	</table>
