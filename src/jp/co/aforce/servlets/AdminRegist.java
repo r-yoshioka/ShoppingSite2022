@@ -68,6 +68,7 @@ public class AdminRegist extends HttpServlet {
 
 			} else {
 				adminDao.insert(rb);
+				request.setAttribute("rb", rb);
 				request.setAttribute("messageI1", AdminMessage.I_01);
 				request.getRequestDispatcher("../AdminViews/admin_regist_success.jsp").forward(request, response);
 			}
