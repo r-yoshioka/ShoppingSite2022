@@ -48,7 +48,7 @@
 	</p>
 </form>
 
-<form action="/UserViews/user_top.jsp" method="post">
+<form action="../UserViews/user_top.jsp" method="post">
 	<p>
 		<input type="submit" class="push" value="TOPへ戻る">
 	</p>
