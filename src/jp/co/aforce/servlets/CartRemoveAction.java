@@ -36,13 +36,20 @@ public class CartRemoveAction extends HttpServlet {
 			if (itemBean.getRegistBean().getItemId().equals(itemId)) {
 				cart.remove(itemBean);
 				break;
-			}else {
-				//商品の合計
-				sum = sum + itemBean.getRegistBean().getPrice() * itemBean.getCount();
-				itemBean.setSum(itemBean.getSum());
 			}
 		}
+		sum = getSum(cart, sum);
 		request.setAttribute("sum", sum);
 		request.getRequestDispatcher("../UserViews/user_cart.jsp").forward(request, response);
+	}
+
+	private int getSum(List<ItemBean> cart, int sum) {
+		for (ItemBean itemBean : cart) {
+			// 商品の合計
+			sum = sum + itemBean.getRegistBean().getPrice() * itemBean.getCount();
+			itemBean.setSum(itemBean.getSum());
+		}
+		return sum;
+
 	}
 }
