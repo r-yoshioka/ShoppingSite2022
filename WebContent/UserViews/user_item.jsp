@@ -10,27 +10,34 @@
 
 <hr>
 
-<form action="../servlets/UserIemInfo" method="post">
-	<div class="itemes">
-		<c:forEach var="rb" items="${list}">
+<div class="itemes">
+	<c:forEach var="rb" items="${list}">
 
-			<div>
-				<a href="<c:url value="../servlets/UserItemInfo">
+		<div>
+			<form action="../servlets/UserIemInfo" method="get">
+				<a
+					href="<c:url value="../servlets/UserItemInfo">
 					<c:param name="itemId" value="${rb.itemId }" /></c:url>">
 					<img src="../UserImg/${rb.itemId}.jpg">
 				</a>
 
-				<p>
-					<a href="<c:url value="../servlets/UserItemInfo">
+				<p><a href="<c:url value="../servlets/UserItemInfo">
 					<c:param name="itemId" value="${rb.itemId }" /></c:url>">${rb.name}</a>
 				</p>
 
 				<p>\ ${rb.price}</p>
-				<p><a class="cart" href="">CART</a></p>
-			</div>
+			</form>
 
-		</c:forEach>
-	</div>
-</form>
+			<form action="../servlets/CartAction" method="get">
+			<p>
+				<a class="cart" href="<c:url value="../servlets/CartAction">
+					<c:param name="itemId" value="${rb.itemId }" /></c:url>">CART</a>
+			</p>
+			</form>
+
+		</div>
+
+	</c:forEach>
+</div>
 
 <%@ include file="../footer.html"%>
