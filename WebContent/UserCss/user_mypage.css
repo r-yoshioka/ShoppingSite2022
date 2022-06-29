@@ -1,0 +1,186 @@
+@charset "UTF-8";
+
+h1 {
+	font-size : 300%;
+	font-family : 'Shadows Into Light', cursive;
+}
+
+/* HEADER */
+#header {
+	position : relative;
+	z-index : 999;
+	/*装飾のためのCSS*/
+	background : #222;
+	color : #f2f2f2;
+	display : flex;
+	justify-content : space-between;
+	align-items : center;
+	padding : 5px 20px;
+}
+
+/*右にある丸ナビゲーション色*/
+#multiscroll-nav span {
+	background : transparent !important;
+	border-color : #fff !important;
+}
+
+/*右にある丸のナビゲーション現在地色*/
+#multiscroll-nav li .active span {
+	background : #fff !important;
+}
+
+/*右上のナビゲーション*/
+#menu li {
+	display : inline-block;
+	margin : 15px;
+}
+
+#menu li a {
+	text-decoration : none;
+	color : #fff;
+	padding : 5px 10px;
+	display : block;
+	border-radius : 10px;
+	font-family : 'Shadows Into Light', cursive;
+}
+
+#menu li.active a {
+	color : #666;
+}
+
+.mini {
+	font-size : 20px;
+	/*矢印と下線の基点とするためrelativeを指定*/
+	position : relative;
+	/*形状*/
+	display : inline-block;
+	padding : 0 20px;
+	color : #fff;
+	text-decoration : none;
+	outline : none;
+}
+
+/*矢印と下線の形状*/
+.mini::before {
+	content : '';
+	/*絶対配置で下線の位置を決める*/
+	position : absolute;
+	bottom : -8px;
+	left : 15%;
+	/*下線の形状*/
+	width : 85%;
+	height : 1px;
+	background : #fff;
+	/*アニメーションの指定*/
+	transition : all .3s;
+}
+
+.mini::after {
+	content : '';
+	/*絶対配置で矢印の位置を決める*/
+	position : absolute;
+	bottom : -3px;
+	right : 0;
+	/*矢印の形状*/
+	width : 15px;
+	height : 1px;
+	background : #fff;
+	transform : rotate(35deg);
+	/*アニメーションの指定*/
+	transition : all .3s;
+}
+
+/*hoverした際の移動*/
+.mini:hover::before {
+	left : 20%;
+}
+
+.mini:hover::after {
+	right : -5%;
+}
+
+/*2階層目以降は横並びにしない*/
+nav ul ul {
+	display : block;
+}
+
+/*下の階層のulや矢印の基点にするためliにrelativeを指定*/
+nav ul li {
+	position : relative;
+}
+
+/*2階層目を持つliの矢印の設定*/
+nav ul li.has-child::before {
+	content : '';
+	position : absolute;
+	left : 15px;
+	top : 25px;
+	width : 6px;
+	height : 6px;
+	border-top : 2px solid #999;
+	border-right : 2px solid #999;
+	transform : rotate(135deg);
+}
+
+/*下の階層を持っているulの指定*/
+nav li.has-child ul {
+	/*絶対配置で位置を指定*/
+	position : absolute;
+	right : -100px;
+	top : 62px;
+	z-index : 4;
+	/*形状を指定*/
+	background : #808080;
+	width : 800px;
+	height : 700px;
+	/*はじめは非表示*/
+	visibility : hidden;
+	opacity : 0;
+	/*アニメーション設定*/
+	transition : all .4s;
+}
+
+/*hoverしたら表示*/
+nav li.has-child:hover>ul, nav li.has-child ul li:hover>ul, nav li.has-child:active>ul,
+	nav li.has-child ul li:active>ul {
+	visibility : visible;
+	opacity : 1;
+}
+
+/*ナビゲーションaタグの形状*/
+nav li.has-child ul li a {
+	color : #fff;
+	border-bottom : 10px white;
+}
+
+/*矢印の位置と向き*/
+nav ul li.has-child::before {
+	position : absolute;
+	top : 30%;
+	left : -5%;
+}
+
+nav ul ul li.has-child::before {
+	transform : rotate(135deg);
+	left : 20px;
+}
+
+nav ul li.has-child.active::before {
+	transform : rotate(-45deg);
+}
+
+/*footer設定*/
+#footer {
+	background : #333;
+	color : #fff;
+	padding : 40px;
+	text-align : center;
+}
+
+#footer a {
+	color : #000000;
+}
+
+.copyright {
+	color : #fff;
+}

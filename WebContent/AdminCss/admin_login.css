@@ -1,0 +1,57 @@
+@charset "UTF-8";
+
+.header {
+	text-align: center;
+	font-size: 150%;
+}
+
+.message {
+	color: #f00;
+	text-align: center;
+}
+
+.design {
+	width: 60%;
+	margin-top: 200px;
+	margin-bottom: 20px;
+	margin-right: auto;
+	margin-left: auto;
+}
+
+.content, .input {
+	padding: 20px;
+	border: 1px solid #ccc;
+}
+
+.content {
+	text-align: left;
+	width: 30%;
+	background-color: #eee;
+}
+
+.input {
+	width: 70%;
+}
+
+button.btn-border {
+	border: 2px solid #000;
+	border-radius: 0;
+	background: #fff;
+	text-align: center;
+}
+
+button.btn-border:hover {
+	color: #fff;
+	background: #000;
+	text-align: center;
+}
+
+.push {
+	text-align: center;
+	padding: 10px 10px;
+	margin-top: 20px;
+	margin-right: 50px;
+	margin-left: 120px;
+	width: 20%;
+	float: left;
+}

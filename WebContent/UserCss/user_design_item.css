@@ -1,0 +1,62 @@
+@charset "UTF-8";
+
+h1 {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 2vh;
+}
+
+.itemes {
+	width: 90%;
+	margin: auto;
+	display: flex;
+	flex-wrap: wrap;
+}
+
+.itemes div {
+	width: 20%;
+	margin-left: 4.0%;
+	margin-bottom: 3vh;
+	background: white;
+	box-shadow: 2px 2px 2px 2px #efefef;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+p {
+	text-decoration: none;
+	padding: 1vh 2vh;
+	text-align: center;
+}
+
+p:last-child {
+	border-top: 3px dotted #efefef;
+	text-align: right;
+}
+
+a {
+	text-decoration: none;
+	transition: color 0.3s;
+}
+
+.cart {
+	background-image: url(../UserImg/cart_icon.jpeg); /*背景画像のパス*/
+	background-repeat: no-repeat; /*背景画像の繰り返し*/
+	background-position: center right; /*背景画像の配置*/
+	padding-right: 50px;
+	z-index:1000;
+}
+
+a:link { /*アクセスしたことのないリンク*/
+	color: black;
+}
+
+a:hover { /*マウスが上に乗っている状態*/
+	color: #FF0099;
+	text-decoration: underline;
+}
+
+img {
+	width: 100%;
+}

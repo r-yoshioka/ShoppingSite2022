@@ -1,0 +1,44 @@
+@charset "UTF-8";
+
+h1, p {
+	text-align: center;
+	font-size: 2rem;
+	margin-bottom: 2vh;
+}
+
+.itemes {
+	margin: auto;
+}
+
+.itemes div {
+	background: white;
+	flex-direction: column;
+	justify-content: space-between;
+}
+
+p {
+	text-decoration: none;
+	padding: 1vh 2vh;
+	text-align: center;
+}
+
+.items th td{
+	text-align: center;
+}
+
+a:link { /*アクセスしたことのないリンク*/
+	color: black;
+}
+
+a:hover { /*マウスが上に乗っている状態*/
+	color: #FF0099;
+	text-decoration: underline;
+}
+
+img {
+	width: 100%;
+}
+
+.buttun {
+	text-align: right;
+}

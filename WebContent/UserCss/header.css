@@ -1,0 +1,288 @@
+@charset "UTF-8";
+
+h1 {
+	font-size: 300%;
+	font-family: 'Shadows Into Light', cursive;
+}
+
+/* HEADER */
+#header {
+	position: relative;
+	z-index: 999;
+	/*装飾のためのCSS*/
+	background: #222;
+	color: #f2f2f2;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	padding: 5px 20px;
+}
+
+/*右上のナビゲーション*/
+#menu li {
+	display: inline-block;
+	margin: 10px;
+	text-align:left;
+}
+
+#menu li a {
+	text-decoration: none;
+	color: #fff;
+	margin:15px;
+	display: block !important;
+	border-radius: 10px;
+	font-size: 20px;
+	font-family: 'Shadows Into Light', cursive;
+}
+
+#menu li.active a {
+	color: #666;
+}
+
+.mini2 a{
+	font-size: 20px;
+}
+
+.mini {
+	/*矢印と下線の基点とするためrelativeを指定*/
+	position: relative;
+	/*形状*/
+	display: block;
+	padding: 0 20px;
+	color: #fff;
+	text-decoration: none;
+	outline: none;
+}
+
+/*矢印と下線の形状*/
+.mini::before {
+	content: '';
+	/*絶対配置で下線の位置を決める*/
+	position: absolute;
+	bottom: -8px;
+	left: 15%;
+	/*下線の形状*/
+	width: 85%;
+	height: 1px;
+	background: #fff;
+	/*アニメーションの指定*/
+	transition: all .3s;
+}
+
+.mini::after {
+	content: '';
+	/*絶対配置で矢印の位置を決める*/
+	position: absolute;
+	bottom: -3px;
+	right: 0;
+	/*矢印の形状*/
+	width: 15px;
+	height: 1px;
+	background: #fff;
+	transform: rotate(35deg);
+	/*アニメーションの指定*/
+	transition: all .3s;
+}
+
+/*hoverした際の移動*/
+.mini:hover::before {
+	left: 20%;
+}
+
+.mini:hover::after {
+	right: -5%;
+}
+
+nav {
+	width:60%;
+}
+
+nav ul {
+	display:flex;
+}
+
+/*2階層目以降は横並びにしない*/
+nav ul ul {
+	display: block;
+}
+
+/*下の階層のulや矢印の基点にするためliにrelativeを指定*/
+nav ul li {
+	position: relative;
+}
+
+/*2階層目を持つliの矢印の設定*/
+nav ul li.has-child::before {
+	content: '';
+	position: absolute;
+	left: 15px;
+	top: 25px;
+	width: 6px;
+	height: 6px;
+	border-top: 2px solid #999;
+	border-right: 2px solid #999;
+	transform: rotate(135deg);
+}
+
+/*下の階層を持っているulの指定*/
+nav li.has-child ul {
+	/*絶対配置で位置を指定*/
+	position: absolute;
+	text-align: center;
+	right: -100px;
+	top: 60px;
+	z-index: 999;
+	/*形状を指定*/
+	background: #808080;
+	width: 800px;
+	height: 700px;
+	/*はじめは非表示*/
+	visibility: hidden;
+	opacity: 0;
+	/*アニメーション設定*/
+	transition: all .4s;
+}
+
+/*hoverしたら表示*/
+nav li.has-child:hover>ul,
+nav li.has-child ul li:hover>ul,
+nav li.has-child:active>ul,
+nav li.has-child ul li:active>ul {
+	visibility: visible;
+	opacity: 1;
+}
+
+/*ナビゲーションaタグの形状*/
+nav li.has-child ul li a {
+	flex-direction:column !important;
+	color: #fff;
+	border-bottom: 10px white;
+}
+
+/*矢印の位置と向き*/
+nav ul li.has-child::before {
+	position: absolute;
+	top: 35%;
+	left: 8%;
+}
+
+nav ul ul li.has-child::before {
+	transform: rotate(135deg);
+	left: 20px;
+}
+
+nav ul li.has-child.active::before {
+	transform: rotate(-45deg);
+}
+
+.navi{
+	font-size:23px !important;
+	padding:5px 20px;
+}
+
+.cart-btn{
+	position: absolute;
+	/*カートの位置*/
+	background: #fff url("../UserImg/カートのアイコン素材.png") no-repeat 15px center;
+	background-size: 25px 25px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+}
+
+/*========= 検索窓を開くための虫眼鏡ボタン設定 ===========*/
+.open-btn {
+	position: absolute;
+	/*虫眼鏡の位置*/
+	background: #fff url("../UserImg/虫眼鏡のアイコン.png") no-repeat 15px center;
+	/*虫眼鏡アイコンを背景に表示*/
+	background-size: 20px 20px;
+	width: 50px;
+	height: 50px;
+	border-radius: 50%;
+	cursor: pointer;
+	margin:15px;
+	margin-left:110px;
+}
+
+/*========= 検索窓の設定 ===============*/
+
+/*==検索窓背景のエリア*/
+#search-wrap {
+	top: 0;
+	left: 0;
+	z-index: -1; /*最背面に設定*/
+	opacity: 0; /*透過を0に*/
+	transition: all 0.4s; /*transitionを使ってスムースに現れる*/
+	width: 100%;
+	height: 100%;
+}
+
+/*ボタンクリック後、JSで#search-wrapに panelactive クラスが付与された後の見た目*/
+#search-wrap.panelactive {
+	position: absolute;
+    width: 130rem;
+    height: 6rem;
+    left: -83rem;
+    top: 5.7rem;
+	opacity: 1; /*不透明に変更*/
+	z-index: 3; /*全面に出現*/
+	background: #333;
+	/*中の要素を天地中央揃えにする設定*/
+	display: flex;
+	justify-content: center;
+	align-items: center;
+}
+
+/*==検索窓のエリア*/
+#search-wrap .search-area {
+	display: none; /*検索窓のエリアは、はじめ非表示*/
+}
+
+/*ボタンクリック後、JSで#search-wrapに panelactive クラスが付与された後*/
+#search-wrap.panelactive .search-area {
+	display: block; /*検索窓エリアを表示*/
+	width: 50%;
+	position: relative;
+}
+
+/*==検索フォームの設定*/
+#search-wrap form {
+	position: relative;
+	height: 66px;
+}
+
+/*==テキスト入力とボタンinput共通設定*/
+#search-wrap input {
+	-webkit-appearance: none; /*SafariやChromeのデフォルトの設定を無効*/
+	outline: none;
+	cursor: pointer; /*カーソルを指マークに*/
+	color: #fff;
+}
+
+/*テキスト入力input設定*/
+#search-wrap input[type="text"] {
+	width: 100%;
+	padding: 20px;
+	border: none;
+	border-bottom: 2px solid #666;
+	transition: all 0.5s;
+	letter-spacing: 0.05em;
+}
+
+#search-wrap input[type="text"]:focus {
+	background: #444;
+}
+
+/*ボタンinput設定*/
+#search-wrap input[type="submit"] {
+	position: absolute;
+	top: 0;
+	right: 10px;
+	background: url("../UserImg/虫眼鏡のアイコン.png") no-repeat 15px center;
+	/*虫眼鏡アイコンを背景に表示*/
+	background-size: 25px 25px;
+	width: 60px;
+	height: 60px;
+}

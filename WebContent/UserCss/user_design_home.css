@@ -1,0 +1,38 @@
+@charset "UTF-8";
+
+.title {
+	font-family: 'Shadows Into Light', cursive;
+	color: white;
+	font-weight: bolder;
+	text-align: center; /* 文字中央寄せ */
+	letter-spacing: 0.3em; /* 文字の間隔 */
+	font-weight: bold; /* 文字太め */
+	margin-top: 200px;
+	font-size: 50px;
+}
+
+.push {
+	padding: 1em; /* ボタンの余白 */
+	display: block; /* ボタン中央 */
+	width: 150px;
+	margin: 0 auto;
+}
+
+body {
+	background-image: url(../UserImg/user_home.jpg);/* 背景画像指定 */
+	background-color: black;
+	background-repeat : no-repeat;/* 画像繰り返しなし */
+	background-position: center; /* 画像中央寄せ */
+	width: auto;
+	height: auto;
+	background-repeat: no-repeat;
+}
+
+img{
+	background-size: 20px 20px;
+	width: 30px;
+	height: 30px;
+	border-radius: 50%;
+	cursor: pointer;
+
+}
