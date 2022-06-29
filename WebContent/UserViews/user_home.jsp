@@ -13,7 +13,7 @@
 </head>
 <body>
 
-	<p class="title">-STORE NAME-</p>
+	<p class="title">-LIM ORGANIC-</p>
 
 	<section class="background">
 

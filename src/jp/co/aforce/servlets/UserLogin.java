@@ -7,6 +7,7 @@ import javax.servlet.annotation.WebServlet;
 import javax.servlet.http.HttpServlet;
 import javax.servlet.http.HttpServletRequest;
 import javax.servlet.http.HttpServletResponse;
+import javax.servlet.http.HttpSession;
 
 import jp.co.aforce.beans.UserLoginBean;
 import jp.co.aforce.dao.UserLoginDAO;
@@ -21,6 +22,8 @@ public class UserLogin extends HttpServlet {
 		request.setCharacterEncoding("UTF-8");
 		response.setContentType("text/html; charset = UTF-8");
 
+		HttpSession session = request.getSession();
+
 		String mailAddress = request.getParameter("mailAddress");
 		String password = request.getParameter("password");
 
@@ -32,12 +35,12 @@ public class UserLogin extends HttpServlet {
 			String logId = ulb.getMailAddress();
 
 			if (logId != null) {
-				request.setAttribute("loginName", ulb);
+				session.setAttribute("loginName", ulb);
 				request.getRequestDispatcher("../UserViews/user_top.jsp").forward(request, response);
 			} else {
 				request.setAttribute("LoginMessage", UserMessage.L_01);
-				request.setAttribute("mailAddress", mailAddress);
-				request.setAttribute("password", "");
+				session.setAttribute("mailAddress", mailAddress);
+				session.setAttribute("password", "");
 				request.getRequestDispatcher("../UserViews/user_login.jsp").forward(request, response);
 			}
 
