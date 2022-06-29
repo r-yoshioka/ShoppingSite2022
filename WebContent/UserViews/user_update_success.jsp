@@ -1,10 +1,13 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
 <%@ include file="../header.html"%>
+<link rel="stylesheet" type="text/css" href="../UserCss/user_update.css">
 
 <form action="../servlets/UserUpdate" method="post">
 
 	<p class="header">入力内容（確認画面）</p>
+
+	<p>以下の内容で変更いたしました。</p>
 
 	<table class="design">
 
@@ -45,13 +48,13 @@
 
 </form>
 
-<form action="user_top.jsp" method="post">
+<form action="../UserViews/user_update.jsp" method="post">
 	<p>
-		<input type="submit" class="push" value="確認">
+		<input type="submit" class="push" value="変更画面へ戻る">
 	</p>
 </form>
 
-<form action="/UserViews/user_update_search.jsp" method="post">
+<form action="../UserViews/user_top.jsp" method="post">
 	<p>
 		<input type="submit" class="push" value="TOPへ戻る">
 	</p>
