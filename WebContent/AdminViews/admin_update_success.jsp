@@ -9,6 +9,10 @@
 	<table class="design">
 
 		<tr>
+			<th class="content">■ID</th>
+			<td class="input">${rb.itemId}</td>
+		</tr>
+		<tr>
 			<th class="content">■NAME</th>
 			<td class="input">${rb.name}</td>
 		</tr>

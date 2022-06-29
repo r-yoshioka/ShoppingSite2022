@@ -1,0 +1,14 @@
+@charset "UTF-8";
+
+p{
+	font-size: 200%;
+	text-align: center;
+	font-weight: bold;
+}
+
+.menu{
+	padding: 1em; /* ボタンの余白 */
+	display: block; /* ボタン中央 */
+	width: 150px;
+	margin: 90 auto;
+}
