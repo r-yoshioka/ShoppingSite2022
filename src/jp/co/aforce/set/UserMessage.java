@@ -24,4 +24,8 @@ public class UserMessage {
 	public static final String S_02 = "検索情報が見つかりません。";
 	public static final String S_03 = "の検索結果です。";
 
+	//お客様情報入力
+	public static final String O_01 = "入力内容に誤りがあります。";
+	public static final String O_02 = "エラーが発生しました。";
+
 }
