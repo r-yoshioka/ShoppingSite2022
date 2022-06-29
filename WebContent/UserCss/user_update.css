@@ -28,13 +28,13 @@
 
 /*右にある丸ナビゲーション色*/
 #multiscroll-nav span {
-	background: transparent !important;
-	border-color: #fff !important;
+	background: transparent ;
+	border-color: #fff ;
 }
 
 /*右にある丸のナビゲーション現在地色*/
 #multiscroll-nav li .active span {
-	background: #fff !important;
+	background: #fff ;
 }
 
 /*右上のナビゲーション*/
