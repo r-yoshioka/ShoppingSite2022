@@ -43,45 +43,6 @@ public class UserOrder extends HttpServlet {
 			request.setAttribute("orderBean", uob);
 			request.getRequestDispatcher("../UserViews/user_customer_success.jsp").forward(request, response);
 
-//			DateTimeFormatter format = DateTimeFormatter.ofPattern("yyMMddHHmmss");
-//			LocalDateTime ld = LocalDateTime.now();
-//			String orderId = ld.format(format);
-//
-//			uob.setOrderId("O" + orderId);
-//			uob.setMemberId("m" + orderId);
-//			uob.setPost(post);
-//			uob.setPrefectures(prefectures);
-//			uob.setAddress(address);
-//			uob.setPayment(payment);
-//			uob.setDate(date);
-//
-//			UserReginstModel urm = new UserReginstModel();
-//
-//			String result = urm.orderCheck(uob);
-//
-//			if (result != null) {
-//				request.setAttribute("Omessage", UserMessage.O_01);
-//				request.getRequestDispatcher("../UserViews/user_customer_input.jsp").forward(request, response);
-//			}
-//
-//			UserOrderDAO uod = new UserOrderDAO();
-//
-//			int line = uod.insert(uob);
-//
-//			if (line > 0) {
-//				request.setAttribute("message", UserMessage.R_03);
-//				request.getRequestDispatcher("../UserViews/user_customer_input.jsp").forward(request, response);
-//			} else {
-//				request.setAttribute("name", name);
-//				request.setAttribute("post", post);
-//				request.setAttribute("prefectures", prefectures);
-//				request.setAttribute("address", address);
-//				request.setAttribute("payment", payment);
-//				request.setAttribute("date", date);
-//				request.setAttribute("orderBean", uob);
-//				request.getRequestDispatcher("../UserViews/user_customer_success.jsp").forward(request, response);
-//			}
-//
 		} catch (Exception e) {
 			request.setAttribute("message", UserMessage.O_02);
 			request.getRequestDispatcher("../UserViews/user_customer_input.jsp").forward(request, response);
