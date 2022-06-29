@@ -13,7 +13,7 @@ import javax.servlet.http.HttpServletResponse;
 
 import jp.co.aforce.beans.UserOrderBean;
 import jp.co.aforce.dao.UserOrderDAO;
-import jp.co.aforce.model.UserReginstModel;
+import jp.co.aforce.model.UserOrderModel;
 import jp.co.aforce.set.UserMessage;
 import jp.co.aforce.tool.Page;
 
@@ -50,7 +50,7 @@ public class UserOrder extends HttpServlet {
 			uob.setPayment(payment);
 			uob.setDate(date);
 
-			UserReginstModel urm = new UserReginstModel();
+			UserOrderModel urm = new UserOrderModel();
 
 			String result = urm.orderCheck(uob);
 
