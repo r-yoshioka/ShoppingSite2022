@@ -1,91 +1,90 @@
 @charset "UTF-8";
 
-.topic{
-    font-size: 40px;
-    font-weight: bold;
-    margin-bottom: 40px;
-    text-align: center;
+.topic {
+	font-size: 40px;
+	font-weight: bold;
+	margin-bottom: 40px;
+	text-align: center;
 }
 
-.design{
+.design {
 	width: 60%;
-	margin-top:10px;
-    margin-bottom: 20px;
-    margin-right:auto;
-    margin-left:auto;
+	margin-top: 10px;
+	margin-bottom: 20px;
+	margin-right: auto;
+	margin-left: auto;
 }
 
-.content,.input {
-    padding: 20px;
-    border: 1px solid #ccc;
+.content, .input {
+	padding: 20px;
+	border: 1px solid #ccc;
 }
 
 .content {
-    text-align: left;
-    width: 30%;
-    background-color: #eee;
+	text-align: left;
+	width: 30%;
+	background-color: #eee;
 }
 
 .input {
-    width: 70%;
+	width: 70%;
 }
 
 .finish a {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  position: relative;
-  margin: 0 auto;
-  padding: 1em 2em;
-  width: 300px;
-  color: #333;
-  font-size: 18px;
-  font-weight: 700;
-  background-color: #ccc;
-  transition: 0.3s;
+	display: flex;
+	justify-content: space-between;
+	align-items: center;
+	position: relative;
+	margin: 0 auto;
+	padding: 1em 2em;
+	width: 300px;
+	color: #333;
+	font-size: 18px;
+	font-weight: 700;
+	background-color: #ccc;
+	transition: 0.3s;
 }
 
 .finish a::before {
-  content: '';
-  position: absolute;
-  top: -5px;
-  left: -5px;
-  width: calc(100% - 4px);
-  height: calc(100% - 4px);
-  border: 2px solid #000000;
-  transition: 0.2s;
+	content: '';
+	position: absolute;
+	top: -5px;
+	left: -5px;
+	width: calc(100% - 4px);
+	height: calc(100% - 4px);
+	border: 2px solid #000000;
+	transition: 0.2s;
 }
 
 .finish a::after {
-  content: '';
-  width: 5px;
-  height: 5px;
-  border-top: 3px solid #333333;
-  border-right: 3px solid #333333;
-  transform: rotate(45deg);
+	content: '';
+	width: 5px;
+	height: 5px;
+	border-top: 3px solid #333333;
+	border-right: 3px solid #333333;
+	transform: rotate(45deg);
 }
 
 .finish a:hover::before {
-  top: 0;
-  left: 0;
+	top: 0;
+	left: 0;
 }
 
 .finish a:hover {
-  text-decoration: none;
-  background-color: #a0c4d3;
+	text-decoration: none;
+	background-color: #a0c4d3;
 }
-
 
 /*支払方法 アコーディオン全体*/
-.accordion-area{
-    list-style: none;
-    width: 96%;
-    max-width: 900px;
-    margin:0 auto;
+.accordion-area {
+	list-style: none;
+	width: 96%;
+	max-width: 900px;
+	margin: 0 auto;
 }
 
-.accordion-area li{
-    margin: 10px 0;
+.accordion-area li {
+	margin: 10px 0;
 }
 
 .accordion-area section {
@@ -94,51 +93,48 @@
 
 /*アコーディオンタイトル*/
 .title {
-    position: relative;/*+マークの位置基準とするためrelative指定*/
-    cursor: pointer;
-    font-size:1rem;
-    font-weight: normal;
-    padding: 3% 3% 3% 50px;
-    transition: all .5s ease;
+	position: relative; /*+マークの位置基準とするためrelative指定*/
+	cursor: pointer;
+	font-size: 1rem;
+	font-weight: normal;
+	padding: 3% 3% 3% 50px;
+	transition: all .5s ease;
 }
 
 /*アイコンの＋と×*/
-.title::before,
-.title::after{
-    position: absolute;
-    content:'';
-    width: 15px;
-    height: 2px;
-    background-color: #333;
-
+.title::before, .title::after {
+	position: absolute;
+	content: '';
+	width: 15px;
+	height: 2px;
+	background-color: #333;
 }
-.title::before{
-    top:48%;
-    left: 15px;
-    transform: rotate(0deg);
 
+.title::before {
+	top: 48%;
+	left: 15px;
+	transform: rotate(0deg);
 }
-.title::after{
-    top:48%;
-    left: 15px;
-    transform: rotate(90deg);
 
+.title::after {
+	top: 48%;
+	left: 15px;
+	transform: rotate(90deg);
 }
 
 /*　closeというクラスがついたら形状変化　*/
-
-.title.close::before{
+.title.close::before {
 	transform: rotate(45deg);
 }
 
-.title.close::after{
+.title.close::after {
 	transform: rotate(-45deg);
 }
 
 /*アコーディオンで現れるエリア*/
 .box {
-    display: none;/*はじめは非表示*/
-    background: #f3f3f3;
-	margin:0 3% 3% 3%;
-    padding: 3%;
+	display: none; /*はじめは非表示*/
+	background: #f3f3f3;
+	margin: 0 3% 3% 3%;
+	padding: 3%;
 }
