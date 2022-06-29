@@ -1,6 +1,6 @@
 package jp.co.aforce.beans;
 
-public class UserTopBean implements java.io.Serializable {
+public class UserTopItemBean implements java.io.Serializable {
 
 	private String itemId;
 	private String name;
@@ -47,5 +47,7 @@ public class UserTopBean implements java.io.Serializable {
 	public void setInfo(String info) {
 		this.info = info;
 	}
+
+
 
 }
