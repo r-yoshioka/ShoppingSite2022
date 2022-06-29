@@ -50,6 +50,5 @@ public class CartRemoveAction extends HttpServlet {
 			itemBean.setSum(itemBean.getSum());
 		}
 		return sum;
-
 	}
 }
