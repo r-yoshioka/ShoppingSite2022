@@ -1,15 +1,27 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
 	pageEncoding="UTF-8"%>
-<%@ include file="../header.html"%>
+<!DOCTYPE html>
+<html>
+   <head>
+      <meta charset="UTF-8">
+      <title>会員情報登録画面</title>
+      <link rel="stylesheet" type="text/css" href="../UserCss/user_regist.css">
+      <link href="https://fonts.googleapis.com/css2?family=Smooch&display=swap" rel="stylesheet">
+   </head>
 
-<form action="../servlets/UserReginst" method="post">
+   <body>
+      <header>
+          <h1 class="shopName">SHOP</h1>
+      </header>
 
-	<p class="header">会員登録画面</p>
+   <main>
+      <form action="../servlets/UserReginst" method="post">
 
-	<p>${message }</p>
+	  <h1 class="header">会員登録画面</h1>
 
-	<table class="design">
+	  <p class="message">${message }</p>
 
+	  <table class="design">
 		<tr>
 			<th class="content">■NAME</th>
 			<td class="input"><input type="text" name="name" size="15"
@@ -200,21 +212,30 @@
 			<th class="content">■PASSWORD</th>
 			<td class="input"><input type="password" name="password"
 				maxlength="20">
-	</table>
+	  </table>
 
-	<p>
-		<input type="submit" class="push" value="登録">
-	</p>
-	<p>
-		<input type="reset" class="push" value="リセット">
-	</p>
+	  <p>
+		  <input type="submit" class="push" value="登録">
+	  </p>
+	  <p>
+		  <input type="reset" class="push" value="リセット">
+	  </p>
+      </form>
 
-</form>
+      <form action="user_home.jsp" method="post">
+	      <p>
+		      <input type="submit" class="push" value="戻る">
+	      </p>
+      </form>
+   </main>
 
-<form action="user_home.jsp" method="post">
-	<p>
-		<input type="submit" class="push" value="戻る">
-	</p>
-</form>
+      <footer>
+         <p>Minami Shingaki<br>
+              M.shingaki@ks-japan.jp</p>
+         <p>Risa Yoshioka<br>
+              R.yoshioka@ks-japan.jp</p>
+         <p>copyright:KSJ,</p>
+      </footer>
+</body>
 
 <%@ include file="../footer.html"%>
