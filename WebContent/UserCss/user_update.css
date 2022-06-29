@@ -4,6 +4,13 @@
 	text-align:center;
 	font-size: 150%;
 	font-family: 'Shadows Into Light', cursive;
+	margin-top:80px;
+	margin-bottom:70px;
+}
+
+.push {
+	margin-top:80px;
+	margin-bottom:100px;
 }
 
 /* HEADER */

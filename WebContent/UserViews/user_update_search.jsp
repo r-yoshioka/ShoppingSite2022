@@ -22,10 +22,10 @@
 					   <li><a href="../UserVews/user_top.jsp" class="push">TOP</a></li>
 					   <li class="has-child"><a href="#" class="push">CATEGORY</a>
 						   <ul>
-							   <li><a href="#" class="push">ALL ITEM</a></li>
-							   <li><a href="#" class="push">HAIR CARE</a></li>
-							   <li><a href="#" class="push">BODY CARE</a></li>
-							   <li><a href="#" class="push">SKIN CARE</a></li>
+							   <li class="has-child"><a href="#" class="push">ALL ITEM</a></li>
+							   <li class="has-child"><a href="#" class="push">HAIR CARE</a></li>
+							   <li class="has-child"><a href="#" class="push">BODY CARE</a></li>
+							   <li class="has-child"><a href="#" class="push">SKIN CARE</a></li>
 						   </ul>
 					   </li>
 					   <li><a href="#">CART</a></li>
@@ -65,7 +65,7 @@
 			<td class="input"><input type="password" name="password" size="30" maxlength="20"></td>
 		</tr>
 
-		<tr>
+		<tr class="search">
 		    <th></th>
 			<td><input type="submit" class="push" value="検索"></td>
 		</tr>
