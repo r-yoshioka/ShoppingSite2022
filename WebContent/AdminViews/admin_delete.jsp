@@ -27,20 +27,16 @@
 
 	<table class="design">
 		<tr>
-			<td class="input">商品名： <input type="text" name="name" value="${rb.name}" required>
+			<td class="input">商品名： <input type="text" name="name" value="${rb.name}">
 			</td>
 		</tr>
 
 		<tr>
-			<td class="input">値段： <input type="tel" name="price" value="${rb.price}" required>
+			<td class="input">値段： <input type="tel" name="price" value="${rb.price}" >
 			</td>
 		</tr>
 		<tr>
-			<td class="input">個数： <input type="tel" name="number" value="${rb.number}" required>
-			</td>
-		</tr>
-		<tr>
-			<td class="input">商品詳細： <textarea name="info" cols="20" rows="10" <%= "${info}" %> required></textarea>
+			<td class="input">個数： <input type="tel" name="number" value="${rb.number}" >
 			</td>
 		</tr>
 	</table>
