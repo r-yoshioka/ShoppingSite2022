@@ -1,25 +1,28 @@
 <%@ page language="java" contentType="text/html; charset=UTF-8"
     pageEncoding="UTF-8"%>
 <%@ include file="../header.html"%>
+<link rel="stylesheet" type="text/css" href="../UserCss/user_customer_input.css">
 
-<h1>Customer Information </h1>
+<form action="../servlets/UserOrder" method="post">
 
-<table>
+<h1 class="topic">Customer Information </h1>
+
+<table class="design">
 <tr>
-<th>NAME</th>
-<td><input type="text" name="name" size="15" maxlength="32"></td>
+<th class="content">NAME</th>
+<td class="input"><input type="text" name="name" size="15" maxlength="32"></td>
 </tr>
 
 <tr>
-<th>POST</th>
-<td>
+<th class="content">POST</th>
+<td class="input">
 <input type="number" name="post" size="5" maxlength="7">
 </td>
 </tr>
 
 <tr>
-<th>PREFECTURES</th>
-<td>
+<th class="content">PREFECTURES</th>
+<td class="input">
 <select name="prefectures">
 <option value=""></option>
 <option value="北海道">北海道</option>
@@ -74,21 +77,79 @@
 </tr>
 
 <tr>
-<th>ADDRESS</th>
-<td><input type="text" name="address" size="20" maxlength="32"></td>
+<th class="content">ADDRESS</th>
+<td class="input"><input type="text" name="address" size="20" maxlength="32"></td>
 </tr>
 
 <tr>
-<th>PAYMENT</th>
-<td><input type="radio" name="payment" value="代金引換">代金引換<br>
-        <input type="radio" name="payment" value="クレジットカード">クレジットカード<br>
-        <input type="radio" name="payment" value="コンビニ支払い">コンビニ支払い
-        </td>
+<th class="content">PAYMENT</th>
+   <td class="input">
+      <ul>
+         <li>
+             <section>
+               <a class="title"><input type="radio" name="payment" value="代金引換">代金引換</a>
+               <div class="box">
+                  <p>代金引換の際は、別途で<br>手数料：200円<br>を頂戴いたします。</p>
+               </div>
+            </section>
+         </li>
+         <li>
+            <section>
+               <a class="title"><input type="radio" name="payment" value="クレジットカード">クレジットカード</a>
+               <div class="box">
+                  <p>カード情報入力</p>
+                  <p>カード番号：<input type="text" name="card" maxlength="16"><br>
+                       有効期限：
+                          <select name="month">
+                             <option value="">-</option>
+                             <option value="1">1</option>
+                             <option value="2">2</option>
+                             <option value="3">3</option>
+                             <option value="4">4</option>
+                             <option value="5">5</option>
+                             <option value="6">6</option>
+                             <option value="7">7</option>
+                             <option value="8">8</option>
+                             <option value="9">9</option>
+                             <option value="10">10</option>
+                             <option value="11">11</option>
+                             <option value="12">12</option>
+                          </select>/
+                          <select name="year">
+                             <option value="">-</option>
+                             <option value="2022">2022</option>
+                             <option value="2023">2023</option>
+                             <option value="2024">2024</option>
+                             <option value="2025">2025</option>
+                             <option value="2026">2026</option>
+                             <option value="2027">2027</option>
+                          </select><br>
+                       セキュリティコード CVC/CW：<input type="number" name="cord" maxlength="4">
+                    </p>
+               </div>
+            </section>
+         </li>
+         <li>
+            <section>
+               <a class="title"><input type="radio" name="payment" value="コンビニ支払い">コンビニ支払い</a>
+               <div class="box">
+                  <p>お支払い可能なお店<br>
+                       ・セブンイレブン<br>
+                       ・ファミリーマート<br>
+                       ・ローソン<br>
+                       ・ミニストップ<br>
+                       別途手数料：300円
+                   </p>
+               </div>
+            </section>
+         </li>
+      </ul>
+   </td>
 </tr>
 
 <tr>
-<th>DELIVERY DATE</th>
-<td>
+<th class="content">DELIVERY DATE</th>
+<td class="input">
 <select id="datelist" name="datelist" data-start="3" data-end="20">
 <option value="">-選択してください-</option>
 </select>
@@ -96,5 +157,18 @@
 </tr>
 </table>
 
+<a><input type="reset" class="reset" value="リセット"></a>
+
+<p>購入内容</p>
+
+
+<a class="finish"><input type="submit" value="購入"></a>
+<a class="finish"><input type="button" onclick="history.back()" value="戻る"></a>
+</form>
+
+
+<!-- jquely -->
+<script src="https://code.jquery.com/jquery-3.4.1.min.js" integrity="sha256-CSXorXvZcTkaix6Yvo6HppcZGetbYMGWSFlBw8HfCJo=" crossorigin="anonymous"></script>
+<!-- 自作CSS -->
 <script src="../UserJs/date.js"></script>
 <%@ include file="../footer.html"%>
