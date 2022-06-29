@@ -5,12 +5,17 @@
    <head>
          <meta charset="UTF-8">
        <title>MY PROFILE</title>
-       <!-- フォント -->
-       <link
-	       href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
-	       rel="stylesheet">
+      <!-- フォント -->
+<link
+	href="https://fonts.googleapis.com/css2?family=Shadows+Into+Light&display=swap"
+	rel="stylesheet">
+<link
+	href="https://fonts.googleapis.com/css2?family=Yomogi&display=swap"
+	rel="stylesheet">
        <!-- 自作のCSS -->
        <link rel="stylesheet" type="text/css" href="../UserCss/user_mypage.css">
+       <link rel="stylesheet" type="text/css" href="../UserCss/user_login.css">
+       <link rel="stylesheet" type="text/css" href="../UserCss/logout.css">
    </head>
 
    <body>
@@ -19,7 +24,7 @@
 			   <h1>SHOP</h1>
 			   <nav>
 				   <ul id="menu">
-					   <li><a href="../UserVews/user_top.jsp" class="push">TOP</a></li>
+					   <li><a href="../UserViews/user_top.jsp" class="push">TOP</a></li>
 					   <li class="has-child"><a href="#" class="push">CATEGORY</a>
 						   <ul>
 							   <li><a href="#" class="push">ALL ITEM</a></li>
@@ -28,7 +33,7 @@
 							   <li><a href="#" class="push">SKIN CARE</a></li>
 						   </ul>
 					   </li>
-					   <li><a href="#">CART</a></li>
+					   <li><a href="../UserViews/user_cart.jsp">CART</a></li>
 					   <li class="has-child"><a href="../UserViews/user_mypage.jsp">MYPAGE</a>
 						   <ul>
 							   <li class="mini">
@@ -49,20 +54,22 @@
 			   </nav>
 		   </header>
 
-		   <p class="header">MY PROFILE</p>
+           <main>
+              <section>
+		   <h2 class="title">MY PROFILE</h2>
 
 		   <span>${USMessage }</span>
 
 		   <form action="../servlets/UserProfile" method="post">
-			   <table class="profileSearch">
+			   <table class="design">
 				   <tr>
-					   <th>■MAIL ADDRESS</th>
-					   <td><input type="text" name="mail_address"></td>
+					   <th class="content">■MAIL ADDRESS</th>
+					   <td class="input"><input type="text" name="mail_address"></td>
 				   </tr>
 
 				   <tr>
-					   <th>■PASSWORD</th>
-					   <td><input type="password" name="password"></td>
+					   <th class="content">■PASSWORD</th>
+					   <td class="input"><input type="password" name="password"></td>
 				   </tr>
 
 				   <tr>
@@ -74,6 +81,8 @@
 		   <form action="../UserViews/user_mypage.jsp" method="post">
 			   <input type="submit" value="Myページへ戻る">
 		   </form>
+		   </section>
+           </main>
 
 		   <footer id="footer">
 			   <small id="copyright">Copyright; KSJ</small>

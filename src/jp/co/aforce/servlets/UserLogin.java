@@ -29,9 +29,9 @@ public class UserLogin extends HttpServlet {
 		try {
 			UserLoginBean ulb = ld.search(mailAddress, password);
 
-			String address = ulb.getMailAddress();
+			String logId = ulb.getMailAddress();
 
-			if (address != null) {
+			if (logId != null) {
 				request.setAttribute("loginName", ulb);
 				request.getRequestDispatcher("../UserViews/user_top.jsp").forward(request, response);
 			} else {

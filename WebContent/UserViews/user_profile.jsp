@@ -11,6 +11,7 @@
 	       rel="stylesheet">
        <!-- 自作のCSS -->
        <link rel="stylesheet" type="text/css" href="../UserCss/user_mypage.css">
+       <link rel="stylesheet" type="text/css" href="../UserCss/user_login.css">
    </head>
 
    <body>
@@ -28,7 +29,7 @@
 							   <li><a href="#" class="push">SKIN CARE</a></li>
 						   </ul>
 					   </li>
-					   <li><a href="#">CART</a></li>
+					   <li><a href="../UserViews/user_cart.jsp">CART</a></li>
 					   <li class="has-child"><a href="../UserViews/user_mypage.jsp">MYPAGE</a>
 						   <ul>
 							   <li class="mini">
@@ -50,7 +51,7 @@
 		   </header>
 
 		   <form action="../servlets/UserProfile" method="post">
-			   <p class="header">MY PROFILE</p>
+			   <h2 class="title">MY PROFILE</h2>
 
 			   <table class="design">
 				   <tr>
@@ -82,10 +83,6 @@
 					   <th class="content">■MAIL ADDRESS</th>
 					   <td class="input">${uub. mailAddress}</td>
 				   </tr>
-
-				   <tr>
-					   <th class="content">■PASSWORD</th>
-					   <td class="input">${uub. password}
 			   </table>
 		   </form>
 

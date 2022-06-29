@@ -17,12 +17,11 @@
 			<th class="content">■PASSWORD</th>
 			<td class="input"><input type="password" name="password"></td>
 		</tr>
-
-		<tr>
-			<th></th>
-			<td><input type="submit" value="ログイン"></td>
-		</tr>
 	</table>
+</form>
+
+<form action="../UserViews/user_top.jsp" method="post">
+	<input type="submit" value="ログイン">
 </form>
 
 <form action="user_home.jsp" method="post">
