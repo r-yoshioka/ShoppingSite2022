@@ -27,6 +27,8 @@ public class CartRemoveAction extends HttpServlet {
 
 		String itemId = request.getParameter("itemId");
 
+		int sum = 0;
+
 		//セッション属性から、ItemBeanリストを取得
 		List<ItemBean> cart = (List<ItemBean>) session.getAttribute("cart");
 
@@ -34,8 +36,13 @@ public class CartRemoveAction extends HttpServlet {
 			if (itemBean.getRegistBean().getItemId().equals(itemId)) {
 				cart.remove(itemBean);
 				break;
+			}else {
+				//商品の合計
+				sum = sum + itemBean.getRegistBean().getPrice() * itemBean.getCount();
+				itemBean.setSum(itemBean.getSum());
 			}
 		}
+		request.setAttribute("sum", sum);
 		request.getRequestDispatcher("../UserViews/user_cart.jsp").forward(request, response);
 	}
 }

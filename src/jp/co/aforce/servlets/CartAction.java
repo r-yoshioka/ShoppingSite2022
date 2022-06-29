@@ -51,7 +51,6 @@ public class CartAction extends HttpServlet {
 			sum = sum + itemBean.getRegistBean().getPrice() * itemBean.getCount();
 			itemBean.setSum(itemBean.getSum());
 		}
-		request.setAttribute("sum", sum);
 
 		//商品Idを使って、これから追加する商品を商品リストから探す
 		if (existItem) {
