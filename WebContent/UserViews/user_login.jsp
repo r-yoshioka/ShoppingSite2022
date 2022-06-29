@@ -10,7 +10,7 @@
 	<table class="design">
 		<tr>
 			<th class="content">■MAIL ADDRESS</th>
-			<td class="input"><input type="text" name="mail_address"></td>
+			<td class="input"><input type="text" name="mailAddress"></td>
 		</tr>
 
 		<tr>
@@ -18,9 +18,6 @@
 			<td class="input"><input type="password" name="password"></td>
 		</tr>
 	</table>
-</form>
-
-<form action="../UserViews/user_top.jsp" method="post">
 	<input type="submit" value="ログイン">
 </form>
 
